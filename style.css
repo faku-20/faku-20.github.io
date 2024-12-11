@@ -1,0 +1,780 @@
+/* Estilo general para todos los documentos */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e1e 30%, #000000 100%);
+    color: #eaeaea;
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    margin-top: 50px;
+    text-align: center;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    text-align: center;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+/* ------------------------------------------------------------ */
+/* SECCIÓN: Pagina idex */
+/* SECCIÓN: Introducción de la pagina idex */
+.intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+}
+
+.acerca-de-mi {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 30px;
+    color: #CCCCCC;
+}
+
+.texto-acerca-de-mi {
+    flex: 1;
+    text-align: left;
+}
+
+.intro-seccion {
+    margin-top: 0%;
+    padding-top: 0%;
+}
+
+/* SECCIÓN: Tarjetasde la index */
+
+.tarjetas {
+    display: flex;
+    flex-direction: row;
+    /* Cambia de columna (default) a fila */
+    justify-content: space-around;
+    /* Distribuye las tarjetas con espacio entre ellas */
+    align-items: center;
+    /* Alinea las tarjetas verticalmente al centro */
+    padding-top: 4%;
+    padding-bottom: 20px;
+}
+
+/* Tarjeta individual */
+
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    /* Asegura que no se envuelvan a la siguiente línea */
+    justify-content: space-between;
+    /* Alinea las tarjetas con espacio entre ellas */
+    align-items: center;
+    /* Centra las tarjetas verticalmente */
+    gap: 15px;
+    /* Espacio entre las tarjetas */
+    padding-top: 4%;
+    padding-bottom: 20px;
+}
+
+.grid-secciones {
+    display: flex;
+    /* Utiliza Flexbox para un diseño horizontal */
+    justify-content: space-between;
+    /* Distribuye el espacio entre las tarjetas */
+    align-items: center;
+    /* Alinea las tarjetas verticalmente */
+    gap: 20px;
+    /* Espacio entre las tarjetas */
+    padding-top: 4%;
+    padding-bottom: 20px;
+}
+
+/* Tarjeta individual */
+.tarjeta {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    max-width: 250px;
+    /* Máximo tamaño de la tarjeta */
+    width: 100%;
+    /* Permite que las tarjetas se adapten al espacio disponible */
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Efecto de hover en la tarjeta */
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    background-color: #2a2a2a;
+}
+
+/* Estilos para los elementos dentro de las tarjetas */
+.tarjeta img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.tarjeta h2 {
+    margin: 15px 0;
+    color: #ffcc00;
+}
+
+.tarjeta p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* SECCIÓN: Botones */
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #121212;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.5);
+}
+
+.boton:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+}
+
+.boton-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin: 40px;
+}
+
+.boton-contenedor2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.foto-perfil {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    border-radius: 10%;
+}
+
+.foto-perfil-1 {
+    width: 300px;
+    height: 400px;
+    margin-right: 50px;
+    border-radius: 10%;
+}
+
+/* ------------------------------------------------------------ */
+/* Esta seccion es de los botones de las oras paginas, no la index*/
+/* SECCIÓN: Botones Secundarios */
+.boton-secundario {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #464440;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.boton-secundario:hover {
+    background-color: #333333;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* SECCIÓN: Barra de Navegación, Esta aplica para todas las paginas */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: rgba(51, 51, 51, 0.9);
+    margin: 0 auto;
+}
+
+.menu .logo a {
+    color: #ffcc00;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover i {
+    color: #ff00ff;
+}
+
+nav ul li a i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Hasta aca corresponde la mayoria a ala index, exepto los botones q son generales y lo q definí arriba*/
+/* ------------------------------------------------------------ */
+
+/* SECCIÓN: Video, este es el unico video de la pagina*/
+.Video-sigto {
+    text-align: center;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.Video-sigto h2 {
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.Video-sigto video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* ------------------------------------------------------------ */
+/* SECCIÓN: Imagen, esta corresponde a la pagina sigto del proyecto */
+.imagen-contenedor {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.imagen-detalles {
+    max-width: 40%;
+    border-radius: 10px;
+}
+
+/* ------------------------------------------------------------ */
+/* SECCIÓN: formulario */
+#contacto {
+    background-color: #121212;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#formContacto {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#formContacto input,
+#formContacto textarea,
+#formContacto button {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#formContacto input,
+#formContacto textarea {
+    background-color: #1e1e1e;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#formContacto button {
+    background-color: #ffcc00;
+    color: #121212;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+#formContacto button:hover {
+    background-color: #e6b800;
+}
+
+#formContacto textarea {
+    height: 200px;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* ------------------------------------------------------------ */
+/* SECCIÓN: footer */
+footer {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 10px 10px;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-info h4 {
+    font-size: 1rem;
+    color: #ffcc00;
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    margin: 3px 0;
+    font-size: 0.9rem;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #ffcc00;
+}
+
+.footer-bottom {
+    margin-top: 10px;
+    padding-top: 5px;
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.correoFooter {
+    color: #ffcc00;
+}
+
+.telefonoFooter {
+    color: #ffcc00;
+}
+
+.btnFooter, .btnFrase {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btnFooter:hover, .btnFrase:hover{
+    background-color: #333333;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.proyecto {
+    color: #ffffff;
+}
+/* ------------------------------------------------------------ */
+/* Diseño Responsive aplica para todo*/
+/* Estilo para dispositivos pequeños (celulares) */
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .contenedor {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .acerca-de-mi {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .texto-acerca-de-mi {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .foto-perfil-1 {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+    }
+
+    .tarjetas {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .tarjeta {
+        max-width: 100%;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-container {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+/* Estilo para tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .acerca-de-mi {
+        flex-direction: row;
+    }
+
+    .texto-acerca-de-mi {
+        font-size: 1.2rem;
+    }
+
+    .tarjetas {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .tarjeta {
+        max-width: 45%;
+    }
+}
+
+/* Estilo para dispositivos grandes (computadoras) */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+
+    .contenedor {
+        width: 90%;
+        max-width: 1200px;
+    }
+
+    .texto-acerca-de-mi {
+        font-size: 1.5rem;
+    }
+
+    .tarjetas {
+        gap: 20px;
+    }
+
+    .tarjeta {
+        max-width: 300px;
+    }
+
+    .menu ul {
+        gap: 20px;
+    }
+}
+
+/* Seccion de fotos de la pagina de intereses */
+.intereses-iconos {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.iconos img {
+    width: 250px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.iconos img:hover {
+    transform: scale(1.1);
+}
+
+/* Seccion de logros ticks de la pagina de intereses */
+.logros ul {
+    list-style: none;
+    padding: 0;
+}
+
+.logros li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.logros li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    color: green;
+}
+
+/* Seccion de habilidades de la pagina intereses */
+.habilidades {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.barra {
+    margin-bottom: 20px;
+}
+
+.barra p {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.progreso {
+    height: 25px;
+    background-color: #4caf50;
+    border-radius: 5px;
+    width: 0;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Hover para cambiar el color de la barra */
+.barra:hover .progreso {
+    background-color: #45a049;
+    width: 100%;
+    transition: width 1s ease-in-out;
+}
+
+/* Estilo para la barra de progreso */
+.barra .progreso {
+    width: 0%;
+    background-color: #4caf50;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.barra:hover .progreso:hover {
+    background-color: #45a049;
+    width: 100%;
+}
+/* ------------------------------------------------------------ */
+
+/* boton curriculum de la pagina index */
+.cv-contenedor {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.boton-principal {
+    text-decoration: none;
+    color: #fff;
+    background: #FF6347;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.boton-principal:hover {
+    background: #FF6347;
+    transform: scale(1.1);
+    color: #000000;
+}
+
+.boton-principal:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 99, 71, 0.5);
+}
+
+/* Seccion la cita en la pagina intereses */
+.cita {
+    margin: 30px auto;
+    text-align: center;
+    font-style: italic;
+    color: #FFD700;
+}
+/* ------------------------------------------------------------ */
+/* Pagina conocimientos*/
+/* Seccion de detalles en la pagina de conocimientos */
+.detalles {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.detalles h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2bdd07;
+}
+
+/* Tarjetas de conocimientos */
+.info-conocimientos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tarjeta2 {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    background-color: #2a2a2a;
+}
+
+.tarjeta2 i {
+    font-size: 2.5rem;
+    color: #1bdb22;
+    /* Íconos en verde */
+    margin-bottom: 10px;
+}
+
+.tarjeta2 h3 {
+    margin: 15px 0;
+    color: #ffcc00;
+}
+
+.tarjeta2 p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.menu ul li a.active {
+    color: #ff6f61;
+    /* Un color distintivo */
+    font-weight: bold;
+    border-bottom: 2px solid #ff6f61;
+}
+/* ------------------------------------------------------------ */
+/* footer nuevo de la pagina index */
+.footer-social {
+    text-align: center;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 18px;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #00aaff;
+    transform: scale(1.2);
+}
+
+.footer-social i {
+    margin-right: 8px;
+}
+ 
+/* Estilo del botón */
+.btnFrase {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #000000;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Estilo para la frase */
+#frase {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+.btnFrase:hover {
+    background-color: #333333;
+    color: #ffcc00;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el contenedor */
+.contenedorFrase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+
+

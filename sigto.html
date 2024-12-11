@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Sellxpress</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="Proyectos">
+    <header class="intro">
+        <h1>Mis Proyectos</h1>
+    </header>
+
+    <main class="contenedor">
+        <section class="detalles">
+            <img src="imagenes/sigto.png" alt="SIGTO - Sistema de Gestión de Tiendas Online" title="e-commerce"
+                class="foto-perfil">
+            <p><strong>SIGTO</strong>, desarrollado bajo la compañía ficticia <strong>Sellxpress</strong>, es un
+                avanzado Sistema de Gestión de Tiendas Online. Este proyecto fue diseñado para optimizar y gestionar las
+                operaciones de comercios electrónicos mediante una plataforma robusta y segura.</p>
+            <p>El sistema fue construido utilizando <strong>C#</strong> como lenguaje de programación, junto con una
+                base de datos <strong>SQL</strong>. Para garantizar un alto rendimiento y escalabilidad, la base de
+                datos se implementó en un <strong>servidor Fedora</strong> y se ejecuta dentro de un <strong>contenedor
+                    Docker</strong>.</p>
+
+            <section class="servidor-db-docker">
+                <h2>Servidor, Base de Datos y Docker</h2>
+                <p>El sistema SIGTO está basado en un entorno de servidor robusto con <strong>Fedora</strong> como
+                    sistema operativo, y utiliza una base de datos en <strong>SQL</strong>, gestionada mediante
+                    <strong>MariaDB</strong> como gestor de bases de datos. Esta base de datos se encuentra alojada
+                    dentro de un contenedor <strong>Docker</strong>, lo que permite una gestión eficiente, portátil y
+                    escalable, facilitando su implementación en cualquier entorno compatible con Docker.
+                </p>
+                <p>Gracias a Docker, el sistema puede escalar de manera optimizada, mientras que Fedora proporciona un
+                    entorno seguro y de alto rendimiento para ejecutar la aplicación. La configuración de la base de
+                    datos en un contenedor Docker permite replicaciones rápidas y restauraciones eficientes,
+                    garantizando la disponibilidad continua del servicio en todo momento.</p>
+                <div class="imagen-contenedor">
+                    <img src="imagenes/Sellxpress.png" alt="Servidor Fedora con Docker" class="imagen-detalles">
+                </div>
+            </section>
+
+            <p>Además, se integró un <strong>firewall externo basado en pfSense</strong>, configurado con reglas
+                específicas para proteger los datos y garantizar la seguridad de las transacciones en línea.</p>
+
+            <div class="imagen-contenedor">
+                <img src="imagenes/Picture1.png" alt="Firewall pfSense" class="imagen-detalles">
+            </div>
+        </section>
+
+        <section class="Video-sigto">
+            <h2>Demostración del programa <strong>SIGTO</strong></h2>
+            <video src="imagenes/video sigto.mp4" controls></video>
+        </section>
+
+        <div class="boton-contenedor">
+            <a href="proyectos.html" class="boton-secundario">Volver a la página anterior</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="contact-info">
+                <h4>Contacto</h4>
+                <p><a href="mailto:facuperezaddiego@gmail.com"><i class="fa-solid fa-envelope"></i> Correo: facuperezaddiego@gmail.com</a></p>
+                <p><a href="tel:+59892467494"><i class="fa-solid fa-phone"></i> Teléfono: +598 92 467 494</a></p>
+            </div>
+            <button class="btnFooter">
+                <a href="formulario.html" aria-label="Ir al formulario de contacto">
+                    <i class="fa-solid fa-paper-plane"></i> Contacto
+                </a>
+            </button>
+    
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/ejemplo" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/ejemplo" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Facundo Pérez. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
