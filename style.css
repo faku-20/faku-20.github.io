@@ -446,43 +446,40 @@ a:hover {
 }
 /* ------------------------------------------------------------ */
 /* Diseño Responsive aplica para todo*/
-/* Estilo para dispositivos pequeños (celulares) */
-/* Diseño Responsive para dispositivos móviles */
-@media (max-width: 768px) {
+/* Diseño Responsive para dispositivos móviles (Honor 90 Lite) */
+@media (max-width: 1080px) {
+    /* General */
     body {
-        padding: 0;
-        font-size: 0.9rem;
+        font-size: 14px;
     }
 
     .contenedor {
-        width: 100%;
+        width: 95%;
         padding: 10px;
     }
 
     h1, h2 {
         font-size: 1.5rem;
-        margin-top: 20px;
     }
 
     p {
         font-size: 1rem;
-        padding: 0 10px;
+        margin: 10px 0;
     }
 
-    .acerca-de-mi {
+    /* Introducción */
+    .intro {
+        margin-bottom: 40px;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    /* Tarjetas */
+    .tarjetas {
         flex-direction: column;
-        text-align: center;
-        font-size: 1.2rem;
-    }
-
-    .foto-perfil-1 {
-        width: 100%;
-        height: auto;
-        margin: 20px 0;
-    }
-
-    .tarjetas, .grid-secciones {
-        flex-direction: column;
+        align-items: stretch;
         gap: 20px;
     }
 
@@ -492,54 +489,73 @@ a:hover {
         padding: 15px;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+    .tarjeta img {
+        max-width: 100%;
+        height: auto;
     }
 
+    .tarjeta h2 {
+        font-size: 1.2rem;
+    }
+
+    .tarjeta p {
+        font-size: 0.9rem;
+    }
+
+    /* Botones */
+    .boton, .boton-secundario {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Menú */
     .menu {
         flex-direction: column;
-        text-align: center;
-        padding: 10px 0;
+        align-items: flex-start;
+        padding: 10px;
     }
 
     .menu .logo a {
         font-size: 1.2rem;
     }
 
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    /* Video */
+    .Video-sigto {
+        margin: 10px auto;
+        width: 100%;
+    }
+
+    .Video-sigto video {
+        max-width: 100%;
+    }
+
+    /* Imagen */
+    .imagen-contenedor {
+        margin: 20px auto;
+    }
+
+    .imagen-detalles {
+        max-width: 90%;
+        height: auto;
+    }
+
+    /* Formulario */
     #formContacto {
         padding: 20px;
     }
 
-    footer {
-        font-size: 0.8rem;
-    }
-}
-
-/* Estilos adicionales para pantallas ultra pequeñas */
-@media (max-width: 480px) {
-    h1, h2 {
-        font-size: 1.2rem;
-        margin-top: 15px;
-    }
-
-    p {
-        font-size: 0.9rem;
-        padding: 0 5px;
-    }
-
-    .foto-perfil-1, .imagen-detalles {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-
-    .tarjeta img {
-        margin-bottom: 10px;
-    }
-
-    .boton, .boton-secundario {
-        padding: 8px 15px;
+    #formContacto input,
+    #formContacto textarea,
+    #formContacto button {
         font-size: 0.9rem;
     }
 
@@ -547,8 +563,29 @@ a:hover {
         height: 150px;
     }
 
-    .footer-bottom p {
-        font-size: 0.7rem;
+    /* Footer */
+    footer {
+        padding: 10px;
+    }
+
+    .footer-container {
+        padding: 10px;
+    }
+
+    .contact-info h4 {
+        font-size: 0.9rem;
+    }
+
+    .contact-info p {
+        font-size: 0.8rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+
+    .btnFooter, .btnFrase {
+        font-size: 0.9rem;
     }
 }
 
