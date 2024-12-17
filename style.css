@@ -447,10 +447,11 @@ a:hover {
 /* ------------------------------------------------------------ */
 /* Diseño Responsive aplica para todo*/
 /* Estilo para dispositivos pequeños (celulares) */
-@media (max-width: 600px) {
+/* Diseño Responsive para dispositivos móviles */
+@media (max-width: 768px) {
     body {
-        font-size: 15px;
-        line-height: 1.8;
+        padding: 0;
+        font-size: 0.9rem;
     }
 
     .contenedor {
@@ -458,41 +459,99 @@ a:hover {
         padding: 10px;
     }
 
-    .acerca-de-mi {
-        flex-direction: column;
-        gap: 10px;
+    h1, h2 {
+        font-size: 1.5rem;
+        margin-top: 20px;
     }
 
-    .texto-acerca-de-mi {
-        text-align: center;
+    p {
         font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .acerca-de-mi {
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.2rem;
     }
 
     .foto-perfil-1 {
         width: 100%;
         height: auto;
-        margin-right: 0;
+        margin: 20px 0;
     }
 
-    .tarjetas {
+    .tarjetas, .grid-secciones {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
     }
 
     .tarjeta {
         max-width: 100%;
+        margin: 0 auto;
+        padding: 15px;
     }
 
-    .menu ul {
+    nav ul {
         flex-direction: column;
         gap: 10px;
     }
 
-    .footer-container {
-        font-size: 14px;
+    .menu {
+        flex-direction: column;
         text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu .logo a {
+        font-size: 1.2rem;
+    }
+
+    #formContacto {
+        padding: 20px;
+    }
+
+    footer {
+        font-size: 0.8rem;
     }
 }
+
+/* Estilos adicionales para pantallas ultra pequeñas */
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+
+    p {
+        font-size: 0.9rem;
+        padding: 0 5px;
+    }
+
+    .foto-perfil-1, .imagen-detalles {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .tarjeta img {
+        margin-bottom: 10px;
+    }
+
+    .boton, .boton-secundario {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    #formContacto textarea {
+        height: 150px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.7rem;
+    }
+}
+
 
 /* Estilo para tablets */
 @media (min-width: 601px) and (max-width: 1024px) {
@@ -787,3 +846,6 @@ a:hover {
     align-items: center;
     height: 200px;
 }
+
+
+
