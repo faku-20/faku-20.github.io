@@ -446,146 +446,115 @@ a:hover {
 }
 /* ------------------------------------------------------------ */
 /* Diseño Responsive aplica para todo*/
-/* Diseño Responsive para dispositivos móviles (Honor 90 Lite) */
+/* Diseño Responsive para header y footer adaptados */
 @media (max-width: 1080px) {
     /* General */
     body {
-        font-size: 14px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .contenedor {
-        width: 95%;
-        padding: 10px;
+    /* Header */
+    header {
+        width: 100%;
+        background-color: #333; /* Cambiar según el diseño */
+        color: #fff;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    h1, h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1rem;
-        margin: 10px 0;
-    }
-
-    /* Introducción */
-    .intro {
-        margin-bottom: 40px;
-    }
-
-    .intro p {
-        font-size: 1rem;
-    }
-
-    /* Tarjetas */
-    .tarjetas {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 20px;
-    }
-
-    .tarjeta {
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 15px;
-    }
-
-    .tarjeta img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .tarjeta h2 {
-        font-size: 1.2rem;
-    }
-
-    .tarjeta p {
-        font-size: 0.9rem;
-    }
-
-    /* Botones */
-    .boton, .boton-secundario {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-
-    /* Menú */
     .menu {
-        flex-direction: column;
+        display: flex;
+        flex-direction: column; /* Para apilar elementos si es necesario */
         align-items: flex-start;
-        padding: 10px;
+        width: 100%;
+        padding: 10px 0;
     }
 
     .menu .logo a {
         font-size: 1.2rem;
+        text-decoration: none;
+        color: #fff;
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 10px;
+        display: flex;
+        flex-direction: column; /* Apilar elementos en móviles */
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 5px 0;
     }
 
     nav ul li a {
         font-size: 1rem;
-    }
-
-    /* Video */
-    .Video-sigto {
-        margin: 10px auto;
-        width: 100%;
-    }
-
-    .Video-sigto video {
-        max-width: 100%;
-    }
-
-    /* Imagen */
-    .imagen-contenedor {
-        margin: 20px auto;
-    }
-
-    .imagen-detalles {
-        max-width: 90%;
-        height: auto;
-    }
-
-    /* Formulario */
-    #formContacto {
-        padding: 20px;
-    }
-
-    #formContacto input,
-    #formContacto textarea,
-    #formContacto button {
-        font-size: 0.9rem;
-    }
-
-    #formContacto textarea {
-        height: 150px;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+        background-color: #444; /* Opcional: resaltar los enlaces */
+        border-radius: 5px;
     }
 
     /* Footer */
     footer {
-        padding: 10px;
+        width: 100%;
+        background-color: #222; /* Cambiar según el diseño */
+        color: #fff;
+        padding: 20px;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .footer-container {
-        padding: 10px;
+        width: 100%;
+        max-width: 1080px;
+        text-align: center;
+    }
+
+    .contact-info {
+        margin-bottom: 20px;
     }
 
     .contact-info h4 {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        margin: 5px 0;
     }
 
     .contact-info p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        margin: 5px 0;
     }
 
     .footer-bottom {
         font-size: 0.8rem;
+        margin-top: 10px;
     }
 
     .btnFooter, .btnFrase {
-        font-size: 0.9rem;
+        padding: 10px 20px;
+        font-size: 1rem;
+        margin-top: 10px;
+        background-color: #444;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btnFooter:hover, .btnFrase:hover {
+        background-color: #555;
     }
 }
 
