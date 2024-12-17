@@ -1,4 +1,16 @@
 /* Estilo general para todos los documentos */
+header {
+    width: 100vw; /* Asegura que ocupa todo el ancho del viewport */
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -209,6 +221,7 @@ p {
 /* SECCIÓN: Barra de Navegación, Esta aplica para todas las paginas */
 .menu {
     display: flex;
+    flex: 1;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
@@ -229,7 +242,7 @@ nav ul {
     padding: 0;
     display: flex;
     gap: 20px;
-    margin-right: 20px;
+    /* margin-right: 20px;*/
 }
 
 nav ul li a {
@@ -350,16 +363,20 @@ nav ul li a:hover {
 /* ------------------------------------------------------------ */
 /* SECCIÓN: footer */
 footer {
+    width: 100vw; /* Asegura el ancho completo */
     background-color: #1e1e1e;
     color: #fff;
-    padding: 10px 10px;
-    text-align: center;
-    border-top: 1px solid #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-container {
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
 }
 
 .contact-info h4 {
@@ -396,9 +413,7 @@ footer {
 
 .footer-bottom {
     margin-top: 10px;
-    padding-top: 5px;
     font-size: 0.8rem;
-    color: #bbb;
 }
 
 .footer-bottom p {
@@ -446,171 +461,174 @@ a:hover {
 }
 /* ------------------------------------------------------------ */
 /* Diseño Responsive aplica para todo*/
-/* Diseño Responsive para header y footer adaptados */
-@media (max-width: 1080px) {
-    /* General */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo Base para Todos los Dispositivos */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Media Queries */
+
+/* Teléfonos Pequeños (Pantallas hasta 480px) */
+@media (max-width: 480px) {
     body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        font-size: 14px;
     }
 
-    /* Header */
-    header {
-        width: 100%;
-        background-color: #333; /* Cambiar según el diseño */
-        color: #fff;
-        padding: 10px 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    header, footer {
+        padding: 15px 10px;
     }
 
     .menu {
-        display: flex;
-        flex-direction: column; /* Para apilar elementos si es necesario */
-        align-items: flex-start;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .menu .logo a {
-        font-size: 1.2rem;
-        text-decoration: none;
-        color: #fff;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
     }
 
     nav ul {
-        display: flex;
-        flex-direction: column; /* Apilar elementos en móviles */
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        list-style: none;
+        flex-direction: column;
+        gap: 5px;
     }
 
-    nav ul li {
-        width: 100%;
-        margin: 5px 0;
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    footer .footer-container {
+        font-size: 0.8rem;
+    }
+
+    .footer-social a {
+        font-size: 14px;
+    }
+}
+
+/* Teléfonos Grandes (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    header, footer {
+        padding: 20px 15px;
+    }
+
+    .menu {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    nav ul {
+        gap: 15px;
     }
 
     nav ul li a {
         font-size: 1rem;
-        color: #fff;
-        text-decoration: none;
-        padding: 10px 15px;
-        display: block;
-        background-color: #444; /* Opcional: resaltar los enlaces */
-        border-radius: 5px;
+        padding: 8px 12px;
     }
 
-    /* Footer */
-    footer {
-        width: 100%;
-        background-color: #222; /* Cambiar según el diseño */
-        color: #fff;
-        padding: 20px;
-        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-container {
-        width: 100%;
-        max-width: 1080px;
-        text-align: center;
-    }
-
-    .contact-info {
-        margin-bottom: 20px;
-    }
-
-    .contact-info h4 {
-        font-size: 1rem;
-        margin: 5px 0;
-    }
-
-    .contact-info p {
+    footer .footer-container {
         font-size: 0.9rem;
-        margin: 5px 0;
-    }
-
-    .footer-bottom {
-        font-size: 0.8rem;
-        margin-top: 10px;
-    }
-
-    .btnFooter, .btnFrase {
-        padding: 10px 20px;
-        font-size: 1rem;
-        margin-top: 10px;
-        background-color: #444;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .btnFooter:hover, .btnFrase:hover {
-        background-color: #555;
     }
 }
 
-
-/* Estilo para tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
+/* Tablets (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
     body {
         font-size: 16px;
     }
 
-    .acerca-de-mi {
+    header, footer {
+        padding: 20px 30px;
+    }
+
+    .menu {
         flex-direction: row;
+        justify-content: space-between;
     }
 
-    .texto-acerca-de-mi {
-        font-size: 1.2rem;
+    nav ul {
+        gap: 20px;
     }
 
-    .tarjetas {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 25px;
+    nav ul li a {
+        font-size: 1.1rem;
+        padding: 10px 15px;
     }
 
-    .tarjeta {
-        max-width: 45%;
+    footer .footer-container {
+        font-size: 1rem;
+    }
+
+    .footer-social a {
+        font-size: 16px;
     }
 }
 
-/* Estilo para dispositivos grandes (computadoras) */
-@media (min-width: 1025px) {
+/* Pantallas Medianas (1025px a 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
     body {
         font-size: 18px;
     }
 
-    .contenedor {
-        width: 90%;
-        max-width: 1200px;
+    header, footer {
+        padding: 30px 40px;
     }
 
-    .texto-acerca-de-mi {
-        font-size: 1.5rem;
+    nav ul {
+        gap: 30px;
     }
 
-    .tarjetas {
-        gap: 20px;
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 12px 20px;
     }
 
-    .tarjeta {
-        max-width: 300px;
+    footer .footer-container {
+        font-size: 1.1rem;
     }
 
-    .menu ul {
-        gap: 20px;
+    .footer-social a {
+        font-size: 18px;
     }
 }
+
+/* Pantallas Grandes (1441px en adelante) */
+@media (min-width: 1441px) {
+    body {
+        font-size: 20px;
+    }
+
+    header, footer {
+        padding: 40px 50px;
+    }
+
+    nav ul {
+        gap: 40px;
+    }
+
+    nav ul li a {
+        font-size: 1.4rem;
+        padding: 15px 25px;
+    }
+
+    footer .footer-container {
+        font-size: 1.2rem;
+    }
+
+    .footer-social a {
+        font-size: 20px;
+    }
+}
+
 
 /* Seccion de fotos de la pagina de intereses */
 .intereses-iconos {
@@ -797,15 +815,14 @@ a:hover {
 
 .footer-social a {
     color: #fff;
-    font-size: 18px;
-    margin: 0 15px;
+    margin: 5px 10px;
     text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .footer-social a:hover {
-    color: #00aaff;
-    transform: scale(1.2);
+    color: #ffcc00;
+    transform: scale(1.1);
 }
 
 .footer-social i {
