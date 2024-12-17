@@ -446,118 +446,53 @@ a:hover {
 }
 /* ------------------------------------------------------------ */
 /* Diseño Responsive aplica para todo*/
-/* Diseño Responsive para header y footer adaptados */
-@media (max-width: 1080px) {
-    /* General */
+/* Estilo para dispositivos pequeños (celulares) */
+@media (max-width: 600px) {
     body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        font-size: 15px;
+        line-height: 1.8;
     }
 
-    /* Header */
-    header {
+    .contenedor {
         width: 100%;
-        background-color: #333; /* Cambiar según el diseño */
-        color: #fff;
-        padding: 10px 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        padding: 10px;
     }
 
-    .menu {
-        display: flex;
-        flex-direction: column; /* Para apilar elementos si es necesario */
-        align-items: flex-start;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .menu .logo a {
-        font-size: 1.2rem;
-        text-decoration: none;
-        color: #fff;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: column; /* Apilar elementos en móviles */
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-
-    nav ul li {
-        width: 100%;
-        margin: 5px 0;
-    }
-
-    nav ul li a {
-        font-size: 1rem;
-        color: #fff;
-        text-decoration: none;
-        padding: 10px 15px;
-        display: block;
-        background-color: #444; /* Opcional: resaltar los enlaces */
-        border-radius: 5px;
-    }
-
-    /* Footer */
-    footer {
-        width: 100%;
-        background-color: #222; /* Cambiar según el diseño */
-        color: #fff;
-        padding: 20px;
-        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-        display: flex;
+    .acerca-de-mi {
         flex-direction: column;
-        align-items: center;
+        gap: 10px;
+    }
+
+    .texto-acerca-de-mi {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .foto-perfil-1 {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+    }
+
+    .tarjetas {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .tarjeta {
+        max-width: 100%;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
     }
 
     .footer-container {
-        width: 100%;
-        max-width: 1080px;
+        font-size: 14px;
         text-align: center;
     }
-
-    .contact-info {
-        margin-bottom: 20px;
-    }
-
-    .contact-info h4 {
-        font-size: 1rem;
-        margin: 5px 0;
-    }
-
-    .contact-info p {
-        font-size: 0.9rem;
-        margin: 5px 0;
-    }
-
-    .footer-bottom {
-        font-size: 0.8rem;
-        margin-top: 10px;
-    }
-
-    .btnFooter, .btnFrase {
-        padding: 10px 20px;
-        font-size: 1rem;
-        margin-top: 10px;
-        background-color: #444;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .btnFooter:hover, .btnFrase:hover {
-        background-color: #555;
-    }
 }
-
 
 /* Estilo para tablets */
 @media (min-width: 601px) and (max-width: 1024px) {
