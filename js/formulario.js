@@ -1,5 +1,5 @@
 // Inicializar EmailJS con tu userID
-emailjs.init('uSVuvvg9Ckk1g5TvJ');
+emailjs.init('L1OdrFcELend-h1Rf');
 
 // Espera a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
@@ -54,6 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para validar el mensaje
     function validarMensaje(mensaje) {
-        return mensaje.length >= 10;
+        return mensaje.length >= 1;
     }
 });
