@@ -1,5 +1,5 @@
 // Inicializar EmailJS con tu userID
-emailjs.init('L1OdrFcELend-h1Rf');
+emailjs.init('L1OdrFcELend-h1Rf');  // Este es el User ID
 
 // Espera a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Usar EmailJS para enviar el mensaje
-        emailjs.sendForm('gmail', 'template_s63ttea', formulario) // Asegúrate de que el ID de la plantilla esté entre comillas
+        emailjs.sendForm('service_4t0ii89', 'template_s63ttea', formulario)
             .then(function(response) {
                 console.log('Mensaje enviado:', response);
                 alert("Formulario enviado con éxito. ¡Gracias por tu mensaje!");
