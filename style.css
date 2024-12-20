@@ -27,8 +27,8 @@ p {
 }
 
 /* ------------------------------------------------------------ */
-/* SECCIÓN: Pagina idex */
-/* SECCIÓN: Introducción de la pagina idex */
+/* SECCIÓN: Pagina index */
+/* SECCIÓN: Introducción de la pagina index */
 .intro {
     text-align: center;
     margin-bottom: 60px;
@@ -56,45 +56,32 @@ p {
     padding-top: 0%;
 }
 
-/* SECCIÓN: Tarjetasde la index */
-
+/* SECCIÓN: Tarjetas de la index */
 .tarjetas {
     display: flex;
     flex-direction: row;
-    /* Cambia de columna (default) a fila */
     justify-content: space-around;
-    /* Distribuye las tarjetas con espacio entre ellas */
     align-items: center;
-    /* Alinea las tarjetas verticalmente al centro */
     padding-top: 4%;
     padding-bottom: 20px;
 }
 
 /* Tarjeta individual */
-
 .tarjetas {
     display: flex;
     flex-wrap: wrap;
-    /* Asegura que no se envuelvan a la siguiente línea */
     justify-content: space-between;
-    /* Alinea las tarjetas con espacio entre ellas */
     align-items: center;
-    /* Centra las tarjetas verticalmente */
     gap: 15px;
-    /* Espacio entre las tarjetas */
     padding-top: 4%;
     padding-bottom: 20px;
 }
 
 .grid-secciones {
     display: flex;
-    /* Utiliza Flexbox para un diseño horizontal */
     justify-content: space-between;
-    /* Distribuye el espacio entre las tarjetas */
     align-items: center;
-    /* Alinea las tarjetas verticalmente */
     gap: 20px;
-    /* Espacio entre las tarjetas */
     padding-top: 4%;
     padding-bottom: 20px;
 }
@@ -105,9 +92,7 @@ p {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     max-width: 250px;
-    /* Máximo tamaño de la tarjeta */
     width: 100%;
-    /* Permite que las tarjetas se adapten al espacio disponible */
     text-align: center;
     padding: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -136,6 +121,9 @@ p {
 .tarjeta p {
     font-size: 0.9rem;
     margin-bottom: 15px;
+}
+.tarjeta2 {
+    display: none;
 }
 
 /* SECCIÓN: Botones */
