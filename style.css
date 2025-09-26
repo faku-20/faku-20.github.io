@@ -123,7 +123,8 @@ p {
     margin-bottom: 15px;
 }
 .tarjeta2 {
-    display: none;
+    display: flex;
+    flex-direction: column;
 }
 
 /* SECCIÓN: Botones */
@@ -711,6 +712,47 @@ a:hover {
     /* Un color distintivo */
     font-weight: bold;
     border-bottom: 2px solid #ff6f61;
+}
+
+.certificacion-tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* centra verticalmente si hay espacio */
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%; /* se ajusta al ancho de la tarjeta */
+}
+
+.certificacion-tarjeta p {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.certificado-img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.certificado-img:hover {
+    transform: scale(1.05);
+}
+
+.insignia-img,
+.certificacion-tarjeta iframe {
+    width: 80px; /* o el tamaño que quieras para la insignia */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.insignia-img:hover,
+.certificacion-tarjeta iframe:hover {
+    transform: scale(1.2);
 }
 /* ------------------------------------------------------------ */
 /* footer nuevo de la pagina index */
