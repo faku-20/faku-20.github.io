@@ -1,113 +1,953 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Mi Portafolio</title>
-    <meta name="description" content="Explora el portafolio de Facundo Pérez: proyectos destacados, intereses y contacto profesional.">
-    <meta name="keywords" content="portafolio, proyectos, desarrollo web, contacto profesional, tecnología">
-    <meta name="author" content="Facundo Pérez">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="js/contador.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facundo Pérez — Backend Developer Junior · PHP · Linux · Docker</title>
+<meta name="description" content="Desarrollador junior orientado a backend e infraestructura. Sistema de gestión real con PHP, MariaDB, Docker y Linux. Montevideo, Uruguay.">
+<meta property="og:title" content="Facundo Pérez — Backend Developer Junior">
+<meta property="og:description" content="Sistema de gestión real en producción. PHP · MariaDB · Docker · Linux · Cloudflare. Disponible para oportunidades.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080D;--bg1:#0F0F16;--bg2:#15151F;--bg3:#1B1B28;
+  --bo:rgba(255,255,255,0.055);--bo2:rgba(255,255,255,0.11);
+  --a:#7C6CFC;--a2:#A78BFA;--adim:rgba(124,108,252,.13);
+  --g:#34D399;--gdim:rgba(52,211,153,.12);
+  --am:#FBBF24;--amdim:rgba(251,191,36,.1);
+  --t1:#F0F0F6;--t2:#8888A0;--t3:#3E3E55;
+  --r:10px;--rl:16px;
+  --F:'Sora',sans-serif;--FM:'Fira Code',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--F);background:var(--bg);color:var(--t1);line-height:1.6;overflow-x:hidden}
 
+/* ambient glow */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 10% 30%,rgba(124,108,252,.045) 0%,transparent 70%),
+    radial-gradient(ellipse 40% 40% at 90% 70%,rgba(52,211,153,.03) 0%,transparent 60%);
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,8,13,.82);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--bo);
+  padding:0 max(20px,5vw);height:62px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-name{
+  font-weight:700;font-size:1rem;color:var(--t1);text-decoration:none;
+  letter-spacing:-.025em;display:flex;align-items:center;gap:10px;
+}
+.nav-avatar{
+  width:32px;height:32px;border-radius:50%;
+  background:linear-gradient(135deg,var(--a),var(--g));
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;font-weight:700;color:#fff;flex-shrink:0;
+  letter-spacing:.01em;
+}
+.nav-links{display:flex;gap:30px;list-style:none}
+.nav-links a{font-size:.82rem;color:var(--t2);text-decoration:none;transition:color .2s;font-weight:400}
+.nav-links a:hover{color:var(--t1)}
+.nav-r{display:flex;gap:10px}
+.btn-sm{
+  padding:7px 16px;border-radius:7px;font-size:.8rem;font-family:var(--F);
+  cursor:pointer;text-decoration:none;transition:all .2s;font-weight:500;
+}
+.btn-ghost{background:transparent;border:1px solid var(--bo2);color:var(--t1)}
+.btn-ghost:hover{border-color:var(--a);background:var(--adim)}
+.btn-solid{background:var(--a);border:1px solid var(--a);color:#fff}
+.btn-solid:hover{filter:brightness(1.1)}
+
+/* ── HERO ── */
+.hero-wrap{
+  position:relative;z-index:1;
+  min-height:calc(100vh - 62px);
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:center;
+  padding:80px max(20px,8vw);max-width:1200px;margin:0 auto;
+}
+.hero-left{}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:5px 14px;border:1px solid rgba(52,211,153,.25);border-radius:100px;
+  background:var(--gdim);font-size:.7rem;font-family:var(--FM);
+  color:var(--g);margin-bottom:32px;
+}
+.dot{width:6px;height:6px;background:var(--g);border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+h1{
+  font-size:clamp(2.4rem,4.5vw,4.2rem);font-weight:800;
+  line-height:1.05;letter-spacing:-.04em;color:var(--t1);margin-bottom:22px;
+}
+h1 .a{color:var(--a)}
+h1 .g{color:var(--g)}
+
+.hero-p{
+  font-size:1rem;color:var(--t2);max-width:48ch;
+  margin-bottom:40px;line-height:1.8;font-weight:300;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px}
+.btn-hero{
+  padding:12px 26px;background:var(--a);border:none;border-radius:9px;
+  color:#fff;font-size:.92rem;font-family:var(--F);font-weight:600;
+  cursor:pointer;text-decoration:none;transition:all .2s;
+}
+.btn-hero:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-hero-o{
+  padding:12px 26px;background:transparent;
+  border:1px solid var(--bo2);border-radius:9px;
+  color:var(--t1);font-size:.92rem;font-family:var(--F);
+  cursor:pointer;text-decoration:none;transition:all .2s;font-weight:400;
+}
+.btn-hero-o:hover{border-color:var(--a);background:var(--adim)}
+.tech-row{display:flex;flex-wrap:wrap;gap:8px}
+.tc{
+  padding:4px 10px;background:var(--bg2);border:1px solid var(--bo);
+  border-radius:5px;font-size:.67rem;font-family:var(--FM);color:var(--t3);
+  transition:all .2s;
+}
+.tc.hi{border-color:rgba(124,108,252,.3);color:var(--a2)}
+.tc:hover{color:var(--t2);border-color:var(--bo2)}
+
+/* ── HERO VISUAL — terminal card ── */
+.hero-right{position:relative}
+.term-card{
+  background:var(--bg1);border:1px solid var(--bo2);border-radius:var(--rl);
+  overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5);
+}
+.term-bar{
+  background:var(--bg2);border-bottom:1px solid var(--bo);
+  padding:12px 18px;display:flex;align-items:center;gap:8px;
+}
+.term-dot{width:10px;height:10px;border-radius:50%}
+.td-r{background:#FF5F57}.td-y{background:#FEBC2E}.td-g{background:#28C840}
+.term-title{
+  font-family:var(--FM);font-size:.72rem;color:var(--t3);
+  margin-left:auto;margin-right:auto;
+}
+.term-body{padding:22px 24px;font-family:var(--FM);font-size:.77rem;line-height:2}
+.ln{display:flex;gap:10px}
+.ln-n{color:var(--t3);user-select:none;min-width:16px;text-align:right}
+.ln-c{color:var(--t2)}
+.cy{color:#7FDBFF}.gn{color:var(--g)}.pu{color:var(--a2)}.am{color:var(--am)}
+.cm{color:var(--t3);font-style:italic}.wh{color:var(--t1)}
+.cursor{
+  display:inline-block;width:8px;height:14px;
+  background:var(--g);vertical-align:middle;
+  animation:blink .8s infinite;margin-left:2px;
+}
+
+/* floating badges around terminal */
+.hero-badge-float{
+  position:absolute;background:var(--bg2);border:1px solid var(--bo2);
+  border-radius:9px;padding:10px 14px;display:flex;align-items:center;
+  gap:9px;font-size:.75rem;white-space:nowrap;
+  box-shadow:0 8px 32px rgba(0,0,0,.4);
+}
+.hbf-1{top:-18px;right:-10px}
+.hbf-2{bottom:30px;left:-24px}
+.hbf-icon{font-size:1rem}
+.hbf-main{font-weight:600;color:var(--t1);font-size:.78rem}
+.hbf-sub{font-size:.68rem;color:var(--t2)}
+
+/* ── DIVIDER ── */
+.divider{
+  position:relative;z-index:1;
+  border-top:1px solid var(--bo);padding:40px max(20px,8vw);
+  background:var(--bg1);
+}
+.divider-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;gap:0;
+}
+.stat-item{
+  flex:1;text-align:center;padding:16px 20px;
+  border-right:1px solid var(--bo);
+}
+.stat-item:last-child{border-right:none}
+.stat-n{
+  font-family:'Sora',sans-serif;font-size:2.2rem;font-weight:800;
+  color:var(--a2);letter-spacing:-.04em;line-height:1;display:block;margin-bottom:6px;
+}
+.stat-l{font-size:.72rem;color:var(--t3);text-transform:uppercase;letter-spacing:.1em}
+
+/* ── SECTIONS ── */
+section{position:relative;z-index:1;padding:96px max(20px,8vw)}
+.inner{max-width:1200px;margin:0 auto}
+.lbl{
+  font-family:var(--FM);font-size:.67rem;color:var(--a);
+  text-transform:uppercase;letter-spacing:.16em;
+  margin-bottom:14px;display:flex;align-items:center;gap:10px;
+}
+.lbl::after{content:'';width:28px;height:1px;background:var(--a);opacity:.5}
+.sh{
+  font-size:clamp(1.9rem,3.5vw,3rem);font-weight:800;
+  letter-spacing:-.035em;line-height:1.1;margin-bottom:16px;
+}
+.sh .a{color:var(--a)}.sh .g{color:var(--g)}
+.sp{font-size:.95rem;color:var(--t2);max-width:52ch;line-height:1.8;font-weight:300}
+
+/* ── PROYECTO PRINCIPAL ── */
+.proj-hero{
+  margin-top:56px;border:1px solid var(--bo);border-radius:var(--rl);
+  overflow:hidden;background:var(--bg1);
+}
+.proj-header{
+  padding:36px 40px;display:grid;grid-template-columns:1fr auto;
+  gap:24px;border-bottom:1px solid var(--bo);align-items:start;
+}
+.proj-badge{
+  display:inline-flex;align-items:center;gap:6px;padding:4px 12px;
+  background:var(--gdim);border:1px solid rgba(52,211,153,.2);
+  border-radius:100px;font-size:.67rem;font-family:var(--FM);color:var(--g);
+  margin-bottom:14px;
+}
+.proj-header h3{font-size:1.5rem;font-weight:800;color:var(--t1);letter-spacing:-.025em;margin-bottom:10px}
+.proj-header p{font-size:.88rem;color:var(--t2);line-height:1.75;max-width:55ch}
+.proj-links{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.plink{
+  padding:8px 16px;background:var(--bg2);border:1px solid var(--bo);
+  border-radius:7px;color:var(--t1);font-size:.78rem;text-decoration:none;
+  transition:all .2s;
+}
+.plink:hover{border-color:var(--a);background:var(--adim)}
+.plink.main-link{background:var(--a);border-color:var(--a);color:#fff}
+.plink.main-link:hover{filter:brightness(1.1)}
+
+/* versiones */
+.proj-versions{
+  padding:20px 40px;background:var(--bg);border-bottom:1px solid var(--bo);
+  display:flex;gap:0;overflow-x:auto;
+}
+.ver{
+  flex:1;min-width:140px;padding:16px 20px;border-right:1px solid var(--bo);
+  position:relative;
+}
+.ver:last-child{border-right:none}
+.ver::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:transparent;
+}
+.ver.done::before{background:var(--a)}
+.ver.wip::before{background:var(--am)}
+.ver-tag{font-family:var(--FM);font-size:.65rem;color:var(--t3);margin-bottom:5px}
+.ver h4{font-size:.85rem;font-weight:600;color:var(--t1);margin-bottom:4px}
+.ver p{font-size:.75rem;color:var(--t2);line-height:1.5}
+
+/* módulos grid */
+.modules{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+  gap:1px;background:var(--bo);
+}
+.mod{background:var(--bg1);padding:22px 24px;transition:background .2s}
+.mod:hover{background:var(--bg2)}
+.mod-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.mod-ic{font-size:1.1rem}
+.mod-dot{width:6px;height:6px;background:var(--g);border-radius:50%;margin-top:6px}
+.mod h4{font-size:.88rem;font-weight:600;color:var(--t1);margin-bottom:5px;letter-spacing:-.01em}
+.mod p{font-size:.78rem;color:var(--t2);line-height:1.6}
+
+/* infra split */
+.infra-split{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-top:1px solid var(--bo);
+}
+.infra-left{padding:32px 40px;border-right:1px solid var(--bo)}
+.infra-left h4{font-size:.95rem;font-weight:700;color:var(--t1);margin-bottom:8px;letter-spacing:-.01em}
+.infra-left p{font-size:.83rem;color:var(--t2);line-height:1.7;margin-bottom:20px}
+.istack{display:flex;flex-direction:column;gap:2px}
+.il{
+  padding:11px 16px;background:var(--bg2);
+  border-left:2px solid var(--bo);transition:border-color .2s;
+}
+.il:hover{border-left-color:var(--a)}
+.il-n{font-family:var(--FM);font-size:.7rem;color:var(--a2);display:block;margin-bottom:2px}
+.il-d{font-size:.76rem;color:var(--t3)}
+.infra-right{padding:28px 32px;background:var(--bg)}
+.code-win{
+  background:var(--bg1);border:1px solid var(--bo);border-radius:var(--r);
+  overflow:hidden;
+}
+.code-top{
+  background:var(--bg2);border-bottom:1px solid var(--bo);
+  padding:10px 16px;display:flex;align-items:center;gap:8px;
+}
+.code-dot{width:9px;height:9px;border-radius:50%}
+.code-file{font-family:var(--FM);font-size:.68rem;color:var(--t3);margin-left:6px}
+.code-body{padding:20px;font-family:var(--FM);font-size:.73rem;line-height:1.9;overflow-x:auto}
+
+/* ── OTROS PROYECTOS ── */
+.alt-sec{background:var(--bg1);border-top:1px solid var(--bo)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-top:48px}
+.pcard{
+  background:var(--bg2);border:1px solid var(--bo);border-radius:var(--rl);
+  padding:26px;transition:all .2s;
+}
+.pcard:hover{border-color:var(--bo2);transform:translateY(-2px)}
+.pcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.pc-ic{
+  width:40px;height:40px;background:var(--bg3);border-radius:9px;
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+}
+.pc-yr{
+  padding:3px 9px;background:var(--bg3);border:1px solid var(--bo);
+  border-radius:100px;font-size:.62rem;font-family:var(--FM);color:var(--t3);
+}
+.pcard h3{font-size:.95rem;font-weight:700;color:var(--t1);margin-bottom:7px;letter-spacing:-.01em}
+.pcard p{font-size:.82rem;color:var(--t2);line-height:1.65;margin-bottom:14px}
+.ptags{display:flex;flex-wrap:wrap;gap:6px}
+.ptag{
+  padding:2px 8px;background:var(--bg1);border:1px solid var(--bo);
+  border-radius:4px;font-size:.63rem;font-family:var(--FM);color:var(--t3);
+}
+
+/* ── SKILLS ── */
+.skills-sec{border-top:1px solid var(--bo);border-bottom:1px solid var(--bo)}
+.skgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:48px}
+.skcard{
+  background:var(--bg1);border:1px solid var(--bo);border-radius:var(--r);
+  padding:22px;transition:border-color .2s;
+}
+.skcard:hover{border-color:var(--bo2)}
+.sk-cat{font-family:var(--FM);font-size:.63rem;color:var(--a);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px;display:block}
+.sk-items{display:flex;flex-direction:column;gap:7px}
+.sk-i{font-size:.83rem;color:var(--t2);display:flex;align-items:center;gap:8px;line-height:1.3}
+.sk-i::before{content:'';width:4px;height:4px;background:var(--t3);border-radius:50%;flex-shrink:0}
+.sk-i.s{color:var(--t1);font-weight:500}
+.sk-i.s::before{background:var(--a)}
+
+/* ── EDUCACIÓN ── */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
+.tl{padding-left:24px;position:relative}
+.tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--a) 0%,transparent 100%)}
+.ti{position:relative;padding-bottom:36px}
+.ti::before{
+  content:'';position:absolute;left:-28px;top:7px;width:9px;height:9px;
+  background:var(--bg);border:2px solid var(--a);border-radius:50%;
+}
+.ti-yr{font-family:var(--FM);font-size:.67rem;color:var(--a);margin-bottom:5px;letter-spacing:.08em}
+.ti h4{font-size:.92rem;font-weight:700;color:var(--t1);margin-bottom:5px;letter-spacing:-.01em}
+.ti p{font-size:.82rem;color:var(--t2);line-height:1.65}
+
+.cert-box{
+  background:var(--bg2);border:1px solid var(--bo);border-radius:var(--rl);padding:28px;
+}
+.cert-box h4{font-size:.92rem;font-weight:700;color:var(--t1);margin-bottom:5px;letter-spacing:-.01em}
+.cert-box p{font-size:.82rem;color:var(--t2);line-height:1.6;margin-bottom:14px}
+.cert-link{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 16px;
+  background:var(--adim);border:1px solid rgba(124,108,252,.25);
+  border-radius:7px;font-size:.78rem;color:var(--a2);text-decoration:none;
+  transition:background .2s;font-family:var(--FM);
+}
+.cert-link:hover{background:rgba(124,108,252,.22)}
+.cert-divider{border:none;border-top:1px solid var(--bo);margin:22px 0}
+
+/* ── SOBRE MÍ ── */
+.about-grid{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:start;margin-top:48px}
+.about-photo{
+  width:180px;height:220px;background:var(--bg2);
+  border:1px solid var(--bo);border-radius:var(--rl);overflow:hidden;
+  flex-shrink:0;position:relative;
+}
+.photo-placeholder{
+  width:100%;height:100%;
+  background:linear-gradient(160deg,var(--bg3) 0%,var(--bg2) 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+}
+.photo-initials{
+  width:72px;height:72px;border-radius:50%;
+  background:linear-gradient(135deg,var(--a),#A78BFA);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:.05em;
+}
+.photo-note{font-size:.67rem;font-family:var(--FM);color:var(--t3);text-align:center;padding:0 12px;line-height:1.4}
+.about-content{}
+.about-text p{font-size:.9rem;color:var(--t2);line-height:1.85;margin-bottom:14px;font-weight:300}
+.about-text p strong{color:var(--t1);font-weight:600}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:20px}
+.fact{padding:12px 16px;background:var(--bg1);border-left:2px solid var(--bo);transition:border-color .2s}
+.fact:hover{border-left-color:var(--a)}
+.fact-k{font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px;display:block}
+.fact-v{font-size:.83rem;color:var(--t1);font-weight:500}
+
+/* ── CONTACTO ── */
+.cta-sec{
+  background:var(--bg1);border-top:1px solid var(--bo);
+  padding:100px max(20px,8vw);text-align:center;
+}
+.cta-inner{max-width:580px;margin:0 auto}
+.cta-inner h2{
+  font-size:clamp(2rem,4vw,3.2rem);font-weight:800;
+  letter-spacing:-.04em;color:var(--t1);line-height:1.1;margin-bottom:16px;
+}
+.cta-inner h2 .a{color:var(--a)}
+.cta-inner p{font-size:.95rem;color:var(--t2);margin-bottom:44px;line-height:1.8}
+.clinks{display:flex;flex-direction:column;gap:10px;align-items:center}
+.cl{
+  display:flex;align-items:center;gap:13px;
+  padding:13px 22px;background:var(--bg2);border:1px solid var(--bo);
+  border-radius:var(--r);color:var(--t1);text-decoration:none;font-size:.85rem;
+  transition:all .2s;width:100%;max-width:400px;
+}
+.cl:hover{border-color:var(--bo2);background:var(--bg3);transform:translateX(2px)}
+.cl.primary{background:var(--a);border-color:var(--a);color:#fff}
+.cl.primary:hover{filter:brightness(1.1)}
+.cl-ico{font-size:1rem;flex-shrink:0}
+.cl-text{text-align:left}
+.cl-main{display:block;font-weight:500;font-size:.85rem}
+.cl-sub{display:block;font-size:.72rem;opacity:.7;margin-top:1px}
+
+/* ── FOOTER ── */
+footer{
+  position:relative;z-index:1;
+  background:var(--bg);border-top:1px solid var(--bo);
+  padding:32px max(20px,8vw);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+}
+.ft-l{font-size:.75rem;color:var(--t3)}
+.ft-l span{color:var(--a2);font-family:var(--FM)}
+.ft-badges{display:flex;gap:7px;flex-wrap:wrap}
+.ftb{
+  padding:3px 8px;background:var(--bg1);border:1px solid var(--bo);
+  border-radius:4px;font-size:.62rem;font-family:var(--FM);color:var(--t3);
+}
+
+/* ── REVEAL ── */
+.r{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.r.v{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-wrap{grid-template-columns:1fr;gap:40px;padding:60px max(20px,6vw)}
+  .hero-right{display:none}
+  .edu-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .about-photo{width:100%;height:160px}
+  .photo-initials{width:56px;height:56px;font-size:1.1rem}
+  .infra-split{grid-template-columns:1fr}
+  .infra-left{border-right:none;border-bottom:1px solid var(--bo)}
+  .proj-versions{flex-direction:column}
+  .ver{border-right:none;border-bottom:1px solid var(--bo);padding:14px}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .proj-header{grid-template-columns:1fr}
+  .proj-header{padding:24px}
+  .infra-left,.infra-right{padding:24px}
+  .facts{grid-template-columns:1fr}
+  h1{font-size:2.2rem}
+  .skgrid{grid-template-columns:1fr 1fr}
+  .stat-n{font-size:1.6rem}
+}
+</style>
 </head>
+<body>
 
-<body class="index">
-    <header class="intro">
-        <div class="menu">
-            <div class="logo">
-                <a href="index.html" aria-label="Ir al inicio">Mi Sitio Web</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="intereses.html"><i class="fas fa-balance-scale"></i> Intereses</a></li>
-                    <li><a href="proyectos.html"><i class="fas fa-briefcase"></i> Proyectos</a></li>
-                    <li><a href="estudios.html"><i class="fas fa-graduation-cap"></i> Estudios</a></li>
-                    <li><a href="formulario.html"><i class="fas fa-envelope"></i> Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-name">
+    <div class="nav-avatar">FP</div>
+    Facundo Pérez
+  </a>
+  <ul class="nav-links">
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#educacion">Estudios</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <div class="nav-r">
+    <a href="archivos/Curriculum_Facundo_Perez.pdf" class="btn-sm btn-ghost" download>CV</a>
+    <a href="#contacto" class="btn-sm btn-solid">Contactar</a>
+  </div>
+</nav>
 
-    <main class="contenedor">
-        <section class="intro-seccion">
-            <h1>¡Bienvenido a mi sitio web!</h1>
-            <p>Aquí podrás conocer más sobre mí, mis intereses, proyectos y conocimientos.</p>
-        </section>
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      Disponible · Montevideo, Uruguay
+    </div>
 
-        <section class="acerca-de-mi">
-            <img src="imagenes/image4.png" alt="Facundo Pérez, apasionado de la tecnología" class="foto-perfil-1">
-            <p>¡Hola!, Bienvenido a mi pagina web, mi nombre es Facundo Pérez, soy un aficionado de la tecnología y la informática</p>
-        </section>
+    <h1>
+      Backend.<br>
+      <span class="a">Infra.</span><br>
+      <span class="g">Proyectos reales.</span>
+    </h1>
 
-        <section class="tarjetas">
-            <article class="tarjeta">
-                <img src="imagenes/intereses.jpg" alt="Mis intereses">
-                <h2>Intereses</h2>
-                <p>Desde pequeño me ha apasionado el mundo de la informática...</p>
-                <a href="intereses.html" class="boton">Saber más</a>
-            </article>
+    <p class="hero-p">
+      Desarrollador junior orientado a backend e infraestructura. Construí un sistema interno de gestión para una empresa de movilidad eléctrica, integrando PHP, MariaDB, Docker, Linux y Cloudflare en un entorno real.
+    </p>
 
-            <article class="tarjeta">
-                <img src="imagenes/sigto.png" alt="Mis proyectos">
-                <h2>Proyectos</h2>
-                <p>Uno de mis proyectos más significativos fue el desarrollo de un e-commerce...</p>
-                <a href="proyectos.html" class="boton">Saber más</a>
-            </article>
+    <div class="hero-btns">
+      <a href="#proyectos" class="btn-hero">Ver mi trabajo</a>
+      <a href="archivos/Curriculum_Facundo_Perez.pdf" class="btn-hero-o" download>Descargar CV →</a>
+    </div>
 
-            <article class="tarjeta">
-                <img src="imagenes/imagenEstudios.png" alt="Mis estudios">
-                <h2>Mis Estudios</h2>
-                <p>Mi formación académica comenzó con un enfoque en ciencias biológicas...</p>
-                <a href="estudios.html" class="boton">Saber más</a>
-            </article>
+    <div class="tech-row">
+      <span class="tc hi">PHP</span>
+      <span class="tc hi">MariaDB</span>
+      <span class="tc hi">Docker</span>
+      <span class="tc hi">Linux</span>
+      <span class="tc hi">Cloudflare</span>
+      <span class="tc">Apache</span>
+      <span class="tc">Git</span>
+      <span class="tc">Bash</span>
+    </div>
+  </div>
 
-            <article class="tarjeta">
-                <img src="imagenes/logoConocimientos.png" alt="Mis conocimientos">
-                <h2>Mis Conocimientos</h2>
-                <p>A lo largo de mi carrera, he desarrollado una amplia gama de conocimientos...</p>
-                <a href="conocimientos.html" class="boton">Saber más</a>
-            </article>
-        </section>
-
-        <div class="cv-contenedor">
-    <a href="archivos/Curriculum_Facundo_Perez.pdf" class="boton-principal" download>
-        <i class="fa-solid fa-download"></i> Descargar CV
-    </a>
+  <!-- TERMINAL VISUAL -->
+  <div class="hero-right r">
+    <div class="hero-badge-float hbf-1">
+      <span class="hbf-icon">⚡</span>
+      <div><div class="hbf-main">Ltecobike</div><div class="hbf-sub">Sistema en producción</div></div>
+    </div>
+    <div class="term-card">
+      <div class="term-bar">
+        <div class="term-dot td-r"></div>
+        <div class="term-dot td-y"></div>
+        <div class="term-dot td-g"></div>
+        <span class="term-title">docker-compose.yml</span>
+      </div>
+      <div class="term-body">
+        <div class="ln"><span class="ln-n">1</span><span class="ln-c cm"># ltecobike — producción</span></div>
+        <div class="ln"><span class="ln-n">2</span><span class="ln-c wh">services:</span></div>
+        <div class="ln"><span class="ln-n">3</span><span class="ln-c">&nbsp;&nbsp;<span class="cy">ltecobike_panel</span>:</span></div>
+        <div class="ln"><span class="ln-n">4</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;build: <span class="gn">./panel</span></span></div>
+        <div class="ln"><span class="ln-n">5</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;volumes:</span></div>
+        <div class="ln"><span class="ln-n">6</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ./lteco-panel:<span class="am">/var/www/html</span></span></div>
+        <div class="ln"><span class="ln-n">7</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;networks: [<span class="pu">lteco_net</span>]</span></div>
+        <div class="ln"><span class="ln-n">8</span><span class="ln-c">&nbsp;&nbsp;<span class="cy">ltecobike_web</span>:</span></div>
+        <div class="ln"><span class="ln-n">9</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;build: <span class="gn">./web</span></span></div>
+        <div class="ln"><span class="ln-n">10</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;networks: [<span class="pu">lteco_net</span>]</span></div>
+        <div class="ln"><span class="ln-n">11</span><span class="ln-c wh">networks:</span></div>
+        <div class="ln"><span class="ln-n">12</span><span class="ln-c">&nbsp;&nbsp;<span class="pu">lteco_net</span>: {}</span></div>
+        <div class="ln"><span class="ln-n">13</span><span class="ln-c cm"># MariaDB: instalada en el host</span></div>
+        <div class="ln"><span class="ln-n">14</span><span class="ln-c cm"># Cloudflared: servicio systemd</span></div>
+        <div class="ln"><span class="ln-n">15</span><span class="ln-c">&nbsp;<span class="cursor"></span></span></div>
+      </div>
+    </div>
+    <div class="hero-badge-float hbf-2">
+      <span class="hbf-icon">🐳</span>
+      <div><div class="hbf-main">2 contenedores</div><div class="hbf-sub">Rocky Linux · Docker</div></div>
+    </div>
+  </div>
 </div>
 
-    </main>
+<!-- STATS -->
+<div class="divider">
+  <div class="divider-inner">
+    <div class="stat-item">
+      <span class="stat-n" data-t="18">0</span>
+      <span class="stat-l">Módulos del sistema</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n" data-t="4">0</span>
+      <span class="stat-l">Roles de acceso</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n" style="font-size:1.5rem;letter-spacing:-.02em">Linux<br>+ Docker</span>
+      <span class="stat-l">Stack de producción</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n" data-t="1" data-s=" negocio">0</span>
+      <span class="stat-l">Real · digitalizado</span>
+    </div>
+  </div>
+</div>
 
-    <footer>
-        <div class="footer-container">
-            <div class="contact-info">
-                <h4>Contacto</h4>
-                <p>
-                    <a href="mailto:facuperezaddiego@gmail.com"><i class="fa-solid fa-envelope"></i><span>Correo:</span> facuperezaddiego@gmail.com</a>
-                </p>
-                <p>
-                    <a href="tel:+59892467494"><i class="fa-solid fa-phone"></i><span>Teléfono:</span> +598 92 467 494</a>
-                </p>
-            </div>
-            <button class="btnFooter">
-                <a href="formulario.html" aria-label="Ir al formulario de contacto"><i class="fa-solid fa-paper-plane"></i> Contacto</a>
-            </button>
+<!-- PROYECTOS -->
+<section id="proyectos">
+<div class="inner">
+  <div class="lbl">Proyectos</div>
+  <h2 class="sh r">Proyecto principal —<br><span class="a">desarrollado para<br>un negocio real</span></h2>
+  <p class="sp r">Proyecto desarrollado para resolver una necesidad operativa real. Sistema en uso activo, desplegado sobre infraestructura que configuré desde cero.</p>
 
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/facundo-p%C3%A9rez-a61498253/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/faku-20" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            </div>
+  <div class="proj-hero r">
+    <!-- HEADER -->
+    <div class="proj-header">
+      <div>
+        <div class="proj-badge"><span class="dot"></span> En producción</div>
+        <h3>Ltecobike — Sistema de gestión para movilidad eléctrica</h3>
+        <p>Sistema interno desarrollado para gestionar ventas, stock, clientes, gastos, distribuidores y catálogo web de una empresa de motos eléctricas. Combina backend PHP/MariaDB, panel administrativo, sitio público y despliegue sobre servidor Linux con Docker y Cloudflare.</p>
 
-            <div id="contador">
-                Esta página ha sido visitada <span id="visitas"></span> veces en este navegador.
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Facundo Pérez. Todos los derechos reservados.</p>
-            </div>
+      </div>
+    </div>
+
+    <!-- VERSIONES -->
+    <div class="proj-versions">
+      <div class="ver done">
+        <div class="ver-tag">v1 · 2025</div>
+        <h4>Panel básico</h4>
+        <p>PHP + MariaDB, Laragon. Validación del modelo de negocio.</p>
+      </div>
+      <div class="ver done">
+        <div class="ver-tag">v2 · 2025</div>
+        <h4>Dockerización</h4>
+        <p>Migración a Rocky Linux + Docker. Cloudflare Tunnel + Pages.</p>
+      </div>
+      <div class="ver done">
+        <div class="ver-tag">v3 · 2026</div>
+        <h4>Funcionalidades principales</h4>
+        <p>Roles, comisiones, QR, balance y Cloudflare Access.</p>
+      </div>
+      <div class="ver wip">
+        <div class="ver-tag">v4 · en curso</div>
+        <h4>Refinamiento UX/UI</h4>
+        <p>Mejoras de interfaz, rendimiento y escalabilidad.</p>
+      </div>
+    </div>
+
+    <!-- MÓDULOS -->
+    <div class="modules">
+      <div class="mod">
+        <div class="mod-top"><span class="mod-ic">💰</span><span class="mod-dot"></span></div>
+        <h4>Gestión de ventas</h4>
+        <p>Flujo completo con IVA, pagos parciales, saldos y comprobantes digitales.</p>
+      </div>
+      <div class="mod">
+        <div class="mod-top"><span class="mod-ic">👥</span><span class="mod-dot"></span></div>
+        <h4>Clientes e historial</h4>
+        <p>Ficha completa por cliente: compras, saldo, documentos y trazabilidad.</p>
+      </div>
+      <div class="mod">
+        <div class="mod-top"><span class="mod-ic">🔐</span><span class="mod-dot"></span></div>
+        <h4>Roles y permisos</h4>
+        <p>RBAC desde cero: Superadmin, Admin, Vendedor, Distribuidor.</p>
+      </div>
+      <div class="mod">
+        <div class="mod-top"><span class="mod-ic">🏢</span><span class="mod-dot"></span></div>
+        <h4>Comisiones automáticas</h4>
+        <p>Cálculo automático de comisiones por distribuidor. Sin planillas externas.</p>
+      </div>
+      <div class="mod">
+        <div class="mod-top"><span class="mod-ic">📊</span><span class="mod-dot"></span></div>
+        <h4>Balance financiero</h4>
+        <p>Dashboard con ingresos, egresos y saldo neto por período.</p>
+      </div>
+      <div class="mod">
+        <div class="mod-top"><span class="mod-ic">📱</span><span class="mod-dot"></span></div>
+        <h4>Sistema QR interno</h4>
+        <p>Cada vehículo tiene QR con ID y número de motor. Trazabilidad física.</p>
+      </div>
+      <div class="mod">
+        <div class="mod-top"><span class="mod-ic">🌐</span><span class="mod-dot"></span></div>
+        <h4>Catálogo web dinámico</h4>
+        <p>Web pública sincronizada con el panel. Deploy automático desde GitHub.</p>
+      </div>
+      <div class="mod">
+        <div class="mod-top"><span class="mod-ic">🔧</span><span class="mod-dot"></span></div>
+        <h4>Stock y repuestos</h4>
+        <p>Control de inventario con alertas de bajo stock integradas.</p>
+      </div>
+      <div class="mod">
+        <div class="mod-top"><span class="mod-ic">📈</span><span class="mod-dot"></span></div>
+        <h4>Gestión de gastos</h4>
+        <p>Registro de egresos operativos integrado al balance general.</p>
+      </div>
+    </div>
+
+    <!-- INFRA -->
+    <div class="infra-split">
+      <div class="infra-left">
+        <h4>Arquitectura de infraestructura</h4>
+        <p>Panel y web pública desplegados en contenedores Docker sobre Rocky Linux. MariaDB instalada en el servidor host. Cloudflare Tunnel corre como servicio del sistema para exponer el panel sin abrir puertos. La web pública hace deploy automático desde GitHub.</p>
+        <div class="istack">
+          <div class="il"><span class="il-n">Docker + Compose</span><span class="il-d">Panel y web pública en contenedores</span></div>
+          <div class="il"><span class="il-n">Apache + PHP 8</span><span class="il-d">Panel administrativo containerizado</span></div>
+          <div class="il"><span class="il-n">MariaDB</span><span class="il-d">Instalada en el host Rocky Linux</span></div>
+          <div class="il"><span class="il-n">Cloudflare Tunnel</span><span class="il-d">Servicio systemd — exposición segura sin puertos abiertos</span></div>
+          <div class="il"><span class="il-n">Cloudflare Pages + GitHub</span><span class="il-d">Deploy automático de la web pública</span></div>
+          <div class="il"><span class="il-n">Rocky Linux</span><span class="il-d">Servidor de producción</span></div>
         </div>
-    </footer>
-</body>
+      </div>
+      <div class="infra-right">
+        <div class="code-win">
+          <div class="code-top">
+            <div class="code-dot" style="background:#FF5F57"></div>
+            <div class="code-dot" style="background:#FEBC2E"></div>
+            <div class="code-dot" style="background:#28C840"></div>
+            <span class="code-file">docker-compose.yml</span>
+          </div>
+          <div class="code-body">
+<pre><span style="color:var(--t3)"># infraestructura ltecobike · producción</span>
 
+<span style="color:#7FDBFF">services</span>:
+  <span style="color:var(--a2)">ltecobike_panel</span>:
+    build: .
+    container_name: ltecobike_panel
+    volumes:
+      - ./lteco-panel:<span style="color:var(--am)">/var/www/html</span>
+    networks: [<span style="color:var(--g)">lteco_net</span>]
+
+  <span style="color:var(--a2)">ltecobike_web</span>:
+    build: ./web
+    container_name: ltecobike_web
+    networks: [<span style="color:var(--g)">lteco_net</span>]
+
+<span style="color:#7FDBFF">networks</span>:
+  <span style="color:var(--g)">lteco_net</span>: {}
+
+<span style="color:var(--t3)"># MariaDB: instalada en el host</span>
+<span style="color:var(--t3)"># Cloudflared: servicio systemd</span></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- OTROS PROYECTOS -->
+<section class="alt-sec" id="otros">
+<div class="inner">
+  <div class="lbl">También construí</div>
+  <h2 class="sh r">Otros <span class="a">proyectos</span></h2>
+  <div class="pgrid">
+
+    <!-- SIGTO -->
+    <div class="pcard r" style="border-color:rgba(124,108,252,.18);grid-column:span 2">
+      <div class="pcard-top">
+        <div class="pc-ic">🖥️</div>
+        <span class="pc-yr">2024 · Proyecto académico</span>
+      </div>
+      <h3>S.I.G.T.O. — Infraestructura y automatización Linux</h3>
+      <p style="margin-bottom:14px">Proyecto de egreso del bachillerato. Desarrollé 8 scripts Bash de administración de servidor, configuración de infraestructura Docker con MariaDB, automatización completa con Ansible y replicación de base de datos entre servidores.</p>
+      <div class="ptags" style="margin-bottom:14px">
+        <span class="ptag">Bash · 8 scripts</span>
+        <span class="ptag">Docker Compose</span>
+        <span class="ptag">Ansible</span>
+        <span class="ptag">MariaDB</span>
+        <span class="ptag">Replicación primaria/secundaria</span>
+        <span class="ptag">firewall-cmd</span>
+        <span class="ptag">rsync · scp</span>
+        <span class="ptag">journalctl</span>
+        <span class="ptag">Linux</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px">
+        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
+          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Gestión de usuarios y grupos</div>
+          <div style="font-size:.78rem;color:var(--t2)">Alta, baja, bloqueo, cambio de grupo y contraseña con validación y logging.</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
+          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Gestión de respaldos</div>
+          <div style="font-size:.78rem;color:var(--t2)">Backup completo, incremental y envío remoto automatizado con rsync y scp.</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
+          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Gestión de red</div>
+          <div style="font-size:.78rem;color:var(--t2)">Configuración de IP estática, DNS, reinicio de interfaces y tabla de ruteo.</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
+          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Gestión de base de datos</div>
+          <div style="font-size:.78rem;color:var(--t2)">Backup/restore de MariaDB, consultas y respaldo remoto vía SSH.</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
+          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Firewall y logs</div>
+          <div style="font-size:.78rem;color:var(--t2)">Reglas firewall-cmd, gestión de logs por servicio y prioridad con journalctl.</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
+          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Ansible + Docker + Replicación</div>
+          <div style="font-size:.78rem;color:var(--t2)">Setup completo del servidor, cron automatizado y replicación primaria/secundaria de MariaDB.</div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-sec">
+<div class="inner">
+  <div class="lbl">Skills</div>
+  <h2 class="sh r">Tecnologías que <span class="a">uso en proyectos reales</span></h2>
+  <p class="sp r">Tecnologías utilizadas en proyectos académicos, personales y productivos. Sin porcentajes — los proyectos hablan mejor que una barra.</p>
+  <div class="skgrid">
+    <div class="skcard r">
+      <span class="sk-cat">Backend</span>
+      <div class="sk-items">
+        <span class="sk-i s">PHP 8</span>
+        <span class="sk-i s">MariaDB / MySQL</span>
+        <span class="sk-i s">Diseño de base de datos</span>
+        <span class="sk-i">Apache</span>
+      </div>
+    </div>
+    <div class="skcard r">
+      <span class="sk-cat">Infraestructura</span>
+      <div class="sk-items">
+        <span class="sk-i s">Docker y Compose</span>
+        <span class="sk-i s">Linux (Rocky, Fedora)</span>
+        <span class="sk-i s">Cloudflare</span>
+        <span class="sk-i">Git y GitHub</span>
+      </div>
+    </div>
+    <div class="skcard r">
+      <span class="sk-cat">Scripting y automatización</span>
+      <div class="sk-items">
+        <span class="sk-i s">Bash / Shell scripting</span>
+        <span class="sk-i s">Ansible (playbooks)</span>
+        <span class="sk-i s">cron / tareas programadas</span>
+        <span class="sk-i s">rsync · scp · ssh</span>
+        <span class="sk-i">journalctl / logs</span>
+      </div>
+    </div>
+    <div class="skcard r">
+      <span class="sk-cat">Redes y seguridad</span>
+      <div class="sk-items">
+        <span class="sk-i s">pfSense — firewall y routing</span>
+        <span class="sk-i s">Segmentación LAN / DMZ</span>
+        <span class="sk-i">VirtualBox</span>
+        <span class="sk-i">Replicación primaria/secundaria</span>
+      </div>
+    </div>
+    <div class="skcard r">
+      <span class="sk-cat">Frontend y herramientas</span>
+      <div class="sk-items">
+        <span class="sk-i s">HTML · CSS · JavaScript</span>
+        <span class="sk-i s">Git y GitHub</span>
+        <span class="sk-i">Deploy automático con Cloudflare Pages + GitHub</span>
+        <span class="sk-i">HeidiSQL / MySQL Workbench</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- EDUCACIÓN -->
+<section id="educacion">
+<div class="inner">
+  <div class="lbl">Educación</div>
+  <h2 class="sh r">Trayectoria <span class="a">académica</span></h2>
+  <div class="edu-grid">
+    <div class="tl r">
+      <div class="ti">
+        <div class="ti-yr">2022 — ingreso</div>
+        <h4>Bachillerato Tecnológico en Informática</h4>
+        <p>Inicio en tecnología. Fundamentos de programación, redes y sistemas operativos.</p>
+      </div>
+      <div class="ti">
+        <div class="ti-yr">2023</div>
+        <h4>Redes, Bash y desarrollo web</h4>
+        <p>Redes de datos y conectividad. Primeros scripts en Bash. HTML y CSS.</p>
+      </div>
+      <div class="ti">
+        <div class="ti-yr">2024 — graduación</div>
+        <h4>Bachiller Tecnólogo — Desarrollo y Soporte</h4>
+        <p>Graduado como <strong>Bachiller Tecnólogo en Informática con énfasis en Desarrollo y Soporte</strong>. Proyecto de egreso: <strong>S.I.G.T.O. / SellXpress</strong> — Rol: subcoordinador del proyecto, responsable de infraestructura Linux, scripting Bash (8 módulos), Docker, Ansible y replicación MariaDB.</p>
+      </div>
+    </div>
+    <div class="cert-box r">
+      <h4>Certificación en Redes Informáticas</h4>
+      <p>Certificado verificable en Credly. Cubre fundamentos de redes, conectividad y configuración de equipos.</p>
+      <a href="https://www.credly.com/badges/1ade53cf-7408-4e19-88c4-14ffd80fc22b" target="_blank" class="cert-link" rel="noopener">🏅 Ver en Credly →</a>
+      <hr class="cert-divider">
+      <h4>Hardware y ensamblado de equipos</h4>
+      <p>Experiencia práctica en selección de componentes compatibles, armado de PC, diagnóstico básico y montaje de hardware.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+<div class="inner">
+  <div class="lbl">Sobre mí</div>
+  <h2 class="sh r">¿Quién soy<br>además del <span class="a">código?</span></h2>
+  <div class="about-grid r">
+    <div class="about-photo">
+      <div class="photo-placeholder">
+        <div class="photo-initials">FP</div>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Soy de <strong>Montevideo, Uruguay</strong>. Empecé en informática en 2022 y desde entonces no paré. Lo que más me impulsa es <strong>resolver problemas reales con herramientas técnicas</strong>.</p>
+        <p>Ltecobike no empezó como portfolio. Empezó porque mi familia necesitaba un sistema para gestionar el negocio y decidí construirlo. Eso me forzó a tomar decisiones concretas: qué tecnología usar, cómo deployar de forma segura, cómo diseñar una base de datos que funcione en producción.</p>
+        <p>Me interesa la intersección entre <strong>desarrollo backend y administración de sistemas</strong>. Estoy al inicio de mi carrera y busco una oportunidad para seguir aprendiendo en un entorno profesional real.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="fact-k">Ubicación</span><span class="fact-v">Montevideo, Uruguay</span></div>
+        <div class="fact"><span class="fact-k">Formación</span><span class="fact-v">Bachiller Tecnólogo en Informática</span></div>
+        <div class="fact"><span class="fact-k">Enfoque</span><span class="fact-v">Backend · Infra · Linux</span></div>
+        <div class="fact"><span class="fact-k">Proyecto activo</span><span class="fact-v">Ltecobike v4</span></div>
+        <div class="fact"><span class="fact-k">Disponibilidad</span><span class="fact-v">Abierto a oportunidades</span></div>
+        <div class="fact"><span class="fact-k">Modalidad</span><span class="fact-v">Montevideo · presencial o remoto</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section class="cta-sec" id="contacto">
+<div class="cta-inner">
+  <div class="lbl" style="justify-content:center;margin-bottom:16px">Contacto</div>
+  <h2 class="r">¿Trabajamos<br><span class="a">juntos?</span></h2>
+  <p class="r">Busco oportunidades en backend, sysadmin o roles mixtos. Montevideo o remoto.</p>
+  <div class="clinks r">
+    <a href="https://linkedin.com/in/facundo-p%C3%A9rez-a61498253/" class="cl primary" target="_blank" rel="noopener">
+      <span class="cl-ico">💼</span>
+      <span class="cl-text"><span class="cl-main">LinkedIn</span><span class="cl-sub">Facundo Pérez</span></span>
+    </a>
+    <a href="mailto:facuperezaddiego@gmail.com" class="cl">
+      <span class="cl-ico">✉️</span>
+      <span class="cl-text"><span class="cl-main">Email</span><span class="cl-sub">facuperezaddiego@gmail.com</span></span>
+    </a>
+
+    <a href="https://github.com/faku-20" class="cl" target="_blank" rel="noopener">
+      <span class="cl-ico">🐙</span>
+      <span class="cl-text"><span class="cl-main">GitHub</span><span class="cl-sub">faku-20</span></span>
+    </a>
+    <a href="archivos/Curriculum_Facundo_Perez.pdf" class="cl" download>
+      <span class="cl-ico">📄</span>
+      <span class="cl-text"><span class="cl-main">Descargar CV</span><span class="cl-sub">PDF · actualizado 2026</span></span>
+    </a>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p class="ft-l">© 2026 <span>Facundo Pérez</span> · Montevideo, Uruguay</p>
+  <div class="ft-badges">
+    <span class="ftb">PHP</span><span class="ftb">Docker</span>
+    <span class="ftb">Linux</span><span class="ftb">Cloudflare</span>
+    <span class="ftb">MariaDB</span><span class="ftb">Git</span>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('v'); io.unobserve(e.target); } });
+}, {threshold:.07, rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+const co = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if(e.isIntersecting){
+      const el = e.target, t = +el.dataset.t, s = el.dataset.s||'', d = 1600, t0 = performance.now();
+      const tick = now => {
+        const p = Math.min((now-t0)/d,1), ease = 1-Math.pow(1-p,3);
+        el.textContent = Math.floor(ease*t)+s;
+        if(p<1) requestAnimationFrame(tick); else el.textContent=t+s;
+      };
+      requestAnimationFrame(tick);
+      co.unobserve(el);
+    }
+  });
+}, {threshold:.5});
+document.querySelectorAll('[data-t]').forEach(el => co.observe(el));
+</script>
+</body>
 </html>
