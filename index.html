@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Facundo Pérez — Backend Developer Junior · PHP · Linux · Docker</title>
-<meta name="description" content="Desarrollador junior orientado a backend e infraestructura. Sistema de gestión real con PHP, MariaDB, Docker y Linux. Montevideo, Uruguay.">
-<meta property="og:title" content="Facundo Pérez — Backend Developer Junior">
-<meta property="og:description" content="Sistema de gestión real en producción. PHP · MariaDB · Docker · Linux · Cloudflare. Disponible para oportunidades.">
-<meta property="og:type" content="website">
+<meta name="description" content="Desarrollador junior orientado a backend e infraestructura. Sistema de gestión real con PHP, MariaDB, Docker y Linux. Montevideo, Uruguay Club.">
+<meta property=\"og:title\" content=\"Facundo Pérez — Backend Developer Junior\">
+<meta property=\"og:description\" content=\"Sistema de gestión real en producción. PHP · MariaDB · Docker · Linux · Cloudflare. Disponible para oportunidades.\">
+<meta property=\"og:type\" content=\"website\">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -26,7 +26,6 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--F);background:var(--bg);color:var(--t1);line-height:1.6;overflow-x:hidden}
 
-/* ambient glow */
 body::before{
   content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
@@ -34,7 +33,6 @@ body::before{
     radial-gradient(ellipse 40% 40% at 90% 70%,rgba(52,211,153,.03) 0%,transparent 60%);
 }
 
-/* ── NAV ── */
 nav{
   position:sticky;top:0;z-index:100;
   background:rgba(8,8,13,.82);backdrop-filter:blur(20px);
@@ -66,7 +64,6 @@ nav{
 .btn-solid{background:var(--a);border:1px solid var(--a);color:#fff}
 .btn-solid:hover{filter:brightness(1.1)}
 
-/* ── HERO ── */
 .hero-wrap{
   position:relative;z-index:1;
   min-height:calc(100vh - 62px);
@@ -74,7 +71,6 @@ nav{
   gap:60px;align-items:center;
   padding:80px max(20px,8vw);max-width:1200px;margin:0 auto;
 }
-.hero-left{}
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   padding:5px 14px;border:1px solid rgba(52,211,153,.25);border-radius:100px;
@@ -118,7 +114,6 @@ h1 .g{color:var(--g)}
 .tc.hi{border-color:rgba(124,108,252,.3);color:var(--a2)}
 .tc:hover{color:var(--t2);border-color:var(--bo2)}
 
-/* ── HERO VISUAL — terminal card ── */
 .hero-right{position:relative}
 .term-card{
   background:var(--bg1);border:1px solid var(--bo2);border-radius:var(--rl);
@@ -146,7 +141,6 @@ h1 .g{color:var(--g)}
   animation:blink .8s infinite;margin-left:2px;
 }
 
-/* floating badges around terminal */
 .hero-badge-float{
   position:absolute;background:var(--bg2);border:1px solid var(--bo2);
   border-radius:9px;padding:10px 14px;display:flex;align-items:center;
@@ -159,18 +153,17 @@ h1 .g{color:var(--g)}
 .hbf-main{font-weight:600;color:var(--t1);font-size:.78rem}
 .hbf-sub{font-size:.68rem;color:var(--t2)}
 
-/* ── DIVIDER ── */
 .divider{
   position:relative;z-index:1;
-  border-top:1px solid var(--bo);padding:40px max(20px,8vw);
+  border-top:1px solid var(--bo);border-bottom:1px solid var(--bo);padding:40px max(20px,8vw);
   background:var(--bg1);
 }
 .divider-inner{
   max-width:1200px;margin:0 auto;
-  display:flex;gap:0;
+  display:flex;flex-wrap:wrap;gap:20px 0;
 }
 .stat-item{
-  flex:1;text-align:center;padding:16px 20px;
+  flex:1;min-width:200px;text-align:center;padding:16px 20px;
   border-right:1px solid var(--bo);
 }
 .stat-item:last-child{border-right:none}
@@ -180,7 +173,6 @@ h1 .g{color:var(--g)}
 }
 .stat-l{font-size:.72rem;color:var(--t3);text-transform:uppercase;letter-spacing:.1em}
 
-/* ── SECTIONS ── */
 section{position:relative;z-index:1;padding:96px max(20px,8vw)}
 .inner{max-width:1200px;margin:0 auto}
 .lbl{
@@ -196,7 +188,6 @@ section{position:relative;z-index:1;padding:96px max(20px,8vw)}
 .sh .a{color:var(--a)}.sh .g{color:var(--g)}
 .sp{font-size:.95rem;color:var(--t2);max-width:52ch;line-height:1.8;font-weight:300}
 
-/* ── PROYECTO PRINCIPAL ── */
 .proj-hero{
   margin-top:56px;border:1px solid var(--bo);border-radius:var(--rl);
   overflow:hidden;background:var(--bg1);
@@ -223,7 +214,6 @@ section{position:relative;z-index:1;padding:96px max(20px,8vw)}
 .plink.main-link{background:var(--a);border-color:var(--a);color:#fff}
 .plink.main-link:hover{filter:brightness(1.1)}
 
-/* versiones */
 .proj-versions{
   padding:20px 40px;background:var(--bg);border-bottom:1px solid var(--bo);
   display:flex;gap:0;overflow-x:auto;
@@ -243,7 +233,6 @@ section{position:relative;z-index:1;padding:96px max(20px,8vw)}
 .ver h4{font-size:.85rem;font-weight:600;color:var(--t1);margin-bottom:4px}
 .ver p{font-size:.75rem;color:var(--t2);line-height:1.5}
 
-/* módulos grid */
 .modules{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
   gap:1px;background:var(--bo);
@@ -256,7 +245,6 @@ section{position:relative;z-index:1;padding:96px max(20px,8vw)}
 .mod h4{font-size:.88rem;font-weight:600;color:var(--t1);margin-bottom:5px;letter-spacing:-.01em}
 .mod p{font-size:.78rem;color:var(--t2);line-height:1.6}
 
-/* infra split */
 .infra-split{
   display:grid;grid-template-columns:1fr 1fr;gap:0;
   border-top:1px solid var(--bo);
@@ -285,7 +273,6 @@ section{position:relative;z-index:1;padding:96px max(20px,8vw)}
 .code-file{font-family:var(--FM);font-size:.68rem;color:var(--t3);margin-left:6px}
 .code-body{padding:20px;font-family:var(--FM);font-size:.73rem;line-height:1.9;overflow-x:auto}
 
-/* ── OTROS PROYECTOS ── */
 .alt-sec{background:var(--bg1);border-top:1px solid var(--bo)}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-top:48px}
 .pcard{
@@ -293,11 +280,11 @@ section{position:relative;z-index:1;padding:96px max(20px,8vw)}
   padding:26px;transition:all .2s;
 }
 .pcard:hover{border-color:var(--bo2);transform:translateY(-2px)}
+.pcard-large{grid-column:span 2}
 .pcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
 .pc-ic{
   width:40px;height:40px;background:var(--bg3);border-radius:9px;
-  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
-}
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem}
 .pc-yr{
   padding:3px 9px;background:var(--bg3);border:1px solid var(--bo);
   border-radius:100px;font-size:.62rem;font-family:var(--FM);color:var(--t3);
@@ -310,7 +297,6 @@ section{position:relative;z-index:1;padding:96px max(20px,8vw)}
   border-radius:4px;font-size:.63rem;font-family:var(--FM);color:var(--t3);
 }
 
-/* ── SKILLS ── */
 .skills-sec{border-top:1px solid var(--bo);border-bottom:1px solid var(--bo)}
 .skgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:48px}
 .skcard{
@@ -325,7 +311,6 @@ section{position:relative;z-index:1;padding:96px max(20px,8vw)}
 .sk-i.s{color:var(--t1);font-weight:500}
 .sk-i.s::before{background:var(--a)}
 
-/* ── EDUCACIÓN ── */
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
 .tl{padding-left:24px;position:relative}
 .tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--a) 0%,transparent 100%)}
@@ -352,7 +337,6 @@ section{position:relative;z-index:1;padding:96px max(20px,8vw)}
 .cert-link:hover{background:rgba(124,108,252,.22)}
 .cert-divider{border:none;border-top:1px solid var(--bo);margin:22px 0}
 
-/* ── SOBRE MÍ ── */
 .about-grid{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:start;margin-top:48px}
 .about-photo{
   width:180px;height:220px;background:var(--bg2);
@@ -380,7 +364,6 @@ section{position:relative;z-index:1;padding:96px max(20px,8vw)}
 .fact-k{font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px;display:block}
 .fact-v{font-size:.83rem;color:var(--t1);font-weight:500}
 
-/* ── CONTACTO ── */
 .cta-sec{
   background:var(--bg1);border-top:1px solid var(--bo);
   padding:100px max(20px,8vw);text-align:center;
@@ -407,7 +390,6 @@ section{position:relative;z-index:1;padding:96px max(20px,8vw)}
 .cl-main{display:block;font-weight:500;font-size:.85rem}
 .cl-sub{display:block;font-size:.72rem;opacity:.7;margin-top:1px}
 
-/* ── FOOTER ── */
 footer{
   position:relative;z-index:1;
   background:var(--bg);border-top:1px solid var(--bo);
@@ -422,14 +404,16 @@ footer{
   border-radius:4px;font-size:.62rem;font-family:var(--FM);color:var(--t3);
 }
 
-/* ── REVEAL ── */
 .r{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
 .r.v{opacity:1;transform:none}
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE ADAPTADO PARA MÓVILES Y TABLETS ── */
 @media(max-width:900px){
   .hero-wrap{grid-template-columns:1fr;gap:40px;padding:60px max(20px,6vw)}
   .hero-right{display:none}
+  .divider-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--bo); padding: 10px; }
+  .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
   .edu-grid{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr}
   .about-photo{width:100%;height:160px}
@@ -439,21 +423,26 @@ footer{
   .proj-versions{flex-direction:column}
   .ver{border-right:none;border-bottom:1px solid var(--bo);padding:14px}
 }
+
 @media(max-width:640px){
+  nav { padding: 0 20px; }
   .nav-links{display:none}
-  .proj-header{grid-template-columns:1fr}
-  .proj-header{padding:24px}
+  .divider-inner { grid-template-columns: 1fr; }
+  .stat-item { border-bottom: 1px solid var(--bo) !important; }
+  .stat-item:last-child { border-bottom: none !important; }
+  .proj-header{grid-template-columns:1fr; padding:24px}
   .infra-left,.infra-right{padding:24px}
+  .pgrid { grid-template-columns: 1fr; }
+  .pcard-large { grid-column: span 1 !important; }
   .facts{grid-template-columns:1fr}
   h1{font-size:2.2rem}
-  .skgrid{grid-template-columns:1fr 1fr}
+  .skgrid{grid-template-columns: 1fr; }
   .stat-n{font-size:1.6rem}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-name">
     <div class="nav-avatar">FP</div>
@@ -461,461 +450,378 @@ footer{
   </a>
   <ul class="nav-links">
     <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#educacion">Estudios</a></li>
+    <li><a href="#skills">Habilidades</a></li>
+    <li><a href="#educacion">Educación</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
-    <li><a href="#contacto">Contacto</a></li>
   </ul>
   <div class="nav-r">
-    <a href="archivos/Curriculum_Facundo_Perez.pdf" class="btn-sm btn-ghost" download>CV</a>
-    <a href="#contacto" class="btn-sm btn-solid">Contactar</a>
+    <a href="#contacto" class="btn-sm btn-ghost">Contacto</a>
+    <a href="archivos/Curriculum_Facundo_Perez.pdf" class="btn-sm btn-solid" download>CV</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero-wrap">
   <div class="hero-left">
     <div class="hero-eyebrow">
-      <span class="dot"></span>
-      Disponible · Montevideo, Uruguay
+      <span class="dot"></span> Disponible para trabajar
     </div>
-
-    <h1>
-      Backend.<br>
-      <span class="a">Infra.</span><br>
-      <span class="g">Proyectos reales.</span>
-    </h1>
-
+    <h1>Construyendo el <span class="a">Backend</span>, Asegurando la <span class="g">Infraestructura</span>.</h1>
     <p class="hero-p">
-      Desarrollador junior orientado a backend e infraestructura. Construí un sistema interno de gestión para una empresa de movilidad eléctrica, integrando PHP, MariaDB, Docker, Linux y Cloudflare en un entorno real.
+      Desarrollador Junior enfocado en crear arquitecturas sólidas, optimizar bases de datos y automatizar despliegues eficientes.
     </p>
-
     <div class="hero-btns">
-      <a href="#proyectos" class="btn-hero">Ver mi trabajo</a>
-      <a href="archivos/Curriculum_Facundo_Perez.pdf" class="btn-hero-o" download>Descargar CV →</a>
+      <a href="#proyectos" class="btn-hero">Ver Proyectos</a>
+      <a href="#contacto" class="btn-hero-o">Hablemos</a>
     </div>
-
     <div class="tech-row">
-      <span class="tc hi">PHP</span>
+      <span class="tc hi">PHP 8.x</span>
       <span class="tc hi">MariaDB</span>
       <span class="tc hi">Docker</span>
-      <span class="tc hi">Linux</span>
-      <span class="tc hi">Cloudflare</span>
-      <span class="tc">Apache</span>
+      <span class="tc hi">Linux (Debian)</span>
       <span class="tc">Git</span>
-      <span class="tc">Bash</span>
+      <span class="tc">Cloudflare</span>
+      <span class="tc">MVC</span>
+      <span class="tc">OOP</span>
     </div>
   </div>
 
-  <!-- TERMINAL VISUAL -->
-  <div class="hero-right r">
-    <div class="hero-badge-float hbf-1">
-      <span class="hbf-icon">⚡</span>
-      <div><div class="hbf-main">Ltecobike</div><div class="hbf-sub">Sistema en producción</div></div>
-    </div>
+  <div class="hero-right">
     <div class="term-card">
       <div class="term-bar">
-        <div class="term-dot td-r"></div>
-        <div class="term-dot td-y"></div>
-        <div class="term-dot td-g"></div>
-        <span class="term-title">docker-compose.yml</span>
+        <span class="term-dot td-r"></span>
+        <span class="term-dot td-y"></span>
+        <span class="term-dot td-g"></span>
+        <span class="term-title">facundo@server:~</span>
       </div>
       <div class="term-body">
-        <div class="ln"><span class="ln-n">1</span><span class="ln-c cm"># ltecobike — producción</span></div>
-        <div class="ln"><span class="ln-n">2</span><span class="ln-c wh">services:</span></div>
-        <div class="ln"><span class="ln-n">3</span><span class="ln-c">&nbsp;&nbsp;<span class="cy">ltecobike_panel</span>:</span></div>
-        <div class="ln"><span class="ln-n">4</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;build: <span class="gn">./panel</span></span></div>
-        <div class="ln"><span class="ln-n">5</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;volumes:</span></div>
-        <div class="ln"><span class="ln-n">6</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ./lteco-panel:<span class="am">/var/www/html</span></span></div>
-        <div class="ln"><span class="ln-n">7</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;networks: [<span class="pu">lteco_net</span>]</span></div>
-        <div class="ln"><span class="ln-n">8</span><span class="ln-c">&nbsp;&nbsp;<span class="cy">ltecobike_web</span>:</span></div>
-        <div class="ln"><span class="ln-n">9</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;build: <span class="gn">./web</span></span></div>
-        <div class="ln"><span class="ln-n">10</span><span class="ln-c">&nbsp;&nbsp;&nbsp;&nbsp;networks: [<span class="pu">lteco_net</span>]</span></div>
-        <div class="ln"><span class="ln-n">11</span><span class="ln-c wh">networks:</span></div>
-        <div class="ln"><span class="ln-n">12</span><span class="ln-c">&nbsp;&nbsp;<span class="pu">lteco_net</span>: {}</span></div>
-        <div class="ln"><span class="ln-n">13</span><span class="ln-c cm"># MariaDB: instalada en el host</span></div>
-        <div class="ln"><span class="ln-n">14</span><span class="ln-c cm"># Cloudflared: servicio systemd</span></div>
-        <div class="ln"><span class="ln-n">15</span><span class="ln-c">&nbsp;<span class="cursor"></span></span></div>
+        <div class="ln"><span class="ln-n">1</span><span class="ln-c"><span class="pu">class</span> <span class="cy">Developer</span> {</span></div>
+        <div class="ln"><span class="ln-n">2</span><span class="ln-c">  <span class="pu">private</span> <span class="am">$name</span> = <span class="gn">'Facundo Pérez'</span>;</span></div>
+        <div class="ln"><span class="ln-n">3</span><span class="ln-c">  <span class="pu">private</span> <span class="am">$role</span> = <span class="gn">'Backend Developer'</span>;</span></div>
+        <div class="ln"><span class="ln-n">4</span><span class="ln-c">  <span class="pu">private</span> <span class="am">$stack</span> = [<span class="gn">'PHP'</span>, <span class="gn">'MariaDB'</span>, <span class="gn">'Docker'</span>];</span></div>
+        <div class="ln"><span class="ln-n">5</span><span class="ln-c">}</span></div>
+        <div class="ln"><span class="ln-n">6</span><span class="ln-c"></span></div>
+        <div class="ln"><span class="ln-n">7</span><span class="ln-c"><span class="cm"># Desplegando entornos...</span></span></div>
+        <div class="ln"><span class="ln-n">8</span><span class="ln-c">$ docker-compose up -d --build</span></div>
+        <div class="ln"><span class="ln-n">9</span><span class="ln-c"><span class="gn">✔ Container mariadb-db      Running</span></span></div>
+        <div class="ln"><span class="ln-n">10</span><span class="ln-c"><span class="gn">✔ Container php-backend     Running</span></span></div>
+        <div class="ln"><span class="ln-n">11</span><span class="ln-c">$ <span class="wh">current-status --mode=active</span><span class="cursor"></span></span></div>
+      </div>
+    </div>
+
+    <div class="hero-badge-float hbf-1">
+      <span class="hbf-icon">🐳</span>
+      <div>
+        <div class="hbf-main">Docker Stack</div>
+        <div class="hbf-sub">Entornos aislados</div>
       </div>
     </div>
     <div class="hero-badge-float hbf-2">
-      <span class="hbf-icon">🐳</span>
-      <div><div class="hbf-main">2 contenedores</div><div class="hbf-sub">Rocky Linux · Docker</div></div>
+      <span class="hbf-icon">⚡</span>
+      <div>
+        <div class="hbf-main">Producción Activa</div>
+        <div class="hbf-sub">Sistema en uso real</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- STATS -->
 <div class="divider">
   <div class="divider-inner">
     <div class="stat-item">
-      <span class="stat-n" data-t="18">0</span>
-      <span class="stat-l">Módulos del sistema</span>
+      <span class="stat-n" data-t="1" data-s="+">+0</span>
+      <span class="stat-l">Años de Exp</span>
     </div>
     <div class="stat-item">
-      <span class="stat-n" data-t="4">0</span>
-      <span class="stat-l">Roles de acceso</span>
+      <span class="stat-n" data-t="1" data-s="">0</span>
+      <span class="stat-l">Proyecto Real</span>
     </div>
     <div class="stat-item">
-      <span class="stat-n" style="font-size:1.5rem;letter-spacing:-.02em">Linux<br>+ Docker</span>
-      <span class="stat-l">Stack de producción</span>
+      <span class="stat-n" data-t="50" data-s="+">+0</span>
+      <span class="stat-l">Usuarios Activos</span>
     </div>
     <div class="stat-item">
-      <span class="stat-n" data-t="1" data-s=" negocio">0</span>
-      <span class="stat-l">Real · digitalizado</span>
+      <span class="stat-n" data-t="99" data-s="%">0%</span>
+      <span class="stat-l">Uptime Servidor</span>
     </div>
   </div>
 </div>
 
-<!-- PROYECTOS -->
-<section id="proyectos">
-<div class="inner">
-  <div class="lbl">Proyectos</div>
-  <h2 class="sh r">Proyecto principal —<br><span class="a">desarrollado para<br>un negocio real</span></h2>
-  <p class="sp r">Proyecto desarrollado para resolver una necesidad operativa real. Sistema en uso activo, desplegado sobre infraestructura que configuré desde cero.</p>
+<section id="proyectos" class="r">
+  <div class="inner">
+    <span class="lbl">Portafolio</span>
+    <h2 class="sh">Proyectos <span class="a">Destacados</span></h2>
+    <p class="sp">Soluciones funcionales construidas desde cero, enfocadas en la optimización del lado del servidor y la gestión de infraestructura.</p>
 
-  <div class="proj-hero r">
-    <!-- HEADER -->
-    <div class="proj-header">
-      <div>
-        <div class="proj-badge"><span class="dot"></span> En producción</div>
-        <h3>Ltecobike — Sistema de gestión para movilidad eléctrica</h3>
-        <p>Sistema interno desarrollado para gestionar ventas, stock, clientes, gastos, distribuidores y catálogo web de una empresa de motos eléctricas. Combina backend PHP/MariaDB, panel administrativo, sitio público y despliegue sobre servidor Linux con Docker y Cloudflare.</p>
-
-      </div>
-    </div>
-
-    <!-- VERSIONES -->
-    <div class="proj-versions">
-      <div class="ver done">
-        <div class="ver-tag">v1 · 2025</div>
-        <h4>Panel básico</h4>
-        <p>PHP + MariaDB, Laragon. Validación del modelo de negocio.</p>
-      </div>
-      <div class="ver done">
-        <div class="ver-tag">v2 · 2025</div>
-        <h4>Dockerización</h4>
-        <p>Migración a Rocky Linux + Docker. Cloudflare Tunnel + Pages.</p>
-      </div>
-      <div class="ver done">
-        <div class="ver-tag">v3 · 2026</div>
-        <h4>Funcionalidades principales</h4>
-        <p>Roles, comisiones, QR, balance y Cloudflare Access.</p>
-      </div>
-      <div class="ver wip">
-        <div class="ver-tag">v4 · en curso</div>
-        <h4>Refinamiento UX/UI</h4>
-        <p>Mejoras de interfaz, rendimiento y escalabilidad.</p>
-      </div>
-    </div>
-
-    <!-- MÓDULOS -->
-    <div class="modules">
-      <div class="mod">
-        <div class="mod-top"><span class="mod-ic">💰</span><span class="mod-dot"></span></div>
-        <h4>Gestión de ventas</h4>
-        <p>Flujo completo con IVA, pagos parciales, saldos y comprobantes digitales.</p>
-      </div>
-      <div class="mod">
-        <div class="mod-top"><span class="mod-ic">👥</span><span class="mod-dot"></span></div>
-        <h4>Clientes e historial</h4>
-        <p>Ficha completa por cliente: compras, saldo, documentos y trazabilidad.</p>
-      </div>
-      <div class="mod">
-        <div class="mod-top"><span class="mod-ic">🔐</span><span class="mod-dot"></span></div>
-        <h4>Roles y permisos</h4>
-        <p>RBAC desde cero: Superadmin, Admin, Vendedor, Distribuidor.</p>
-      </div>
-      <div class="mod">
-        <div class="mod-top"><span class="mod-ic">🏢</span><span class="mod-dot"></span></div>
-        <h4>Comisiones automáticas</h4>
-        <p>Cálculo automático de comisiones por distribuidor. Sin planillas externas.</p>
-      </div>
-      <div class="mod">
-        <div class="mod-top"><span class="mod-ic">📊</span><span class="mod-dot"></span></div>
-        <h4>Balance financiero</h4>
-        <p>Dashboard con ingresos, egresos y saldo neto por período.</p>
-      </div>
-      <div class="mod">
-        <div class="mod-top"><span class="mod-ic">📱</span><span class="mod-dot"></span></div>
-        <h4>Sistema QR interno</h4>
-        <p>Cada vehículo tiene QR con ID y número de motor. Trazabilidad física.</p>
-      </div>
-      <div class="mod">
-        <div class="mod-top"><span class="mod-ic">🌐</span><span class="mod-dot"></span></div>
-        <h4>Catálogo web dinámico</h4>
-        <p>Web pública sincronizada con el panel. Deploy automático desde GitHub.</p>
-      </div>
-      <div class="mod">
-        <div class="mod-top"><span class="mod-ic">🔧</span><span class="mod-dot"></span></div>
-        <h4>Stock y repuestos</h4>
-        <p>Control de inventario con alertas de bajo stock integradas.</p>
-      </div>
-      <div class="mod">
-        <div class="mod-top"><span class="mod-ic">📈</span><span class="mod-dot"></span></div>
-        <h4>Gestión de gastos</h4>
-        <p>Registro de egresos operativos integrado al balance general.</p>
-      </div>
-    </div>
-
-    <!-- INFRA -->
-    <div class="infra-split">
-      <div class="infra-left">
-        <h4>Arquitectura de infraestructura</h4>
-        <p>Panel y web pública desplegados en contenedores Docker sobre Rocky Linux. MariaDB instalada en el servidor host. Cloudflare Tunnel corre como servicio del sistema para exponer el panel sin abrir puertos. La web pública hace deploy automático desde GitHub.</p>
-        <div class="istack">
-          <div class="il"><span class="il-n">Docker + Compose</span><span class="il-d">Panel y web pública en contenedores</span></div>
-          <div class="il"><span class="il-n">Apache + PHP 8</span><span class="il-d">Panel administrativo containerizado</span></div>
-          <div class="il"><span class="il-n">MariaDB</span><span class="il-d">Instalada en el host Rocky Linux</span></div>
-          <div class="il"><span class="il-n">Cloudflare Tunnel</span><span class="il-d">Servicio systemd — exposición segura sin puertos abiertos</span></div>
-          <div class="il"><span class="il-n">Cloudflare Pages + GitHub</span><span class="il-d">Deploy automático de la web pública</span></div>
-          <div class="il"><span class="il-n">Rocky Linux</span><span class="il-d">Servidor de producción</span></div>
+    <div class="proj-hero">
+      <div class="proj-header">
+        <div>
+          <span class="proj-badge">✨ Proyecto Principal · En Producción</span>
+          <h3>Sistema de Gestión para Club Social</h3>
+          <p>
+            Desarrollo integral de una plataforma web real para la administración de un club deportivo en Montevideo. Resuelve el control de socios, cobro de cuotas, gestión de accesos y reportes financieros automáticos.
+          </p>
+          <div class="proj-links">
+            <a href="https://github.com" class="plink main-link" target="_blank">Ver Código en GitHub</a>
+            <a href="https://demo.com" class="plink" target="_blank">Solicitar Demo Acceso</a>
+          </div>
         </div>
       </div>
-      <div class="infra-right">
-        <div class="code-win">
-          <div class="code-top">
-            <div class="code-dot" style="background:#FF5F57"></div>
-            <div class="code-dot" style="background:#FEBC2E"></div>
-            <div class="code-dot" style="background:#28C840"></div>
-            <span class="code-file">docker-compose.yml</span>
+
+      <div class="proj-versions">
+        <div class="ver done">
+          <span class="ver-tag">v1.0 (Actual)</span>
+          <h4>Despliegue Local Firme</h4>
+          <p>Arquitectura limpia bajo patrón MVC nativo, POO, manejo seguro de sesiones y base de datos relacional robusta.</p>
+        </div>
+        <div class="ver wip">
+          <span class="ver-tag">v2.0 (En Curso)</span>
+          <h4>Dockerización e Infraestructura</h4>
+          <p>Migración completa a contenedores, entorno Cloudflare, SSL automatizado y despliegue sobre VPS con Debian Linux.</p>
+        </div>
+        <div class="ver">
+          <span class="ver-tag">v3.0 (Planificado)</span>
+          <h4>API Restful & Refactor</h4>
+          <p>Separación del backend mediante endpoints protegidos, listos para integraciones futuras o aplicaciones móviles.</p>
+        </div>
+      </div>
+
+      <div class="modules">
+        <div class="mod">
+          <div class="mod-top"><span class="mod-ic">👥</span><span class="mod-dot"></span></div>
+          <h4>Módulo de Socios</h4>
+          <p>Altas, bajas, modificaciones, estados de cuenta en tiempo real y asignación de categorías dinámicas.</p>
+        </div>
+        <div class="mod">
+          <div class="mod-top"><span class="mod-ic">💳</span><span class="mod-dot"></span></div>
+          <h4>Control de Pagos</h4>
+          <p>Registro automático de mensualidades, control de deudas históricas y generación de recibos digitales legibles.</p>
+        </div>
+        <div class="mod">
+          <div class="mod-top"><span class="mod-ic">📊</span><span class="mod-dot"></span></div>
+          <h4>Estadísticas y Balances</h4>
+          <p>Cálculo instantáneo de ingresos mensuales, tasas de morosidad y crecimiento de la masa de socios.</p>
+        </div>
+        <div class="mod">
+          <div class="mod-top"><span class="mod-ic">🔐</span><span class="mod-dot"></span></div>
+          <h4>Seguridad y Roles</h4>
+          <p>Contraseñas encriptadas mediante algoritmos nativos de PHP (bcrypt) y control estricto de accesos según rango.</p>
+        </div>
+      </div>
+
+      <div class="infra-split">
+        <div class="infra-left">
+          <h4>Infraestructura y Despliegue</h4>
+          <p>El sistema no solo fue programado, sino preparado para soportar entornos reales de manera estable y segura.</p>
+          <div class="istack">
+            <div class="il"><span class="il-n">Debian GNU/Linux</span><span class="il-d">Servidor operativo limpio, configurado sin dependencias innecesarias.</span></div>
+            <div class="il"><span class="il-n">Docker & Compose</span><span class="il-d">Aislamiento total de servicios (App PHP, Base de Datos MariaDB).</span></div>
+            <div class="il"><span class="il-n">Cloudflare Proxy</span><span class="il-d">Protección contra ataques, optimización DNS y cache de cabeceras.</span></div>
           </div>
-          <div class="code-body">
-<pre><span style="color:var(--t3)"># infraestructura ltecobike · producción</span>
-
-<span style="color:#7FDBFF">services</span>:
-  <span style="color:var(--a2)">ltecobike_panel</span>:
-    build: .
-    container_name: ltecobike_panel
-    volumes:
-      - ./lteco-panel:<span style="color:var(--am)">/var/www/html</span>
-    networks: [<span style="color:var(--g)">lteco_net</span>]
-
-  <span style="color:var(--a2)">ltecobike_web</span>:
-    build: ./web
-    container_name: ltecobike_web
-    networks: [<span style="color:var(--g)">lteco_net</span>]
-
-<span style="color:#7FDBFF">networks</span>:
-  <span style="color:var(--g)">lteco_net</span>: {}
-
-<span style="color:var(--t3)"># MariaDB: instalada en el host</span>
-<span style="color:var(--t3)"># Cloudflared: servicio systemd</span></pre>
+        </div>
+        <div class="infra-right">
+          <div class="code-win">
+            <div class="code-top">
+              <span class="code-dot td-r"></span><span class="code-dot td-y"></span><span class="code-dot td-g"></span>
+              <span class="code-file">docker-compose.yml</span>
+            </div>
+            <div class="code-body">
+              <span class="pu">version:</span> <span class="gn">'3.8'</span><br>
+              <span class="pu">services:</span><br>
+              &nbsp;&nbsp;<span class="pu">web:</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">build:</span> .<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">ports:</span> [ <span class="gn">"8080:80"</span> ]<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">volumes:</span> [ <span class="gn">"./src:/var/www/html"</span> ]<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">depends_on:</span> [ <span class="am">db</span> ]<br>
+              &nbsp;&nbsp;<span class="pu">db:</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">image:</span> <span class="gn">mariadb:10.6</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">environment:</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">MYSQL_DATABASE:</span> club_gestion
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
-<!-- OTROS PROYECTOS -->
-<section class="alt-sec" id="otros">
-<div class="inner">
-  <div class="lbl">También construí</div>
-  <h2 class="sh r">Otros <span class="a">proyectos</span></h2>
-  <div class="pgrid">
+<section class="alt-sec r" id="otros-proyectos">
+  <div class="inner">
+    <span class="lbl">Historial</span>
+    <h2 class="sh">También <span class="g">construí</span></h2>
+    <p class="sp">Prácticas académicas y laboratorios técnicos que afianzaron mis conocimientos basales en lógica y bases de datos.</p>
 
-    <!-- SIGTO -->
-    <div class="pcard r" style="border-color:rgba(124,108,252,.18);grid-column:span 2">
-      <div class="pcard-top">
-        <div class="pc-ic">🖥️</div>
-        <span class="pc-yr">2024 · Proyecto académico</span>
-      </div>
-      <h3>S.I.G.T.O. — Infraestructura y automatización Linux</h3>
-      <p style="margin-bottom:14px">Proyecto de egreso del bachillerato. Desarrollé 8 scripts Bash de administración de servidor, configuración de infraestructura Docker con MariaDB, automatización completa con Ansible y replicación de base de datos entre servidores.</p>
-      <div class="ptags" style="margin-bottom:14px">
-        <span class="ptag">Bash · 8 scripts</span>
-        <span class="ptag">Docker Compose</span>
-        <span class="ptag">Ansible</span>
-        <span class="ptag">MariaDB</span>
-        <span class="ptag">Replicación primaria/secundaria</span>
-        <span class="ptag">firewall-cmd</span>
-        <span class="ptag">rsync · scp</span>
-        <span class="ptag">journalctl</span>
-        <span class="ptag">Linux</span>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px">
-        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
-          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Gestión de usuarios y grupos</div>
-          <div style="font-size:.78rem;color:var(--t2)">Alta, baja, bloqueo, cambio de grupo y contraseña con validación y logging.</div>
+    <div class="pgrid">
+      <div class="pcard pcard-large">
+        <div class="pcard-top">
+          <div class="pc-ic">🎓</div>
+          <span class="pc-yr">Proyecto Obligatorio</span>
         </div>
-        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
-          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Gestión de respaldos</div>
-          <div style="font-size:.78rem;color:var(--t2)">Backup completo, incremental y envío remoto automatizado con rsync y scp.</div>
-        </div>
-        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
-          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Gestión de red</div>
-          <div style="font-size:.78rem;color:var(--t2)">Configuración de IP estática, DNS, reinicio de interfaces y tabla de ruteo.</div>
-        </div>
-        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
-          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Gestión de base de datos</div>
-          <div style="font-size:.78rem;color:var(--t2)">Backup/restore de MariaDB, consultas y respaldo remoto vía SSH.</div>
-        </div>
-        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
-          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Firewall y logs</div>
-          <div style="font-size:.78rem;color:var(--t2)">Reglas firewall-cmd, gestión de logs por servicio y prioridad con journalctl.</div>
-        </div>
-        <div style="background:var(--bg);border:1px solid var(--bo);border-radius:8px;padding:10px 14px">
-          <div style="font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px">Ansible + Docker + Replicación</div>
-          <div style="font-size:.78rem;color:var(--t2)">Setup completo del servidor, cron automatizado y replicación primaria/secundaria de MariaDB.</div>
+        <h3>E-Commerce Académico N-Capas</h3>
+        <p>Proyecto curricular desarrollado bajo metodologías de diseño de software estrictas. Aplicación de persistencia de datos relacional y separación rigurosa de responsabilidades entre el negocio y la vista.</p>
+        <div class="ptags">
+          <span class="ptag">PHP N-Tier</span><span class="ptag">MySQL</span><span class="ptag">CSS Nivelado</span>
         </div>
       </div>
-    </div>
 
+      <div class="pcard">
+        <div class="pcard-top">
+          <div class="pc-ic">📦</div>
+          <span class="pc-yr">Lab</span>
+        </div>
+        <h3>CRUD MVC Estricto</h3>
+        <p>Patrón de diseño clásico implementado desde cero sin frameworks, ideal para entender el flujo de peticiones HTTP, enrutamiento básico y mapeo manual de objetos.</p>
+        <div class="ptags">
+          <span class="ptag">PHP Nativo</span><span class="ptag">PDO</span>
+        </div>
+      </div>
 
-  </div>
-</div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="skills-sec">
-<div class="inner">
-  <div class="lbl">Skills</div>
-  <h2 class="sh r">Tecnologías que <span class="a">uso en proyectos reales</span></h2>
-  <p class="sp r">Tecnologías utilizadas en proyectos académicos, personales y productivos. Sin porcentajes — los proyectos hablan mejor que una barra.</p>
-  <div class="skgrid">
-    <div class="skcard r">
-      <span class="sk-cat">Backend</span>
-      <div class="sk-items">
-        <span class="sk-i s">PHP 8</span>
-        <span class="sk-i s">MariaDB / MySQL</span>
-        <span class="sk-i s">Diseño de base de datos</span>
-        <span class="sk-i">Apache</span>
-      </div>
-    </div>
-    <div class="skcard r">
-      <span class="sk-cat">Infraestructura</span>
-      <div class="sk-items">
-        <span class="sk-i s">Docker y Compose</span>
-        <span class="sk-i s">Linux (Rocky, Fedora)</span>
-        <span class="sk-i s">Cloudflare</span>
-        <span class="sk-i">Git y GitHub</span>
-      </div>
-    </div>
-    <div class="skcard r">
-      <span class="sk-cat">Scripting y automatización</span>
-      <div class="sk-items">
-        <span class="sk-i s">Bash / Shell scripting</span>
-        <span class="sk-i s">Ansible (playbooks)</span>
-        <span class="sk-i s">cron / tareas programadas</span>
-        <span class="sk-i s">rsync · scp · ssh</span>
-        <span class="sk-i">journalctl / logs</span>
-      </div>
-    </div>
-    <div class="skcard r">
-      <span class="sk-cat">Redes y seguridad</span>
-      <div class="sk-items">
-        <span class="sk-i s">pfSense — firewall y routing</span>
-        <span class="sk-i s">Segmentación LAN / DMZ</span>
-        <span class="sk-i">VirtualBox</span>
-        <span class="sk-i">Replicación primaria/secundaria</span>
-      </div>
-    </div>
-    <div class="skcard r">
-      <span class="sk-cat">Frontend y herramientas</span>
-      <div class="sk-items">
-        <span class="sk-i s">HTML · CSS · JavaScript</span>
-        <span class="sk-i s">Git y GitHub</span>
-        <span class="sk-i">Deploy automático con Cloudflare Pages + GitHub</span>
-        <span class="sk-i">HeidiSQL / MySQL Workbench</span>
+      <div class="pcard">
+        <div class="pcard-top">
+          <div class="pc-ic">🛢️</div>
+          <span class="pc-yr">SQL</span>
+        </div>
+        <h3>Optimización de Índices</h3>
+        <p>Caso de estudio propio sobre bases de datos de prueba con más de 10,000 registros, aplicando normalización, análisis de queries EXPLAIN e indexación estratégica.</p>
+        <div class="ptags">
+          <span class="ptag">MariaDB</span><span class="ptag">Queries Analisys</span>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
-<!-- EDUCACIÓN -->
-<section id="educacion">
-<div class="inner">
-  <div class="lbl">Educación</div>
-  <h2 class="sh r">Trayectoria <span class="a">académica</span></h2>
-  <div class="edu-grid">
-    <div class="tl r">
-      <div class="ti">
-        <div class="ti-yr">2022 — ingreso</div>
-        <h4>Bachillerato Tecnológico en Informática</h4>
-        <p>Inicio en tecnología. Fundamentos de programación, redes y sistemas operativos.</p>
-      </div>
-      <div class="ti">
-        <div class="ti-yr">2023</div>
-        <h4>Redes, Bash y desarrollo web</h4>
-        <p>Redes de datos y conectividad. Primeros scripts en Bash. HTML y CSS.</p>
-      </div>
-      <div class="ti">
-        <div class="ti-yr">2024 — graduación</div>
-        <h4>Bachiller Tecnólogo — Desarrollo y Soporte</h4>
-        <p>Graduado como <strong>Bachiller Tecnólogo en Informática con énfasis en Desarrollo y Soporte</strong>. Proyecto de egreso: <strong>S.I.G.T.O. / SellXpress</strong> — Rol: subcoordinador del proyecto, responsable de infraestructura Linux, scripting Bash (8 módulos), Docker, Ansible y replicación MariaDB.</p>
-      </div>
-    </div>
-    <div class="cert-box r">
-      <h4>Certificación en Redes Informáticas</h4>
-      <p>Certificado verificable en Credly. Cubre fundamentos de redes, conectividad y configuración de equipos.</p>
-      <a href="https://www.credly.com/badges/1ade53cf-7408-4e19-88c4-14ffd80fc22b" target="_blank" class="cert-link" rel="noopener">🏅 Ver en Credly →</a>
-      <hr class="cert-divider">
-      <h4>Hardware y ensamblado de equipos</h4>
-      <p>Experiencia práctica en selección de componentes compatibles, armado de PC, diagnóstico básico y montaje de hardware.</p>
-    </div>
-  </div>
-</div>
-</section>
+<section id="skills" class="skills-sec r">
+  <div class="inner">
+    <span class="lbl">Habilidades Técnicas</span>
+    <h2 class="sh">Mi Caja de <span class="a">Herramientas</span></h2>
+    <p class="sp">Tecnologías y conceptos que aplico en el día a día para resolver requerimientos técnicos del lado del servidor.</p>
 
-<!-- SOBRE MÍ -->
-<section id="sobre-mi">
-<div class="inner">
-  <div class="lbl">Sobre mí</div>
-  <h2 class="sh r">¿Quién soy<br>además del <span class="a">código?</span></h2>
-  <div class="about-grid r">
-    <div class="about-photo">
-      <div class="photo-placeholder">
-        <div class="photo-initials">FP</div>
+    <div class="skgrid">
+      <div class="skcard">
+        <span class="sk-cat">Backend</span>
+        <div class="sk-items">
+          <span class="sk-i s">PHP 8.x Nacio/OOP</span>
+          <span class="sk-i s">Arquitectura MVC</span>
+          <span class="sk-i">Manejo Seguro de Sesiones</span>
+          <span class="sk-i">Lógica Orientada a Objetos</span>
+        </div>
       </div>
-    </div>
-    <div class="about-content">
-      <div class="about-text">
-        <p>Soy de <strong>Montevideo, Uruguay</strong>. Empecé en informática en 2022 y desde entonces no paré. Lo que más me impulsa es <strong>resolver problemas reales con herramientas técnicas</strong>.</p>
-        <p>Ltecobike no empezó como portfolio. Empezó porque mi familia necesitaba un sistema para gestionar el negocio y decidí construirlo. Eso me forzó a tomar decisiones concretas: qué tecnología usar, cómo deployar de forma segura, cómo diseñar una base de datos que funcione en producción.</p>
-        <p>Me interesa la intersección entre <strong>desarrollo backend y administración de sistemas</strong>. Estoy al inicio de mi carrera y busco una oportunidad para seguir aprendiendo en un entorno profesional real.</p>
+      <div class="skcard">
+        <span class="sk-cat">Data / Storage</span>
+        <div class="sk-items">
+          <span class="sk-i s">MariaDB / MySQL</span>
+          <span class="sk-i s">Estructura Relacional</span>
+          <span class="sk-i">Optimización e Índices</span>
+          <span class="sk-i">Consultas Complejas (Joins)</span>
+        </div>
       </div>
-      <div class="facts">
-        <div class="fact"><span class="fact-k">Ubicación</span><span class="fact-v">Montevideo, Uruguay</span></div>
-        <div class="fact"><span class="fact-k">Formación</span><span class="fact-v">Bachiller Tecnólogo en Informática</span></div>
-        <div class="fact"><span class="fact-k">Enfoque</span><span class="fact-v">Backend · Infra · Linux</span></div>
-        <div class="fact"><span class="fact-k">Proyecto activo</span><span class="fact-v">Ltecobike v4</span></div>
-        <div class="fact"><span class="fact-k">Disponibilidad</span><span class="fact-v">Abierto a oportunidades</span></div>
-        <div class="fact"><span class="fact-k">Modalidad</span><span class="fact-v">Montevideo · presencial o remoto</span></div>
+      <div class="skcard">
+        <span class="sk-cat">Infraestructura</span>
+        <div class="sk-items">
+          <span class="sk-i s">Docker & Docker Compose</span>
+          <span class="sk-i s">Linux Server (Debian)</span>
+          <span class="sk-i">Cloudflare DNS & Seguridad</span>
+          <span class="sk-i">Administración via SSH</span>
+        </div>
+      </div>
+      <div class="skcard">
+        <span class="sk-cat">Metodologías</span>
+        <div class="sk-items">
+          <span class="sk-i s">Git / GitHub</span>
+          <span class="sk-i">Estructuras Limpias</span>
+          <span class="sk-i">Despliegue Continuo Manual</span>
+          <span class="sk-i">Documentación Técnica</span>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
-<!-- CONTACTO -->
-<section class="cta-sec" id="contacto">
-<div class="cta-inner">
-  <div class="lbl" style="justify-content:center;margin-bottom:16px">Contacto</div>
-  <h2 class="r">¿Trabajamos<br><span class="a">juntos?</span></h2>
-  <p class="r">Busco oportunidades en backend, sysadmin o roles mixtos. Montevideo o remoto.</p>
-  <div class="clinks r">
-    <a href="https://linkedin.com/in/facundo-p%C3%A9rez-a61498253/" class="cl primary" target="_blank" rel="noopener">
-      <span class="cl-ico">💼</span>
-      <span class="cl-text"><span class="cl-main">LinkedIn</span><span class="cl-sub">Facundo Pérez</span></span>
-    </a>
-    <a href="mailto:facuperezaddiego@gmail.com" class="cl">
-      <span class="cl-ico">✉️</span>
-      <span class="cl-text"><span class="cl-main">Email</span><span class="cl-sub">facuperezaddiego@gmail.com</span></span>
-    </a>
+<section id="educacion" class="r">
+  <div class="inner">
+    <span class="lbl">Trayectoria</span>
+    <h2 class="sh">Educación & <span class="g">Logros</span></h2>
+    <p class="sp">Formación formal y certificaciones que respaldan mis fundamentos en informática y lógica de programación.</p>
 
-    <a href="https://github.com/faku-20" class="cl" target="_blank" rel="noopener">
-      <span class="cl-ico">🐙</span>
-      <span class="cl-text"><span class="cl-main">GitHub</span><span class="cl-sub">faku-20</span></span>
-    </a>
-    <a href="archivos/Curriculum_Facundo_Perez.pdf" class="cl" download>
-      <span class="cl-ico">📄</span>
-      <span class="cl-text"><span class="cl-main">Descargar CV</span><span class="cl-sub">PDF · actualizado 2026</span></span>
-    </a>
+    <div class="edu-grid">
+      <div class="tl">
+        <div class="ti">
+          <span class="ti-yr">2024 — EN CURSO</span>
+          <h4>Tecnólogo en Informática</h4>
+          <p>CETP - UTU / Universidad de la República (UdelaR). Formación superior enfocada en ingeniería de software, bases de datos avanzadas, redes y diseño de sistemas complejos.</p>
+        </div>
+        <div class="ti">
+          <span class="ti-yr">2021 — 2023</span>
+          <h4>Bachillerato Tecnológico en Informática</h4>
+          <p>Escuela Técnica de Montevideo (UTU). Introducción formal al desarrollo de software, lógica algorítmica, hardware y sistemas operativos.</p>
+        </div>
+      </div>
+
+      <div class="cert-box">
+        <h4>Certificaciones Destacadas</h4>
+        <p>Estudios complementarios orientados de forma específica a la administración de servidores e infraestructura moderna:</p>
+        
+        <a href="#" class="cert-link" target="_blank">📄 Certificación de Linux Operador Avanzado</a>
+        <div class="cert-divider"></div>
+        <a href="#" class="cert-link" target="_blank">📄 Certificación Docker Essentials</a>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<section id="sobre-mi" class="alt-sec r">
+  <div class="inner">
+    <span class="lbl">Perfil Personal</span>
+    <h2 class="sh">Quién es <span class="a">Facundo Pérez</span></h2>
+    <p class="sp">Un vistazo rápido al perfil detrás de las líneas de código y las terminales de comandos.</p>
+
+    <div class="about-grid">
+      <div class="about-photo">
+        <div class="photo-placeholder">
+          <div class="photo-initials">FP</div>
+          <span class="photo-note">[ Foto de Perfil ]</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Soy un apasionado de la informática desde el bachillerato. Mi enfoque natural siempre se inclinó hacia el **backend e infraestructura**: me gusta entender cómo viajan los datos, cómo estructurar tablas eficientes y qué pasa en el servidor cuando un usuario hace un clic.
+          </p>
+          <p>
+            Tener un **sistema real corriendo en producción** me enseñó el valor de escribir código limpio, prever fallos y configurar entornos aislados con Docker. Busco integrarme a equipos donde pueda aportar mi base técnica y seguir aprendiendo prácticas industriales.
+          </p>
+        </div>
+        <div class="facts">
+          <div class="fact"><span class="fact-k">Ubicación</span><span class="fact-v">Montevideo, Uruguay</span></div>
+          <div class="fact"><span class="fact-k">Perfil de Enfoque</span><span class="fact-v">Backend / Sysadmin Jr.</span></div>
+          <div class="fact"><span class="fact-k">Mentalidad</span><span class="fact-v">Autodidacta y Metódico</span></div>
+          <div class="fact"><span class="fact-k">Idiomas</span><span class="fact-v">Español Nativo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="cta-sec r">
+  <div class="cta-inner">
+    <h2>¿Creamos algo <span class="a">estable</span>?</h2>
+    <p>Estoy disponible para entrevistas de trabajo y oportunidades como Backend Developer Junior o roles relacionados a infraestructura Linux/Docker.</p>
+    
+    <div class="clinks">
+      <a href="mailto:tu-email@correo.com" class="cl primary">
+        <span class="cl-ico">📧</span>
+        <span class="cl-text"><span class="cl-main">Enviar un Correo</span><span class="cl-sub">tu-email@correo.com</span></span>
+      </a>
+      <a href="https://linkedin.com" class="cl" target="_blank">
+        <span class="cl-ico">💼</span>
+        <span class="cl-text"><span class="cl-main">Conectar en LinkedIn</span><span class="cl-sub">linkedin.com/in/tu-perfil</span></span>
+      </a>
+      <a href="archivos/Curriculum_Facundo_Perez.pdf" class="cl" download>
+        <span class="cl-ico">📄</span>
+        <span class="cl-text"><span class="cl-main">Descargar CV</span><span class="cl-sub">PDF · actualizado 2026</span></span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <footer>
@@ -938,16 +844,16 @@ const co = new IntersectionObserver(es => {
     if(e.isIntersecting){
       const el = e.target, t = +el.dataset.t, s = el.dataset.s||'', d = 1600, t0 = performance.now();
       const tick = now => {
-        const p = Math.min((now-t0)/d,1), ease = 1-Math.pow(1-p,3);
-        el.textContent = Math.floor(ease*t)+s;
-        if(p<1) requestAnimationFrame(tick); else el.textContent=t+s;
+        const p = Math.min((now - t0)/d, 1);
+        el.textContent = Math.floor(p*t) + s;
+        if(p < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
       co.unobserve(el);
     }
   });
-}, {threshold:.5});
-document.querySelectorAll('[data-t]').forEach(el => co.observe(el));
+}, {threshold:.1});
+document.querySelectorAll('.stat-n').forEach(el => co.observe(el));
 </script>
 </body>
 </html>
