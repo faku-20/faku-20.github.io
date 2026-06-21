@@ -390,3 +390,53 @@ body {
     height: 14px;
   }
 }
+/* FIX INDEX - overflow horizontal */
+.hero,
+.hero-copy,
+.hero-visual,
+.quick-stats,
+.stat-card {
+  min-width: 0;
+}
+
+.hero-copy h1,
+.hero-copy p,
+.stat-card strong,
+.stat-card span {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .profile-image {
+    width: min(280px, 100%);
+    height: auto;
+  }
+
+  .quick-stats {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand small {
+    display: none;
+  }
+
+  .kicker {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
