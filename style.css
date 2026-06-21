@@ -302,3 +302,91 @@ a{color:inherit;text-decoration:none}
   .hero-actions{flex-direction:column}
   .floating-badge{position:static; margin-top:1rem}
 }
+
+/* FIX RESPONSIVE GENERAL */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Tablet y mobile */
+@media (max-width: 980px) {
+  .hero,
+  .page-hero,
+  .content-grid,
+  .interests-grid,
+  .cards-grid,
+  .skills-grid,
+  .project-grid,
+  .contact-grid,
+  .panel-wide,
+  .cert-grid,
+  .showcase-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .panel-wide {
+    grid-column: auto !important;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .profile-image {
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .floating-badge {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  .interest-card {
+    min-height: auto;
+  }
+
+  .footer-grid {
+    padding-inline: 1rem;
+  }
+}
+
+/* Mobile chico */
+@media (max-width: 480px) {
+  .container,
+  .topbar,
+  .footer-grid,
+  .footer-bottom {
+    width: min(100% - 1.2rem, 1180px);
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .panel,
+  .timeline-card,
+  .cert-card,
+  .info-card {
+    border-radius: 18px;
+  }
+
+  .panel {
+    padding: 1rem;
+  }
+
+  .timeline-item {
+    padding-left: 2.2rem;
+  }
+
+  .timeline-dot {
+    left: 8px;
+    width: 14px;
+    height: 14px;
+  }
+}
