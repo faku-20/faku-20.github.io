@@ -1,101 +1,186 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos - Sellxpress</title>
-    <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="S.I.G.T.O. / Sell Xpress: sistema de gestión de tiendas online desarrollado en C#, Windows Forms y MariaDB.">
+  <meta name="author" content="Facundo Pérez">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+
+  <title>Facundo Pérez | S.I.G.T.O.</title>
 </head>
-
-<body class="Proyectos">
-    <header class="intro">
-        <div class="menu">
-            <div class="logo">
-                <a href="index.html" aria-label="Ir al inicio">Mi Sitio Web</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" aria-label="Ir al inicio"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="intereses.html" aria-label="Ir a la sección de intereses"><i class="fas fa-balance-scale"></i> Intereses</a></li>
-                    <li><a href="proyectos.html" aria-label="Ir a la sección de proyectos"><i class="fas fa-briefcase"></i> Proyectos</a></li>
-                    <li><a href="estudios.html" aria-label="Ir a la sección de estudios"><i class="fas fa-graduation-cap"></i> Estudios</a></li>
-                    <li><a href="formulario.html" aria-label="Ir a la sección de estudios"><i class="fas fa-envelope"></i> Contacto</a></li>
-                </ul>
-            </nav>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">FP</span>
+        <div>
+          <strong>Facundo Pérez</strong>
+          <small>Redes • Servidores • Desarrollo</small>
         </div>
-    </header>
+      </a>
 
-    <main class="contenedor">
-        <section class="detalles">
-            <img src="imagenes/sigto.png" alt="SIGTO - Sistema de Gestión de Tiendas Online" title="e-commerce"
-                class="foto-perfil">
-            <p><strong>SIGTO</strong>, desarrollado bajo la compañía ficticia <strong>Sellxpress</strong>, es un
-                avanzado Sistema de Gestión de Tiendas Online. Este proyecto fue diseñado para optimizar y gestionar las
-                operaciones de comercios electrónicos mediante una plataforma robusta y segura.</p>
-            <p>El sistema fue construido utilizando <strong>C#</strong> como lenguaje de programación, junto con una
-                base de datos <strong>SQL</strong>. Para garantizar un alto rendimiento y escalabilidad, la base de
-                datos se implementó en un <strong>servidor Fedora</strong> y se ejecuta dentro de un <strong>contenedor
-                    Docker</strong>.</p>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-            <section class="servidor-db-docker">
-                <h2>Servidor, Base de Datos y Docker</h2>
-                <p>El sistema SIGTO está basado en un entorno de servidor robusto con <strong>Fedora</strong> como
-                    sistema operativo, y utiliza una base de datos en <strong>SQL</strong>, gestionada mediante
-                    <strong>MariaDB</strong> como gestor de bases de datos. Esta base de datos se encuentra alojada
-                    dentro de un contenedor <strong>Docker</strong>, lo que permite una gestión eficiente, portátil y
-                    escalable, facilitando su implementación en cualquier entorno compatible con Docker.
-                </p>
-                <p>Gracias a Docker, el sistema puede escalar de manera optimizada, mientras que Fedora proporciona un
-                    entorno seguro y de alto rendimiento para ejecutar la aplicación. La configuración de la base de
-                    datos en un contenedor Docker permite replicaciones rápidas y restauraciones eficientes,
-                    garantizando la disponibilidad continua del servicio en todo momento.</p>
-                <div class="imagen-contenedor">
-                    <img src="imagenes/Sellxpress.png" alt="Servidor Fedora con Docker" class="imagen-detalles">
-                </div>
-            </section>
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="index.html" class=""><i class="fa-solid fa-house"></i><span>Inicio</span></a></li>
+<li><a href="intereses.html" class=""><i class="fa-solid fa-heart"></i><span>Intereses</span></a></li>
+<li><a href="proyectos.html" class="active"><i class="fa-solid fa-briefcase"></i><span>Proyectos</span></a></li>
+<li><a href="estudios.html" class=""><i class="fa-solid fa-graduation-cap"></i><span>Estudios</span></a></li>
+<li><a href="conocimientos.html" class=""><i class="fa-solid fa-code"></i><span>Conocimientos</span></a></li>
+<li><a href="formulario.html" class=""><i class="fa-solid fa-envelope"></i><span>Contacto</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <p>Además, se integró un <strong>firewall externo basado en pfSense</strong>, configurado con reglas
-                específicas para proteger los datos y garantizar la seguridad de las transacciones en línea.</p>
+  <main class="container">
 
-            <div class="imagen-contenedor">
-                <img src="imagenes/Picture1.png" alt="Firewall pfSense" class="imagen-detalles">
-            </div>
-        </section>
-
-        <section class="Video-sigto">
-            <h2>Demostración del programa <strong>SIGTO</strong></h2>
-            <video src="imagenes/video sigto 1.mp4" controls></video>
-        </section>
-
-        <div class="boton-contenedor">
-            <a href="proyectos.html" class="boton-secundario">Volver a la página anterior</a>
+    <section class="page-hero reveal">
+      <div class="page-hero-text">
+        <span class="kicker">Proyecto académico de egreso · App de escritorio</span>
+        <h1>S.I.G.T.O. / Sell Xpress</h1>
+        <p>Sistema de gestión para tiendas online con roles de administrador, empresa vendedora y cliente. Desarrollado con C#, Windows Forms y MariaDB.</p>
+        <div class="hero-actions">
+          <a href="#demo" class="btn btn-primary"><i class="fa-solid fa-circle-play"></i> Ver demo</a>
+          <a href="#capturas" class="btn btn-secondary"><i class="fa-solid fa-images"></i> Ver capturas</a>
         </div>
-    </main>
+      </div>
+    </section>
 
-    <footer>
-        <div class="footer-container">
-            <div class="contact-info">
-                <h4>Contacto</h4>
-                <p>
-                    <a href="mailto:facuperezaddiego@gmail.com"><i class="fa-solid fa-envelope"></i><span>Correo:</span> facuperezaddiego@gmail.com</a>
-                </p>
-                <p>
-                    <a href="tel:+59892467494"><i class="fa-solid fa-phone"></i><span>Teléfono:</span> +598 92 467 494</a>
-                </p>
-            </div>
-            <button class="btnFooter">
-                <a href="formulario.html" aria-label="Ir al formulario de contacto"><i class="fa-solid fa-paper-plane"></i> Contacto</a>
-            </button>
-
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/facundo-p%C3%A9rez-a61498253/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/faku-20" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 Facundo Pérez. Todos los derechos reservados.</p>
-            </div>
+    <section class="content-grid reveal">
+      <article class="panel panel-wide">
+        <div>
+          <span class="kicker">Proyecto destacado</span>
+          <h2>Sistema de Gestión de Tiendas Online</h2>
+          <p>
+            Sell Xpress permite administrar un marketplace desde tres perfiles principales. BackOffice supervisa usuarios, empresas y productos; las empresas gestionan stock, pedidos, ventas y promociones; y los clientes navegan el catálogo, consultan compras y realizan pedidos.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> Dashboards operativos para BackOffice y empresas</li>
+            <li><i class="fa-solid fa-check"></i> Filtros por texto, categoría, estado, stock, precio y fechas</li>
+            <li><i class="fa-solid fa-check"></i> Exportación CSV para listados clave</li>
+            <li><i class="fa-solid fa-check"></i> Checkout con validaciones de stock, envío, tarjeta y vencimiento</li>
+            <li><i class="fa-solid fa-check"></i> Base MariaDB con datos demo preparados para presentación</li>
+          </ul>
         </div>
-    </footer>
+        <img src="imagenes/sigto/empresa-dashboard.webp" alt="Dashboard de empresa en Sell Xpress" width="1535" height="700" decoding="async">
+      </article>
+
+      <article class="panel reveal">
+        <h3>Tecnologías</h3>
+        <p>C#, Windows Forms, .NET Framework 4.7.2, MariaDB, MySQL, Visual Studio y arquitectura por capas.</p>
+      </article>
+
+      <article class="panel reveal">
+        <h3>Módulos</h3>
+        <p>BackOffice, empresas, clientes, productos, catálogo, carrito, checkout, pedidos, ventas, promociones y reportes CSV.</p>
+      </article>
+
+      <article class="panel reveal">
+        <h3>Resultado</h3>
+        <p>Aplicación compilable, con datos demo limpios, capturas reales y video preparado para mostrar el flujo completo en portfolio.</p>
+      </article>
+    </section>
+
+    <section class="section project-showcase reveal" id="capturas">
+      <div class="section-heading">
+        <span class="kicker">Capturas reales</span>
+        <h2>Pantallas principales</h2>
+        <p>Vistas del sistema luego del pulido visual, mejoras de experiencia y carga de datos demo.</p>
+      </div>
+
+      <div class="showcase-grid">
+        <article class="showcase-card">
+          <img src="imagenes/sigto/backoffice-dashboard.webp" alt="Dashboard de BackOffice de Sell Xpress" width="1375" height="700" decoding="async">
+          <div>
+            <h3>BackOffice</h3>
+            <p>Resumen general con usuarios, empresas, productos y stock bajo para supervisión administrativa.</p>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <img src="imagenes/sigto/empresa-dashboard.webp" alt="Dashboard de empresa de Sell Xpress" width="1535" height="700" decoding="async">
+          <div>
+            <h3>Panel de empresa</h3>
+            <p>Indicadores de gestión para productos cargados, pedidos abiertos, ventas del mes y stock bajo.</p>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <img src="imagenes/sigto/empresa-productos.webp" alt="Lista de productos de empresa en Sell Xpress" width="1175" height="775" decoding="async">
+          <div>
+            <h3>Gestión de productos</h3>
+            <p>Listado con buscador, filtros, métricas de inventario y exportación CSV.</p>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <img src="imagenes/sigto/cliente-catalogo.webp" alt="Catálogo de cliente en Sell Xpress" width="1200" height="800" decoding="async">
+          <div>
+            <h3>Catálogo de cliente</h3>
+            <p>Búsqueda y filtros para explorar productos por categoría, estado, precio y stock.</p>
+          </div>
+        </article>
+
+        <article class="showcase-card">
+          <img src="imagenes/sigto/screen-05.jpg" alt="Historial de compras de cliente en Sell Xpress" width="1100" height="700" decoding="async">
+          <div>
+            <h3>Historial de compras</h3>
+            <p>Resumen de compras visibles, total comprado, ticket promedio y exportación de datos.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section project-demo reveal" id="demo">
+      <div class="section-heading">
+        <span class="kicker">Demo</span>
+        <h2>Video del sistema</h2>
+        <p>Recorrido visual por login, paneles, listados, catálogo y compras.</p>
+      </div>
+
+      <video class="demo-video" controls preload="metadata" poster="imagenes/sigto/empresa-dashboard.webp">
+        <source src="imagenes/sigto/sigto-demo.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <div class="back-link"><a href="proyectos.html" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Volver a proyectos</a></div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <p><a href="mailto:facuperezaddiego@gmail.com"><i class="fa-solid fa-envelope"></i> facuperezaddiego@gmail.com</a></p>
+        <p><a href="tel:+59892467494"><i class="fa-solid fa-phone"></i> +598 92 467 494</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">Perfiles</h2>
+        <p><a href="https://github.com/faku-20" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/facundo-p%C3%A9rez-a61498253/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">CV</h2>
+        <p><a href="archivos/Curriculum_Facundo_Perez_Actualizado.pdf" download><i class="fa-solid fa-download"></i> Descargar CV</a></p>
+        <p><a href="formulario.html"><i class="fa-solid fa-paper-plane"></i> Enviarme un mensaje</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Facundo Pérez. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>

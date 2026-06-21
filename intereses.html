@@ -1,119 +1,119 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Intereses</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="index.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Facundo Pérez: redes, servidores, Docker, bases de datos y desarrollo web.">
+  <meta name="author" content="Facundo Pérez">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+
+  <title>Facundo Pérez | Intereses</title>
 </head>
-
-<body class="Intereses">
-    <header class="intro">
-        <div class="menu">
-            <div class="logo">
-                <a href="index.html" aria-label="Ir al inicio">Mi Sitio Web</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" aria-label="Ir al inicio"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="intereses.html" aria-label="Ir a la sección de intereses"><i class="fas fa-balance-scale"></i> Intereses</a></li>
-                    <li><a href="proyectos.html" aria-label="Ir a la sección de proyectos"><i class="fas fa-briefcase"></i> Proyectos</a></li>
-                    <li><a href="estudios.html" aria-label="Ir a la sección de estudios"><i class="fas fa-graduation-cap"></i> Estudios</a></li>
-                    <li><a href="formulario.html" aria-label="Ir a la sección de estudios"><i class="fas fa-envelope"></i> Contacto</a></li>
-                </ul>
-            </nav>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">FP</span>
+        <div>
+          <strong>Facundo Pérez</strong>
+          <small>Redes • Servidores • Desarrollo</small>
         </div>
-    </header>
+      </a>
 
-    <main class="contenedor">
-        <section class="intereses-iconos">
-            <h2>Mis Intereses</h2>
-            <div class="iconos">
-                <img src="imagenes/linux.png" alt="Linux" title="Linux">
-                <img src="imagenes/programacion.jpeg" alt="Programación Web" title="Programación Web">
-                <img src="imagenes/admin de siervidores.png" alt="Administración de Servidores" title="Administración de Servidores">
-                <img src="imagenes/ping-pong.png" alt="Ping Pong" title="Ping Pong">
-                <p>Desde pequeño, me ha apasionado el mundo de la informática. Me atraen especialmente los sistemas
-                    operativos Linux y su administración, ya que ofrecen un control total sobre el entorno y una gran
-                    flexibilidad. Además, me interesa la programación <strong>Web</strong>, el desarrollo de software y
-                    la optimización de procesos en diversas áreas. <br>
-                    En mis tiempos libres, disfruto jugando al ping-pong, lo que me permite desconectar y mantenerme
-                    activo.</p>
-                <p>He dedicado tiempo a aprender sobre redes, servidores, y virtualización, desarrollando proyectos
-                    prácticos que me han permitido profundizar mis conocimientos en estas áreas.</p>
-            </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="index.html" class=""><i class="fa-solid fa-house"></i><span>Inicio</span></a></li>
+<li><a href="intereses.html" class="active"><i class="fa-solid fa-heart"></i><span>Intereses</span></a></li>
+<li><a href="proyectos.html" class=""><i class="fa-solid fa-briefcase"></i><span>Proyectos</span></a></li>
+<li><a href="estudios.html" class=""><i class="fa-solid fa-graduation-cap"></i><span>Estudios</span></a></li>
+<li><a href="conocimientos.html" class=""><i class="fa-solid fa-code"></i><span>Conocimientos</span></a></li>
+<li><a href="formulario.html" class=""><i class="fa-solid fa-envelope"></i><span>Contacto</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+        <section class="page-hero reveal">
+          <div class="page-hero-text">
+            <span class="kicker">Motivación e intereses</span>
+            <h1>Intereses y motivación</h1>
+            <p>Lo que me gusta aprender y desarrollar dentro del mundo de la informática.</p>
+          </div>
         </section>
 
-        <section class="logros">
-            <h2>Mis Logros</h2>
-            <ul>
-                <li>✔️ Instalación y administración de servidores Linux en entornos virtualizados.</li>
-                <li>✔️ Desarrollo de proyectos web con tecnologías modernas.</li>
-                <li>✔️ Optimización de procesos en redes y sistemas.</li>
-                <li>✔️ Certificación en administración de redes (opcional si aplica).</li>
-            </ul>
-        </section>
+<section class="content-grid interests-grid reveal">
+  <article class="panel panel-wide interests-overview">
+    <div>
+      <span class="kicker">Intereses</span>
+      <h2>Tecnología, sistemas y mejora constante</h2>
+      <p>
+        Desde hace tiempo me interesa el mundo de la informática, especialmente las redes,
+        los servidores, las bases de datos y el desarrollo de soluciones que sean útiles en la práctica.
+      </p>
+      <p>
+        También me interesa aprender herramientas nuevas, mejorar proyectos existentes y llevar ideas
+        simples a implementaciones más profesionales.
+      </p>
+    </div>
+    <img src="imagenes/intereses.webp" alt="Intereses tecnológicos" width="1200" height="800" loading="lazy" decoding="async">
+  </article>
 
-        <section class="habilidades">
-            <h2>Habilidades</h2>
-            <div class="barra">
-                <p>Administración de Servidores Linux</p>
-                <div class="progreso" style="width: 30%;"></div>
-            </div>
-            <div class="barra">
-                <p>Programación Web</p>
-                <div class="progreso" style="width: 20%;"></div>
-            </div>
-            <div class="barra">
-                <p>Virtualización de S.O</p>
-                <div class="progreso" style="width: 50%;"></div>
-            </div>
-        </section>
+  <article class="panel interest-card reveal">
+    <i class="fa-solid fa-network-wired panel-icon"></i>
+    <h3>Redes</h3>
+    <p>Configuración, conectividad, segmentación y trabajo con entornos de laboratorio.</p>
+  </article>
 
-        <section class="cita">
-            <blockquote>
-                "La tecnología no solo resuelve problemas, también abre un mundo infinito de posibilidades. Mi objetivo
-                es ser parte de esa evolución."
-            </blockquote>
-        </section>
-    
-        <div class="contenedorFrase">
-            <button class="btnFrase" id="btnGenerar">Generar Frase Aleatoria</button>
-            <span id="frase"></span>
-        </div>
-        
-        <div class="boton-contenedor2">
-            <a href="index.html" class="boton-secundario">Volver a la página principal</a>
-       </div>
-       
-    </main>
+  <article class="panel interest-card reveal">
+    <i class="fa-solid fa-database panel-icon"></i>
+    <h3>Bases de datos</h3>
+    <p>MariaDB / MySQL, conexión de aplicaciones y organización de datos.</p>
+  </article>
 
-    <footer>
-        <div class="footer-container">
-            <div class="contact-info">
-                <h4>Contacto</h4>
-                <p>
-                    <a href="mailto:facuperezaddiego@gmail.com"><i class="fa-solid fa-envelope"></i><span>Correo:</span> facuperezaddiego@gmail.com</a>
-                </p>
-                <p>
-                    <a href="tel:+59892467494"><i class="fa-solid fa-phone"></i><span>Teléfono:</span> +598 92 467 494</a>
-                </p>
-            </div>
-            <button class="btnFooter">
-                <a href="formulario.html" aria-label="Ir al formulario de contacto"><i class="fa-solid fa-paper-plane"></i> Contacto</a>
-            </button>
+  <article class="panel interest-card reveal">
+    <i class="fa-solid fa-laptop-code panel-icon"></i>
+    <h3>Desarrollo</h3>
+    <p>Construcción de aplicaciones web y mejora de interfaces para mostrar proyectos.</p>
+  </article>
+</section>
 
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/facundo-p%C3%A9rez-a61498253/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/faku-20" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            </div>
+  </main>
 
-            <div class="footer-bottom">
-                <p>&copy; 2024 Facundo Pérez. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <p><a href="mailto:facuperezaddiego@gmail.com"><i class="fa-solid fa-envelope"></i> facuperezaddiego@gmail.com</a></p>
+        <p><a href="tel:+59892467494"><i class="fa-solid fa-phone"></i> +598 92 467 494</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">Perfiles</h2>
+        <p><a href="https://github.com/faku-20" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/facundo-p%C3%A9rez-a61498253/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">CV</h2>
+        <p><a href="archivos/Curriculum_Facundo_Perez_Actualizado.pdf" download><i class="fa-solid fa-download"></i> Descargar CV</a></p>
+        <p><a href="formulario.html"><i class="fa-solid fa-paper-plane"></i> Enviarme un mensaje</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Facundo Pérez. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>
