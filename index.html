@@ -1,859 +1,159 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Facundo Pérez — Backend Developer Junior · PHP · Linux · Docker</title>
-<meta name="description" content="Desarrollador junior orientado a backend e infraestructura. Sistema de gestión real con PHP, MariaDB, Docker y Linux. Montevideo, Uruguay Club.">
-<meta property=\"og:title\" content=\"Facundo Pérez — Backend Developer Junior\">
-<meta property=\"og:description\" content=\"Sistema de gestión real en producción. PHP · MariaDB · Docker · Linux · Cloudflare. Disponible para oportunidades.\">
-<meta property=\"og:type\" content=\"website\">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#08080D;--bg1:#0F0F16;--bg2:#15151F;--bg3:#1B1B28;
-  --bo:rgba(255,255,255,0.055);--bo2:rgba(255,255,255,0.11);
-  --a:#7C6CFC;--a2:#A78BFA;--adim:rgba(124,108,252,.13);
-  --g:#34D399;--gdim:rgba(52,211,153,.12);
-  --am:#FBBF24;--amdim:rgba(251,191,36,.1);
-  --t1:#F0F0F6;--t2:#8888A0;--t3:#3E3E55;
-  --r:10px;--rl:16px;
-  --F:'Sora',sans-serif;--FM:'Fira Code',monospace;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--F);background:var(--bg);color:var(--t1);line-height:1.6;overflow-x:hidden}
 
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:
-    radial-gradient(ellipse 60% 50% at 10% 30%,rgba(124,108,252,.045) 0%,transparent 70%),
-    radial-gradient(ellipse 40% 40% at 90% 70%,rgba(52,211,153,.03) 0%,transparent 60%);
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Facundo Pérez: redes, servidores, Docker, bases de datos y desarrollo web.">
+  <meta name="author" content="Facundo Pérez">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
 
-nav{
-  position:sticky;top:0;z-index:100;
-  background:rgba(8,8,13,.82);backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--bo);
-  padding:0 max(20px,5vw);height:62px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.nav-name{
-  font-weight:700;font-size:1rem;color:var(--t1);text-decoration:none;
-  letter-spacing:-.025em;display:flex;align-items:center;gap:10px;
-}
-.nav-avatar{
-  width:32px;height:32px;border-radius:50%;
-  background:linear-gradient(135deg,var(--a),var(--g));
-  display:flex;align-items:center;justify-content:center;
-  font-size:.7rem;font-weight:700;color:#fff;flex-shrink:0;
-  letter-spacing:.01em;
-}
-.nav-links{display:flex;gap:30px;list-style:none}
-.nav-links a{font-size:.82rem;color:var(--t2);text-decoration:none;transition:color .2s;font-weight:400}
-.nav-links a:hover{color:var(--t1)}
-.nav-r{display:flex;gap:10px}
-.btn-sm{
-  padding:7px 16px;border-radius:7px;font-size:.8rem;font-family:var(--F);
-  cursor:pointer;text-decoration:none;transition:all .2s;font-weight:500;
-}
-.btn-ghost{background:transparent;border:1px solid var(--bo2);color:var(--t1)}
-.btn-ghost:hover{border-color:var(--a);background:var(--adim)}
-.btn-solid{background:var(--a);border:1px solid var(--a);color:#fff}
-.btn-solid:hover{filter:brightness(1.1)}
-
-.hero-wrap{
-  position:relative;z-index:1;
-  min-height:calc(100vh - 62px);
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:60px;align-items:center;
-  padding:80px max(20px,8vw);max-width:1200px;margin:0 auto;
-}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:5px 14px;border:1px solid rgba(52,211,153,.25);border-radius:100px;
-  background:var(--gdim);font-size:.7rem;font-family:var(--FM);
-  color:var(--g);margin-bottom:32px;
-}
-.dot{width:6px;height:6px;background:var(--g);border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-
-h1{
-  font-size:clamp(2.4rem,4.5vw,4.2rem);font-weight:800;
-  line-height:1.05;letter-spacing:-.04em;color:var(--t1);margin-bottom:22px;
-}
-h1 .a{color:var(--a)}
-h1 .g{color:var(--g)}
-
-.hero-p{
-  font-size:1rem;color:var(--t2);max-width:48ch;
-  margin-bottom:40px;line-height:1.8;font-weight:300;
-}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px}
-.btn-hero{
-  padding:12px 26px;background:var(--a);border:none;border-radius:9px;
-  color:#fff;font-size:.92rem;font-family:var(--F);font-weight:600;
-  cursor:pointer;text-decoration:none;transition:all .2s;
-}
-.btn-hero:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.btn-hero-o{
-  padding:12px 26px;background:transparent;
-  border:1px solid var(--bo2);border-radius:9px;
-  color:var(--t1);font-size:.92rem;font-family:var(--F);
-  cursor:pointer;text-decoration:none;transition:all .2s;font-weight:400;
-}
-.btn-hero-o:hover{border-color:var(--a);background:var(--adim)}
-.tech-row{display:flex;flex-wrap:wrap;gap:8px}
-.tc{
-  padding:4px 10px;background:var(--bg2);border:1px solid var(--bo);
-  border-radius:5px;font-size:.67rem;font-family:var(--FM);color:var(--t3);
-  transition:all .2s;
-}
-.tc.hi{border-color:rgba(124,108,252,.3);color:var(--a2)}
-.tc:hover{color:var(--t2);border-color:var(--bo2)}
-
-.hero-right{position:relative}
-.term-card{
-  background:var(--bg1);border:1px solid var(--bo2);border-radius:var(--rl);
-  overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5);
-}
-.term-bar{
-  background:var(--bg2);border-bottom:1px solid var(--bo);
-  padding:12px 18px;display:flex;align-items:center;gap:8px;
-}
-.term-dot{width:10px;height:10px;border-radius:50%}
-.td-r{background:#FF5F57}.td-y{background:#FEBC2E}.td-g{background:#28C840}
-.term-title{
-  font-family:var(--FM);font-size:.72rem;color:var(--t3);
-  margin-left:auto;margin-right:auto;
-}
-.term-body{padding:22px 24px;font-family:var(--FM);font-size:.77rem;line-height:2}
-.ln{display:flex;gap:10px}
-.ln-n{color:var(--t3);user-select:none;min-width:16px;text-align:right}
-.ln-c{color:var(--t2)}
-.cy{color:#7FDBFF}.gn{color:var(--g)}.pu{color:var(--a2)}.am{color:var(--am)}
-.cm{color:var(--t3);font-style:italic}.wh{color:var(--t1)}
-.cursor{
-  display:inline-block;width:8px;height:14px;
-  background:var(--g);vertical-align:middle;
-  animation:blink .8s infinite;margin-left:2px;
-}
-
-.hero-badge-float{
-  position:absolute;background:var(--bg2);border:1px solid var(--bo2);
-  border-radius:9px;padding:10px 14px;display:flex;align-items:center;
-  gap:9px;font-size:.75rem;white-space:nowrap;
-  box-shadow:0 8px 32px rgba(0,0,0,.4);
-}
-.hbf-1{top:-18px;right:-10px}
-.hbf-2{bottom:30px;left:-24px}
-.hbf-icon{font-size:1rem}
-.hbf-main{font-weight:600;color:var(--t1);font-size:.78rem}
-.hbf-sub{font-size:.68rem;color:var(--t2)}
-
-.divider{
-  position:relative;z-index:1;
-  border-top:1px solid var(--bo);border-bottom:1px solid var(--bo);padding:40px max(20px,8vw);
-  background:var(--bg1);
-}
-.divider-inner{
-  max-width:1200px;margin:0 auto;
-  display:flex;flex-wrap:wrap;gap:20px 0;
-}
-.stat-item{
-  flex:1;min-width:200px;text-align:center;padding:16px 20px;
-  border-right:1px solid var(--bo);
-}
-.stat-item:last-child{border-right:none}
-.stat-n{
-  font-family:'Sora',sans-serif;font-size:2.2rem;font-weight:800;
-  color:var(--a2);letter-spacing:-.04em;line-height:1;display:block;margin-bottom:6px;
-}
-.stat-l{font-size:.72rem;color:var(--t3);text-transform:uppercase;letter-spacing:.1em}
-
-section{position:relative;z-index:1;padding:96px max(20px,8vw)}
-.inner{max-width:1200px;margin:0 auto}
-.lbl{
-  font-family:var(--FM);font-size:.67rem;color:var(--a);
-  text-transform:uppercase;letter-spacing:.16em;
-  margin-bottom:14px;display:flex;align-items:center;gap:10px;
-}
-.lbl::after{content:'';width:28px;height:1px;background:var(--a);opacity:.5}
-.sh{
-  font-size:clamp(1.9rem,3.5vw,3rem);font-weight:800;
-  letter-spacing:-.035em;line-height:1.1;margin-bottom:16px;
-}
-.sh .a{color:var(--a)}.sh .g{color:var(--g)}
-.sp{font-size:.95rem;color:var(--t2);max-width:52ch;line-height:1.8;font-weight:300}
-
-.proj-hero{
-  margin-top:56px;border:1px solid var(--bo);border-radius:var(--rl);
-  overflow:hidden;background:var(--bg1);
-}
-.proj-header{
-  padding:36px 40px;display:grid;grid-template-columns:1fr auto;
-  gap:24px;border-bottom:1px solid var(--bo);align-items:start;
-}
-.proj-badge{
-  display:inline-flex;align-items:center;gap:6px;padding:4px 12px;
-  background:var(--gdim);border:1px solid rgba(52,211,153,.2);
-  border-radius:100px;font-size:.67rem;font-family:var(--FM);color:var(--g);
-  margin-bottom:14px;
-}
-.proj-header h3{font-size:1.5rem;font-weight:800;color:var(--t1);letter-spacing:-.025em;margin-bottom:10px}
-.proj-header p{font-size:.88rem;color:var(--t2);line-height:1.75;max-width:55ch}
-.proj-links{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
-.plink{
-  padding:8px 16px;background:var(--bg2);border:1px solid var(--bo);
-  border-radius:7px;color:var(--t1);font-size:.78rem;text-decoration:none;
-  transition:all .2s;
-}
-.plink:hover{border-color:var(--a);background:var(--adim)}
-.plink.main-link{background:var(--a);border-color:var(--a);color:#fff}
-.plink.main-link:hover{filter:brightness(1.1)}
-
-.proj-versions{
-  padding:20px 40px;background:var(--bg);border-bottom:1px solid var(--bo);
-  display:flex;gap:0;overflow-x:auto;
-}
-.ver{
-  flex:1;min-width:140px;padding:16px 20px;border-right:1px solid var(--bo);
-  position:relative;
-}
-.ver:last-child{border-right:none}
-.ver::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:transparent;
-}
-.ver.done::before{background:var(--a)}
-.ver.wip::before{background:var(--am)}
-.ver-tag{font-family:var(--FM);font-size:.65rem;color:var(--t3);margin-bottom:5px}
-.ver h4{font-size:.85rem;font-weight:600;color:var(--t1);margin-bottom:4px}
-.ver p{font-size:.75rem;color:var(--t2);line-height:1.5}
-
-.modules{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
-  gap:1px;background:var(--bo);
-}
-.mod{background:var(--bg1);padding:22px 24px;transition:background .2s}
-.mod:hover{background:var(--bg2)}
-.mod-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
-.mod-ic{font-size:1.1rem}
-.mod-dot{width:6px;height:6px;background:var(--g);border-radius:50%;margin-top:6px}
-.mod h4{font-size:.88rem;font-weight:600;color:var(--t1);margin-bottom:5px;letter-spacing:-.01em}
-.mod p{font-size:.78rem;color:var(--t2);line-height:1.6}
-
-.infra-split{
-  display:grid;grid-template-columns:1fr 1fr;gap:0;
-  border-top:1px solid var(--bo);
-}
-.infra-left{padding:32px 40px;border-right:1px solid var(--bo)}
-.infra-left h4{font-size:.95rem;font-weight:700;color:var(--t1);margin-bottom:8px;letter-spacing:-.01em}
-.infra-left p{font-size:.83rem;color:var(--t2);line-height:1.7;margin-bottom:20px}
-.istack{display:flex;flex-direction:column;gap:2px}
-.il{
-  padding:11px 16px;background:var(--bg2);
-  border-left:2px solid var(--bo);transition:border-color .2s;
-}
-.il:hover{border-left-color:var(--a)}
-.il-n{font-family:var(--FM);font-size:.7rem;color:var(--a2);display:block;margin-bottom:2px}
-.il-d{font-size:.76rem;color:var(--t3)}
-.infra-right{padding:28px 32px;background:var(--bg)}
-.code-win{
-  background:var(--bg1);border:1px solid var(--bo);border-radius:var(--r);
-  overflow:hidden;
-}
-.code-top{
-  background:var(--bg2);border-bottom:1px solid var(--bo);
-  padding:10px 16px;display:flex;align-items:center;gap:8px;
-}
-.code-dot{width:9px;height:9px;border-radius:50%}
-.code-file{font-family:var(--FM);font-size:.68rem;color:var(--t3);margin-left:6px}
-.code-body{padding:20px;font-family:var(--FM);font-size:.73rem;line-height:1.9;overflow-x:auto}
-
-.alt-sec{background:var(--bg1);border-top:1px solid var(--bo)}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-top:48px}
-.pcard{
-  background:var(--bg2);border:1px solid var(--bo);border-radius:var(--rl);
-  padding:26px;transition:all .2s;
-}
-.pcard:hover{border-color:var(--bo2);transform:translateY(-2px)}
-.pcard-large{grid-column:span 2}
-.pcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
-.pc-ic{
-  width:40px;height:40px;background:var(--bg3);border-radius:9px;
-  display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-.pc-yr{
-  padding:3px 9px;background:var(--bg3);border:1px solid var(--bo);
-  border-radius:100px;font-size:.62rem;font-family:var(--FM);color:var(--t3);
-}
-.pcard h3{font-size:.95rem;font-weight:700;color:var(--t1);margin-bottom:7px;letter-spacing:-.01em}
-.pcard p{font-size:.82rem;color:var(--t2);line-height:1.65;margin-bottom:14px}
-.ptags{display:flex;flex-wrap:wrap;gap:6px}
-.ptag{
-  padding:2px 8px;background:var(--bg1);border:1px solid var(--bo);
-  border-radius:4px;font-size:.63rem;font-family:var(--FM);color:var(--t3);
-}
-
-.skills-sec{border-top:1px solid var(--bo);border-bottom:1px solid var(--bo)}
-.skgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:48px}
-.skcard{
-  background:var(--bg1);border:1px solid var(--bo);border-radius:var(--r);
-  padding:22px;transition:border-color .2s;
-}
-.skcard:hover{border-color:var(--bo2)}
-.sk-cat{font-family:var(--FM);font-size:.63rem;color:var(--a);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px;display:block}
-.sk-items{display:flex;flex-direction:column;gap:7px}
-.sk-i{font-size:.83rem;color:var(--t2);display:flex;align-items:center;gap:8px;line-height:1.3}
-.sk-i::before{content:'';width:4px;height:4px;background:var(--t3);border-radius:50%;flex-shrink:0}
-.sk-i.s{color:var(--t1);font-weight:500}
-.sk-i.s::before{background:var(--a)}
-
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
-.tl{padding-left:24px;position:relative}
-.tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--a) 0%,transparent 100%)}
-.ti{position:relative;padding-bottom:36px}
-.ti::before{
-  content:'';position:absolute;left:-28px;top:7px;width:9px;height:9px;
-  background:var(--bg);border:2px solid var(--a);border-radius:50%;
-}
-.ti-yr{font-family:var(--FM);font-size:.67rem;color:var(--a);margin-bottom:5px;letter-spacing:.08em}
-.ti h4{font-size:.92rem;font-weight:700;color:var(--t1);margin-bottom:5px;letter-spacing:-.01em}
-.ti p{font-size:.82rem;color:var(--t2);line-height:1.65}
-
-.cert-box{
-  background:var(--bg2);border:1px solid var(--bo);border-radius:var(--rl);padding:28px;
-}
-.cert-box h4{font-size:.92rem;font-weight:700;color:var(--t1);margin-bottom:5px;letter-spacing:-.01em}
-.cert-box p{font-size:.82rem;color:var(--t2);line-height:1.6;margin-bottom:14px}
-.cert-link{
-  display:inline-flex;align-items:center;gap:8px;padding:8px 16px;
-  background:var(--adim);border:1px solid rgba(124,108,252,.25);
-  border-radius:7px;font-size:.78rem;color:var(--a2);text-decoration:none;
-  transition:background .2s;font-family:var(--FM);
-}
-.cert-link:hover{background:rgba(124,108,252,.22)}
-.cert-divider{border:none;border-top:1px solid var(--bo);margin:22px 0}
-
-.about-grid{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:start;margin-top:48px}
-.about-photo{
-  width:180px;height:220px;background:var(--bg2);
-  border:1px solid var(--bo);border-radius:var(--rl);overflow:hidden;
-  flex-shrink:0;position:relative;
-}
-.photo-placeholder{
-  width:100%;height:100%;
-  background:linear-gradient(160deg,var(--bg3) 0%,var(--bg2) 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-}
-.photo-initials{
-  width:72px;height:72px;border-radius:50%;
-  background:linear-gradient(135deg,var(--a),#A78BFA);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:.05em;
-}
-.photo-note{font-size:.67rem;font-family:var(--FM);color:var(--t3);text-align:center;padding:0 12px;line-height:1.4}
-.about-content{}
-.about-text p{font-size:.9rem;color:var(--t2);line-height:1.85;margin-bottom:14px;font-weight:300}
-.about-text p strong{color:var(--t1);font-weight:600}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:20px}
-.fact{padding:12px 16px;background:var(--bg1);border-left:2px solid var(--bo);transition:border-color .2s}
-.fact:hover{border-left-color:var(--a)}
-.fact-k{font-family:var(--FM);font-size:.65rem;color:var(--a2);margin-bottom:3px;display:block}
-.fact-v{font-size:.83rem;color:var(--t1);font-weight:500}
-
-.cta-sec{
-  background:var(--bg1);border-top:1px solid var(--bo);
-  padding:100px max(20px,8vw);text-align:center;
-}
-.cta-inner{max-width:580px;margin:0 auto}
-.cta-inner h2{
-  font-size:clamp(2rem,4vw,3.2rem);font-weight:800;
-  letter-spacing:-.04em;color:var(--t1);line-height:1.1;margin-bottom:16px;
-}
-.cta-inner h2 .a{color:var(--a)}
-.cta-inner p{font-size:.95rem;color:var(--t2);margin-bottom:44px;line-height:1.8}
-.clinks{display:flex;flex-direction:column;gap:10px;align-items:center}
-.cl{
-  display:flex;align-items:center;gap:13px;
-  padding:13px 22px;background:var(--bg2);border:1px solid var(--bo);
-  border-radius:var(--r);color:var(--t1);text-decoration:none;font-size:.85rem;
-  transition:all .2s;width:100%;max-width:400px;
-}
-.cl:hover{border-color:var(--bo2);background:var(--bg3);transform:translateX(2px)}
-.cl.primary{background:var(--a);border-color:var(--a);color:#fff}
-.cl.primary:hover{filter:brightness(1.1)}
-.cl-ico{font-size:1rem;flex-shrink:0}
-.cl-text{text-align:left}
-.cl-main{display:block;font-weight:500;font-size:.85rem}
-.cl-sub{display:block;font-size:.72rem;opacity:.7;margin-top:1px}
-
-footer{
-  position:relative;z-index:1;
-  background:var(--bg);border-top:1px solid var(--bo);
-  padding:32px max(20px,8vw);
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
-}
-.ft-l{font-size:.75rem;color:var(--t3)}
-.ft-l span{color:var(--a2);font-family:var(--FM)}
-.ft-badges{display:flex;gap:7px;flex-wrap:wrap}
-.ftb{
-  padding:3px 8px;background:var(--bg1);border:1px solid var(--bo);
-  border-radius:4px;font-size:.62rem;font-family:var(--FM);color:var(--t3);
-}
-
-.r{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
-.r.v{opacity:1;transform:none}
-
-/* ── RESPONSIVE ADAPTADO PARA MÓVILES Y TABLETS ── */
-@media(max-width:900px){
-  .hero-wrap{grid-template-columns:1fr;gap:40px;padding:60px max(20px,6vw)}
-  .hero-right{display:none}
-  .divider-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .stat-item { border-right: none; border-bottom: 1px solid var(--bo); padding: 10px; }
-  .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
-  .edu-grid{grid-template-columns:1fr}
-  .about-grid{grid-template-columns:1fr}
-  .about-photo{width:100%;height:160px}
-  .photo-initials{width:56px;height:56px;font-size:1.1rem}
-  .infra-split{grid-template-columns:1fr}
-  .infra-left{border-right:none;border-bottom:1px solid var(--bo)}
-  .proj-versions{flex-direction:column}
-  .ver{border-right:none;border-bottom:1px solid var(--bo);padding:14px}
-}
-
-@media(max-width:640px){
-  nav { padding: 0 20px; }
-  .nav-links{display:none}
-  .divider-inner { grid-template-columns: 1fr; }
-  .stat-item { border-bottom: 1px solid var(--bo) !important; }
-  .stat-item:last-child { border-bottom: none !important; }
-  .proj-header{grid-template-columns:1fr; padding:24px}
-  .infra-left,.infra-right{padding:24px}
-  .pgrid { grid-template-columns: 1fr; }
-  .pcard-large { grid-column: span 1 !important; }
-  .facts{grid-template-columns:1fr}
-  h1{font-size:2.2rem}
-  .skgrid{grid-template-columns: 1fr; }
-  .stat-n{font-size:1.6rem}
-}
-</style>
+  <title>Facundo Pérez | Inicio</title>
 </head>
 <body>
-
-<nav>
-  <a href="#" class="nav-name">
-    <div class="nav-avatar">FP</div>
-    Facundo Pérez
-  </a>
-  <ul class="nav-links">
-    <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#skills">Habilidades</a></li>
-    <li><a href="#educacion">Educación</a></li>
-    <li><a href="#sobre-mi">Sobre mí</a></li>
-  </ul>
-  <div class="nav-r">
-    <a href="#contacto" class="btn-sm btn-ghost">Contacto</a>
-    <a href="archivos/Curriculum_Facundo_Perez.pdf" class="btn-sm btn-solid" download>CV</a>
-  </div>
-</nav>
-
-<div class="hero-wrap">
-  <div class="hero-left">
-    <div class="hero-eyebrow">
-      <span class="dot"></span> Disponible para trabajar
-    </div>
-    <h1>Construyendo el <span class="a">Backend</span>, Asegurando la <span class="g">Infraestructura</span>.</h1>
-    <p class="hero-p">
-      Desarrollador Junior enfocado en crear arquitecturas sólidas, optimizar bases de datos y automatizar despliegues eficientes.
-    </p>
-    <div class="hero-btns">
-      <a href="#proyectos" class="btn-hero">Ver Proyectos</a>
-      <a href="#contacto" class="btn-hero-o">Hablemos</a>
-    </div>
-    <div class="tech-row">
-      <span class="tc hi">PHP 8.x</span>
-      <span class="tc hi">MariaDB</span>
-      <span class="tc hi">Docker</span>
-      <span class="tc hi">Linux (Debian)</span>
-      <span class="tc">Git</span>
-      <span class="tc">Cloudflare</span>
-      <span class="tc">MVC</span>
-      <span class="tc">OOP</span>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <div class="term-card">
-      <div class="term-bar">
-        <span class="term-dot td-r"></span>
-        <span class="term-dot td-y"></span>
-        <span class="term-dot td-g"></span>
-        <span class="term-title">facundo@server:~</span>
-      </div>
-      <div class="term-body">
-        <div class="ln"><span class="ln-n">1</span><span class="ln-c"><span class="pu">class</span> <span class="cy">Developer</span> {</span></div>
-        <div class="ln"><span class="ln-n">2</span><span class="ln-c">  <span class="pu">private</span> <span class="am">$name</span> = <span class="gn">'Facundo Pérez'</span>;</span></div>
-        <div class="ln"><span class="ln-n">3</span><span class="ln-c">  <span class="pu">private</span> <span class="am">$role</span> = <span class="gn">'Backend Developer'</span>;</span></div>
-        <div class="ln"><span class="ln-n">4</span><span class="ln-c">  <span class="pu">private</span> <span class="am">$stack</span> = [<span class="gn">'PHP'</span>, <span class="gn">'MariaDB'</span>, <span class="gn">'Docker'</span>];</span></div>
-        <div class="ln"><span class="ln-n">5</span><span class="ln-c">}</span></div>
-        <div class="ln"><span class="ln-n">6</span><span class="ln-c"></span></div>
-        <div class="ln"><span class="ln-n">7</span><span class="ln-c"><span class="cm"># Desplegando entornos...</span></span></div>
-        <div class="ln"><span class="ln-n">8</span><span class="ln-c">$ docker-compose up -d --build</span></div>
-        <div class="ln"><span class="ln-n">9</span><span class="ln-c"><span class="gn">✔ Container mariadb-db      Running</span></span></div>
-        <div class="ln"><span class="ln-n">10</span><span class="ln-c"><span class="gn">✔ Container php-backend     Running</span></span></div>
-        <div class="ln"><span class="ln-n">11</span><span class="ln-c">$ <span class="wh">current-status --mode=active</span><span class="cursor"></span></span></div>
-      </div>
-    </div>
-
-    <div class="hero-badge-float hbf-1">
-      <span class="hbf-icon">🐳</span>
-      <div>
-        <div class="hbf-main">Docker Stack</div>
-        <div class="hbf-sub">Entornos aislados</div>
-      </div>
-    </div>
-    <div class="hero-badge-float hbf-2">
-      <span class="hbf-icon">⚡</span>
-      <div>
-        <div class="hbf-main">Producción Activa</div>
-        <div class="hbf-sub">Sistema en uso real</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="divider">
-  <div class="divider-inner">
-    <div class="stat-item">
-      <span class="stat-n" data-t="1" data-s="+">+0</span>
-      <span class="stat-l">Años de Exp</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n" data-t="1" data-s="">0</span>
-      <span class="stat-l">Proyecto Real</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n" data-t="50" data-s="+">+0</span>
-      <span class="stat-l">Usuarios Activos</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n" data-t="99" data-s="%">0%</span>
-      <span class="stat-l">Uptime Servidor</span>
-    </div>
-  </div>
-</div>
-
-<section id="proyectos" class="r">
-  <div class="inner">
-    <span class="lbl">Portafolio</span>
-    <h2 class="sh">Proyectos <span class="a">Destacados</span></h2>
-    <p class="sp">Soluciones funcionales construidas desde cero, enfocadas en la optimización del lado del servidor y la gestión de infraestructura.</p>
-
-    <div class="proj-hero">
-      <div class="proj-header">
+  <header class="site-header">
+    <div class="topbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">FP</span>
         <div>
-          <span class="proj-badge">✨ Proyecto Principal · En Producción</span>
-          <h3>Sistema de Gestión para Club Social</h3>
-          <p>
-            Desarrollo integral de una plataforma web real para la administración de un club deportivo en Montevideo. Resuelve el control de socios, cobro de cuotas, gestión de accesos y reportes financieros automáticos.
-          </p>
-          <div class="proj-links">
-            <a href="https://github.com" class="plink main-link" target="_blank">Ver Código en GitHub</a>
-            <a href="https://demo.com" class="plink" target="_blank">Solicitar Demo Acceso</a>
-          </div>
+          <strong>Facundo Pérez</strong>
+          <small>Redes • Servidores • Desarrollo</small>
         </div>
-      </div>
-
-      <div class="proj-versions">
-        <div class="ver done">
-          <span class="ver-tag">v1.0 (Actual)</span>
-          <h4>Despliegue Local Firme</h4>
-          <p>Arquitectura limpia bajo patrón MVC nativo, POO, manejo seguro de sesiones y base de datos relacional robusta.</p>
-        </div>
-        <div class="ver wip">
-          <span class="ver-tag">v2.0 (En Curso)</span>
-          <h4>Dockerización e Infraestructura</h4>
-          <p>Migración completa a contenedores, entorno Cloudflare, SSL automatizado y despliegue sobre VPS con Debian Linux.</p>
-        </div>
-        <div class="ver">
-          <span class="ver-tag">v3.0 (Planificado)</span>
-          <h4>API Restful & Refactor</h4>
-          <p>Separación del backend mediante endpoints protegidos, listos para integraciones futuras o aplicaciones móviles.</p>
-        </div>
-      </div>
-
-      <div class="modules">
-        <div class="mod">
-          <div class="mod-top"><span class="mod-ic">👥</span><span class="mod-dot"></span></div>
-          <h4>Módulo de Socios</h4>
-          <p>Altas, bajas, modificaciones, estados de cuenta en tiempo real y asignación de categorías dinámicas.</p>
-        </div>
-        <div class="mod">
-          <div class="mod-top"><span class="mod-ic">💳</span><span class="mod-dot"></span></div>
-          <h4>Control de Pagos</h4>
-          <p>Registro automático de mensualidades, control de deudas históricas y generación de recibos digitales legibles.</p>
-        </div>
-        <div class="mod">
-          <div class="mod-top"><span class="mod-ic">📊</span><span class="mod-dot"></span></div>
-          <h4>Estadísticas y Balances</h4>
-          <p>Cálculo instantáneo de ingresos mensuales, tasas de morosidad y crecimiento de la masa de socios.</p>
-        </div>
-        <div class="mod">
-          <div class="mod-top"><span class="mod-ic">🔐</span><span class="mod-dot"></span></div>
-          <h4>Seguridad y Roles</h4>
-          <p>Contraseñas encriptadas mediante algoritmos nativos de PHP (bcrypt) y control estricto de accesos según rango.</p>
-        </div>
-      </div>
-
-      <div class="infra-split">
-        <div class="infra-left">
-          <h4>Infraestructura y Despliegue</h4>
-          <p>El sistema no solo fue programado, sino preparado para soportar entornos reales de manera estable y segura.</p>
-          <div class="istack">
-            <div class="il"><span class="il-n">Debian GNU/Linux</span><span class="il-d">Servidor operativo limpio, configurado sin dependencias innecesarias.</span></div>
-            <div class="il"><span class="il-n">Docker & Compose</span><span class="il-d">Aislamiento total de servicios (App PHP, Base de Datos MariaDB).</span></div>
-            <div class="il"><span class="il-n">Cloudflare Proxy</span><span class="il-d">Protección contra ataques, optimización DNS y cache de cabeceras.</span></div>
-          </div>
-        </div>
-        <div class="infra-right">
-          <div class="code-win">
-            <div class="code-top">
-              <span class="code-dot td-r"></span><span class="code-dot td-y"></span><span class="code-dot td-g"></span>
-              <span class="code-file">docker-compose.yml</span>
-            </div>
-            <div class="code-body">
-              <span class="pu">version:</span> <span class="gn">'3.8'</span><br>
-              <span class="pu">services:</span><br>
-              &nbsp;&nbsp;<span class="pu">web:</span><br>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">build:</span> .<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">ports:</span> [ <span class="gn">"8080:80"</span> ]<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">volumes:</span> [ <span class="gn">"./src:/var/www/html"</span> ]<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">depends_on:</span> [ <span class="am">db</span> ]<br>
-              &nbsp;&nbsp;<span class="pu">db:</span><br>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">image:</span> <span class="gn">mariadb:10.6</span><br>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">environment:</span><br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pu">MYSQL_DATABASE:</span> club_gestion
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alt-sec r" id="otros-proyectos">
-  <div class="inner">
-    <span class="lbl">Historial</span>
-    <h2 class="sh">También <span class="g">construí</span></h2>
-    <p class="sp">Prácticas académicas y laboratorios técnicos que afianzaron mis conocimientos basales en lógica y bases de datos.</p>
-
-    <div class="pgrid">
-      <div class="pcard pcard-large">
-        <div class="pcard-top">
-          <div class="pc-ic">🎓</div>
-          <span class="pc-yr">Proyecto Obligatorio</span>
-        </div>
-        <h3>E-Commerce Académico N-Capas</h3>
-        <p>Proyecto curricular desarrollado bajo metodologías de diseño de software estrictas. Aplicación de persistencia de datos relacional y separación rigurosa de responsabilidades entre el negocio y la vista.</p>
-        <div class="ptags">
-          <span class="ptag">PHP N-Tier</span><span class="ptag">MySQL</span><span class="ptag">CSS Nivelado</span>
-        </div>
-      </div>
-
-      <div class="pcard">
-        <div class="pcard-top">
-          <div class="pc-ic">📦</div>
-          <span class="pc-yr">Lab</span>
-        </div>
-        <h3>CRUD MVC Estricto</h3>
-        <p>Patrón de diseño clásico implementado desde cero sin frameworks, ideal para entender el flujo de peticiones HTTP, enrutamiento básico y mapeo manual de objetos.</p>
-        <div class="ptags">
-          <span class="ptag">PHP Nativo</span><span class="ptag">PDO</span>
-        </div>
-      </div>
-
-      <div class="pcard">
-        <div class="pcard-top">
-          <div class="pc-ic">🛢️</div>
-          <span class="pc-yr">SQL</span>
-        </div>
-        <h3>Optimización de Índices</h3>
-        <p>Caso de estudio propio sobre bases de datos de prueba con más de 10,000 registros, aplicando normalización, análisis de queries EXPLAIN e indexación estratégica.</p>
-        <div class="ptags">
-          <span class="ptag">MariaDB</span><span class="ptag">Queries Analisys</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills" class="skills-sec r">
-  <div class="inner">
-    <span class="lbl">Habilidades Técnicas</span>
-    <h2 class="sh">Mi Caja de <span class="a">Herramientas</span></h2>
-    <p class="sp">Tecnologías y conceptos que aplico en el día a día para resolver requerimientos técnicos del lado del servidor.</p>
-
-    <div class="skgrid">
-      <div class="skcard">
-        <span class="sk-cat">Backend</span>
-        <div class="sk-items">
-          <span class="sk-i s">PHP 8.x Nacio/OOP</span>
-          <span class="sk-i s">Arquitectura MVC</span>
-          <span class="sk-i">Manejo Seguro de Sesiones</span>
-          <span class="sk-i">Lógica Orientada a Objetos</span>
-        </div>
-      </div>
-      <div class="skcard">
-        <span class="sk-cat">Data / Storage</span>
-        <div class="sk-items">
-          <span class="sk-i s">MariaDB / MySQL</span>
-          <span class="sk-i s">Estructura Relacional</span>
-          <span class="sk-i">Optimización e Índices</span>
-          <span class="sk-i">Consultas Complejas (Joins)</span>
-        </div>
-      </div>
-      <div class="skcard">
-        <span class="sk-cat">Infraestructura</span>
-        <div class="sk-items">
-          <span class="sk-i s">Docker & Docker Compose</span>
-          <span class="sk-i s">Linux Server (Debian)</span>
-          <span class="sk-i">Cloudflare DNS & Seguridad</span>
-          <span class="sk-i">Administración via SSH</span>
-        </div>
-      </div>
-      <div class="skcard">
-        <span class="sk-cat">Metodologías</span>
-        <div class="sk-items">
-          <span class="sk-i s">Git / GitHub</span>
-          <span class="sk-i">Estructuras Limpias</span>
-          <span class="sk-i">Despliegue Continuo Manual</span>
-          <span class="sk-i">Documentación Técnica</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="educacion" class="r">
-  <div class="inner">
-    <span class="lbl">Trayectoria</span>
-    <h2 class="sh">Educación & <span class="g">Logros</span></h2>
-    <p class="sp">Formación formal y certificaciones que respaldan mis fundamentos en informática y lógica de programación.</p>
-
-    <div class="edu-grid">
-      <div class="tl">
-        <div class="ti">
-          <span class="ti-yr">2024 — EN CURSO</span>
-          <h4>Tecnólogo en Informática</h4>
-          <p>CETP - UTU / Universidad de la República (UdelaR). Formación superior enfocada en ingeniería de software, bases de datos avanzadas, redes y diseño de sistemas complejos.</p>
-        </div>
-        <div class="ti">
-          <span class="ti-yr">2021 — 2023</span>
-          <h4>Bachillerato Tecnológico en Informática</h4>
-          <p>Escuela Técnica de Montevideo (UTU). Introducción formal al desarrollo de software, lógica algorítmica, hardware y sistemas operativos.</p>
-        </div>
-      </div>
-
-      <div class="cert-box">
-        <h4>Certificaciones Destacadas</h4>
-        <p>Estudios complementarios orientados de forma específica a la administración de servidores e infraestructura moderna:</p>
-        
-        <a href="#" class="cert-link" target="_blank">📄 Certificación de Linux Operador Avanzado</a>
-        <div class="cert-divider"></div>
-        <a href="#" class="cert-link" target="_blank">📄 Certificación Docker Essentials</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="sobre-mi" class="alt-sec r">
-  <div class="inner">
-    <span class="lbl">Perfil Personal</span>
-    <h2 class="sh">Quién es <span class="a">Facundo Pérez</span></h2>
-    <p class="sp">Un vistazo rápido al perfil detrás de las líneas de código y las terminales de comandos.</p>
-
-    <div class="about-grid">
-      <div class="about-photo">
-        <div class="photo-placeholder">
-          <div class="photo-initials">FP</div>
-          <span class="photo-note"><a href="/imagenes/image4.png"></a></span>
-        </div>
-      </div>
-      <div class="about-content">
-        <div class="about-text">
-          <p>
-            Soy un apasionado de la informática desde el bachillerato. Mi enfoque natural siempre se inclinó hacia el **backend e infraestructura**: me gusta entender cómo viajan los datos, cómo estructurar tablas eficientes y qué pasa en el servidor cuando un usuario hace un clic.
-          </p>
-          <p>
-            Tener un **sistema real corriendo en producción** me enseñó el valor de escribir código limpio, prever fallos y configurar entornos aislados con Docker. Busco integrarme a equipos donde pueda aportar mi base técnica y seguir aprendiendo prácticas industriales.
-          </p>
-        </div>
-        <div class="facts">
-          <div class="fact"><span class="fact-k">Ubicación</span><span class="fact-v">Montevideo, Uruguay</span></div>
-          <div class="fact"><span class="fact-k">Perfil de Enfoque</span><span class="fact-v">Backend / Sysadmin Jr.</span></div>
-          <div class="fact"><span class="fact-k">Mentalidad</span><span class="fact-v">Autodidacta y Metódico</span></div>
-          <div class="fact"><span class="fact-k">Idiomas</span><span class="fact-v">Español Nativo</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contacto" class="cta-sec r">
-  <div class="cta-inner">
-    <h2>¿Creamos algo <span class="a">estable</span>?</h2>
-    <p>Estoy disponible para entrevistas de trabajo y oportunidades como Backend Developer Junior o roles relacionados a infraestructura Linux/Docker.</p>
-    
-    <div class="clinks">
-      <a href="mailto:tu-email@correo.com" class="cl primary">
-        <span class="cl-ico">📧</span>
-        <span class="cl-text"><span class="cl-main">Enviar un Correo</span><span class="cl-sub">tu-email@correo.com</span></span>
       </a>
-      <a href="https://linkedin.com" class="cl" target="_blank">
-        <span class="cl-ico">💼</span>
-        <span class="cl-text"><span class="cl-main">Conectar en LinkedIn</span><span class="cl-sub">linkedin.com/in/tu-perfil</span></span>
-      </a>
-      <a href="archivos/Curriculum_Facundo_Perez.pdf" class="cl" download>
-        <span class="cl-ico">📄</span>
-        <span class="cl-text"><span class="cl-main">Descargar CV</span><span class="cl-sub">PDF · actualizado 2026</span></span>
-      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i><span>Inicio</span></a></li>
+          <li><a href="intereses.html" class=""><i class="fa-solid fa-heart"></i><span>Intereses</span></a></li>
+          <li><a href="proyectos.html" class=""><i class="fa-solid fa-briefcase"></i><span>Proyectos</span></a></li>
+          <li><a href="estudios.html" class=""><i class="fa-solid fa-graduation-cap"></i><span>Estudios</span></a></li>
+          <li><a href="conocimientos.html" class=""><i class="fa-solid fa-code"></i><span>Conocimientos</span></a></li>
+          <li><a href="formulario.html" class=""><i class="fa-solid fa-envelope"></i><span>Contacto</span></a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <main class="container">
+
+
+<section class="hero reveal">
+  <div class="hero-copy">
+    <span class="kicker">Desarrollador Backend Junior · Infraestructura · Redes</span>
+    <h1>Redes, servidores y desarrollo orientado a infraestructura.</h1>
+    <p>
+      Desarrollador Backend Junior con experiencia en PHP, MariaDB, Docker, Linux y Cloudflare.
+      Desarrollé un sistema de gestión real para una empresa, incluyendo panel administrativo, base de datos, roles de acceso,
+      stock y despliegue en servidor Linux. También cuento con formación en redes, scripting Bash y virtualización.
+    </p>
+
+    <div class="hero-actions">
+      <a href="proyectos.html" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> Ver proyectos</a>
+      <a href="archivos/Curriculum_Facundo_Perez_Actualizado.pdf" class="btn btn-secondary" download><i class="fa-solid fa-download"></i> Descargar CV</a>
+    </div>
+
+    <div class="quick-stats">
+      <div class="stat-card">
+        <strong>PHP + MariaDB</strong>
+        <span>Backend y bases de datos</span>
+      </div>
+      <div class="stat-card">
+        <strong>Docker + Linux</strong>
+        <span>Infraestructura y servidores</span>
+      </div>
+      <div class="stat-card">
+        <strong>Cloudflare + Bash</strong>
+        <span>Deploy y automatización</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <img src="imagenes/facundo-profile-balanced.webp" alt="Foto de Facundo Pérez" class="profile-image" width="900" height="1125" fetchpriority="high" decoding="async">
+    <div class="floating-badge"><i class="fa-solid fa-server"></i> Disponible en Montevideo · Presencial o remoto</div>
   </div>
 </section>
 
-<footer>
-  <p class="ft-l">© 2026 <span>Facundo Pérez</span> · Montevideo, Uruguay</p>
-  <div class="ft-badges">
-    <span class="ftb">PHP</span><span class="ftb">Docker</span>
-    <span class="ftb">Linux</span><span class="ftb">Cloudflare</span>
-    <span class="ftb">MariaDB</span><span class="ftb">Git</span>
+<section class="section reveal">
+  <div class="section-heading">
+    <span class="kicker">Resumen</span>
+    <h2>¿Qué hay en este portfolio?</h2>
+    <p>Un recorrido por mis proyectos, habilidades técnicas, formación y experiencia laboral.</p>
   </div>
-</footer>
 
-<script>
-const io = new IntersectionObserver(es => {
-  es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('v'); io.unobserve(e.target); } });
-}, {threshold:.07, rootMargin:'0px 0px -28px 0px'});
-document.querySelectorAll('.r').forEach(el => io.observe(el));
+  <div class="cards-grid">
+    <article class="info-card">
+      <img src="imagenes/index-intereses.webp" alt="Intereses tecnológicos" width="1000" height="1000" loading="lazy" decoding="async">
+      <div class="card-body">
+        <h3>Intereses</h3>
+        <p>Tecnología, informática, infraestructura, sistemas y aprendizaje constante.</p>
+        <a href="intereses.html" class="text-link">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
 
-const co = new IntersectionObserver(es => {
-  es.forEach(e => {
-    if(e.isIntersecting){
-      const el = e.target, t = +el.dataset.t, s = el.dataset.s||'', d = 1600, t0 = performance.now();
-      const tick = now => {
-        const p = Math.min((now - t0)/d, 1);
-        el.textContent = Math.floor(p*t) + s;
-        if(p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-      co.unobserve(el);
-    }
-  });
-}, {threshold:.1});
-document.querySelectorAll('.stat-n').forEach(el => co.observe(el));
-</script>
+    <article class="info-card">
+      <img src="imagenes/index-proyectos.webp" alt="Proyectos de backend e infraestructura" width="1000" height="1000" loading="lazy" decoding="async">
+      <div class="card-body">
+        <h3>Proyectos</h3>
+        <p>Proyectos reales: Ltecobike (sistema de gestión) y S.I.G.T.O. (proyecto de egreso).</p>
+        <a href="proyectos.html" class="text-link">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <img src="imagenes/index-estudios.webp" alt="Estudios técnicos y certificaciones" width="1000" height="1000" loading="lazy" decoding="async">
+      <div class="card-body">
+        <h3>Estudios</h3>
+        <p>Bachillerato Tecnológico, Tecnicatura en Redes y Software, cursos y experiencia laboral.</p>
+        <a href="estudios.html" class="text-link">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <img src="imagenes/index-conocimientos.webp" alt="Conocimientos técnicos" width="1000" height="1000" loading="lazy" decoding="async">
+      <div class="card-body">
+        <h3>Conocimientos</h3>
+        <p>PHP, Docker, Linux, Bash, pfSense, Proxmox, Cloudflare, Git y más.</p>
+        <a href="conocimientos.html" class="text-link">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <p><a href="mailto:facuperezaddiego@gmail.com"><i class="fa-solid fa-envelope"></i> facuperezaddiego@gmail.com</a></p>
+        <p><a href="tel:+59892467494"><i class="fa-solid fa-phone"></i> +598 92 467 494</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">Perfiles</h2>
+        <p><a href="https://github.com/faku-20" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/facundo-p%C3%A9rez-a61498253/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">CV</h2>
+        <p><a href="archivos/Curriculum_Facundo_Perez_Actualizado.pdf" download><i class="fa-solid fa-download"></i> Descargar CV</a></p>
+        <p><a href="formulario.html"><i class="fa-solid fa-paper-plane"></i> Enviarme un mensaje</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Facundo Pérez. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>

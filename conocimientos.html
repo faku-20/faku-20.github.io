@@ -1,101 +1,140 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Conocimientos</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Facundo Pérez: redes, servidores, Docker, bases de datos y desarrollo web.">
+  <meta name="author" content="Facundo Pérez">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+
+  <title>Facundo Pérez | Conocimientos</title>
 </head>
-
-<body class="Conocimientos">
-    <header class="intro">
-        <div class="menu">
-            <div class="logo">
-                <a href="index.html" aria-label="Ir al inicio">Mi Sitio Web</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" aria-label="Ir al inicio"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="intereses.html" aria-label="Ir a la sección de intereses"><i class="fas fa-balance-scale"></i> Intereses</a></li>
-                    <li><a href="proyectos.html" aria-label="Ir a la sección de proyectos"><i class="fas fa-briefcase"></i> Proyectos</a></li>
-                    <li><a href="estudios.html" aria-label="Ir a la sección de estudios"><i class="fas fa-graduation-cap"></i> Estudios</a></li>
-                    <li><a href="formulario.html" aria-label="Ir a la sección de estudios"><i class="fas fa-envelope"></i> Contacto</a></li>
-                </ul>
-            </nav>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">FP</span>
+        <div>
+          <strong>Facundo Pérez</strong>
+          <small>Redes • Servidores • Desarrollo</small>
         </div>
-    </header>
+      </a>
 
-    <main class="contenedor">
-    <section class="detalles">
-        <h2>Mis Conocimientos</h2>
-        <div class="info-conocimientos">
-            <div class="tarjeta2">
-                <i class="fas fa-server"></i>
-                <h3>Administración de Servidores</h3>
-                <p>Gestión de servidores Linux, configuración de servicios y optimización de sistemas.</p>
-            </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-            <div class="tarjeta2">
-                <i class="fab fa-docker"></i>
-                <h3>Docker y Contenedores</h3>
-                <p>Implementación con Docker, `docker-compose` y manejo de contenedores.</p>
-            </div>
-
-            <div class="tarjeta2">
-                <i class="fas fa-code"></i>
-                <h3>Programación</h3>
-                <p>Conocimientos en HTML, CSS, JavaScript, Shell Script y SQL para desarrollo web.</p>
-            </div>
-
-            <div class="tarjeta2">
-                <i class="fas fa-network-wired"></i>
-                <h3>Redes y Seguridad</h3>
-                <p>Diseño de redes, configuración de firewalls y virtualización de entornos de red.</p>
-
-                <div class="certificacion-tarjeta">
-                    <!-- Certificado escaneado -->
-                    <!-- <img src="img/certificado_redes.jpg" alt="Certificación Curso Redes Informáticas" title="Certificación Curso Redes Informáticas" class="certificado-img">
-                    <p>Curso de Redes Informáticas</p> -->
-
-                    <!-- Insignia digital Credly -->
-                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="1ade53cf-7408-4e19-88c4-14ffd80fc22b" data-share-badge-host="https://www.credly.com"></div>
-                    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="boton-contenedor">
-        <a href="index.html" class="boton-secundario">Volver a la página principal</a>
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="index.html" class=""><i class="fa-solid fa-house"></i><span>Inicio</span></a></li>
+<li><a href="intereses.html" class=""><i class="fa-solid fa-heart"></i><span>Intereses</span></a></li>
+<li><a href="proyectos.html" class=""><i class="fa-solid fa-briefcase"></i><span>Proyectos</span></a></li>
+<li><a href="estudios.html" class=""><i class="fa-solid fa-graduation-cap"></i><span>Estudios</span></a></li>
+<li><a href="conocimientos.html" class="active"><i class="fa-solid fa-code"></i><span>Conocimientos</span></a></li>
+<li><a href="formulario.html" class=""><i class="fa-solid fa-envelope"></i><span>Contacto</span></a></li>
+        </ul>
+      </nav>
     </div>
-</main>
+  </header>
 
+  <main class="container">
 
-    <footer>
-        <div class="footer-container">
-            <div class="contact-info">
-                <h4>Contacto</h4>
-                <p>
-                    <a href="mailto:facuperezaddiego@gmail.com"><i class="fa-solid fa-envelope"></i><span>Correo:</span> facuperezaddiego@gmail.com</a>
-                </p>
-                <p>
-                    <a href="tel:+59892467494"><i class="fa-solid fa-phone"></i><span>Teléfono:</span> +598 92 467 494</a>
-                </p>
-            </div>
-            <button class="btnFooter">
-                <a href="formulario.html" aria-label="Ir al formulario de contacto"><i class="fa-solid fa-paper-plane"></i> Contacto</a>
-            </button>
+        <section class="page-hero reveal">
+          <div class="page-hero-text">
+            <span class="kicker">Habilidades técnicas</span>
+            <h1>Tecnologías y herramientas</h1>
+            <p>Stack técnico organizado por área: backend, infraestructura, scripting, redes y herramientas.</p>
+          </div>
+        </section>
 
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/facundo-p%C3%A9rez-a61498253/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/faku-20" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            </div>
+<section class="section reveal">
+  <div class="section-heading">
+    <span class="kicker">Conocimientos</span>
+    <h2>Herramientas y tecnologías</h2>
+    <p>Tecnologías que uso en proyectos reales y entornos de laboratorio.</p>
+  </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2024 Facundo Pérez. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
+  <div class="skills-category">
+    <p class="category-title">Backend y bases de datos</p>
+    <div class="skills-grid">
+      <article class="skill-card"><i class="fa-brands fa-php"></i><h3>PHP</h3><p>Desarrollo de paneles administrativos y backends web.</p></article>
+      <article class="skill-card"><i class="fa-solid fa-database"></i><h3>MariaDB / MySQL</h3><p>Diseño de bases de datos, consultas y replicación primaria/secundaria.</p></article>
+      <article class="skill-card"><i class="fa-solid fa-terminal"></i><h3>SQL</h3><p>Consultas, modelado y gestión de datos (nivel intermedio).</p></article>
+      <article class="skill-card"><i class="fa-solid fa-code"></i><h3>C#</h3><p>Desarrollo de aplicaciones (proyecto S.I.G.T.O.).</p></article>
+      <article class="skill-card"><i class="fa-brands fa-html5"></i><h3>HTML / CSS / JS</h3><p>Estructura, diseño y comportamiento de interfaces web.</p></article>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <p class="category-title">Infraestructura y servidores</p>
+    <div class="skills-grid">
+      <article class="skill-card"><i class="fa-brands fa-linux"></i><h3>Linux</h3><p>Administración de servidores Fedora y Rocky Linux (nivel avanzado).</p></article>
+      <article class="skill-card"><i class="fa-brands fa-docker"></i><h3>Docker / Docker Compose</h3><p>Contenedores, despliegue de servicios y configuración multi-contenedor.</p></article>
+      <article class="skill-card"><i class="fa-solid fa-server"></i><h3>Apache</h3><p>Servidor web en entornos Linux con Docker.</p></article>
+      <article class="skill-card"><i class="fa-solid fa-cloud"></i><h3>Cloudflare</h3><p>Cloudflare Tunnel para exponer servicios locales y Cloudflare Pages para deploy web.</p></article>
+      <article class="skill-card"><i class="fa-solid fa-robot"></i><h3>Ansible</h3><p>Automatización de configuraciones y tareas en servidores (nivel básico).</p></article>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <p class="category-title">Scripting y automatización</p>
+    <div class="skills-grid">
+      <article class="skill-card"><i class="fa-solid fa-terminal"></i><h3>Bash</h3><p>Scripts para administración de servidor, usuarios, backups, firewall y logs.</p></article>
+      <article class="skill-card"><i class="fa-solid fa-clock"></i><h3>Cron / SSH / rsync</h3><p>Automatización de tareas, transferencia segura de archivos y acceso remoto.</p></article>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <p class="category-title">Redes y virtualización</p>
+    <div class="skills-grid">
+      <article class="skill-card"><i class="fa-solid fa-shield-halved"></i><h3>pfSense</h3><p>Firewall, segmentación LAN/DMZ y reglas avanzadas de seguridad.</p></article>
+      <article class="skill-card"><i class="fa-solid fa-network-wired"></i><h3>Redes</h3><p>Conectividad, segmentación de redes y entornos de laboratorio.</p></article>
+      <article class="skill-card"><i class="fa-solid fa-cubes"></i><h3>Proxmox</h3><p>Virtualización de servidores y entornos de prueba.</p></article>
+      <article class="skill-card"><i class="fa-solid fa-box"></i><h3>VirtualBox</h3><p>Máquinas virtuales para desarrollo y laboratorio.</p></article>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <p class="category-title">Herramientas</p>
+    <div class="skills-grid">
+      <article class="skill-card"><i class="fa-brands fa-git-alt"></i><h3>Git / GitHub</h3><p>Control de versiones y publicación de proyectos web.</p></article>
+      <article class="skill-card"><i class="fa-solid fa-table"></i><h3>HeidiSQL / MySQL Workbench</h3><p>Gestión visual de bases de datos relacionales.</p></article>
+      <article class="skill-card"><i class="fa-solid fa-file-excel"></i><h3>Microsoft Office</h3><p>Excel, PowerPoint y Word para gestión y documentación.</p></article>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <p><a href="mailto:facuperezaddiego@gmail.com"><i class="fa-solid fa-envelope"></i> facuperezaddiego@gmail.com</a></p>
+        <p><a href="tel:+59892467494"><i class="fa-solid fa-phone"></i> +598 92 467 494</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">Perfiles</h2>
+        <p><a href="https://github.com/faku-20" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/facundo-p%C3%A9rez-a61498253/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">CV</h2>
+        <p><a href="archivos/Curriculum_Facundo_Perez_Actualizado.pdf" download><i class="fa-solid fa-download"></i> Descargar CV</a></p>
+        <p><a href="formulario.html"><i class="fa-solid fa-paper-plane"></i> Enviarme un mensaje</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Facundo Pérez. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>

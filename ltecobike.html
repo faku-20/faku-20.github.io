@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Facundo Pérez: redes, servidores, Docker, bases de datos y desarrollo web.">
+  <meta name="author" content="Facundo Pérez">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+
+  <title>Facundo Pérez | Ltecobike</title>
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">FP</span>
+        <div>
+          <strong>Facundo Pérez</strong>
+          <small>Redes • Servidores • Desarrollo</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="index.html" class=""><i class="fa-solid fa-house"></i><span>Inicio</span></a></li>
+<li><a href="intereses.html" class=""><i class="fa-solid fa-heart"></i><span>Intereses</span></a></li>
+<li><a href="proyectos.html" class="active"><i class="fa-solid fa-briefcase"></i><span>Proyectos</span></a></li>
+<li><a href="estudios.html" class=""><i class="fa-solid fa-graduation-cap"></i><span>Estudios</span></a></li>
+<li><a href="conocimientos.html" class=""><i class="fa-solid fa-code"></i><span>Conocimientos</span></a></li>
+<li><a href="formulario.html" class=""><i class="fa-solid fa-envelope"></i><span>Contacto</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+        <section class="page-hero reveal">
+          <div class="page-hero-text">
+            <span class="kicker">Proyecto real · Empresa familiar</span>
+            <h1>Ltecobike</h1>
+            <p>Sistema interno de gestión para una empresa de motos eléctricas — desarrollo real con PHP, MariaDB y despliegue en servidor Linux.</p>
+          </div>
+        </section>
+
+<section class="content-grid reveal">
+  <article class="panel panel-wide">
+    <div>
+      <span class="kicker">Proyecto destacado</span>
+      <h2>Ltecobike — Sistema de Gestión para Movilidad Eléctrica</h2>
+      <p>
+        Sistema interno de gestión desarrollado para una empresa familiar de motos eléctricas.
+        Permite gestionar ventas, stock, clientes, gastos, distribuidores, comisiones y roles de acceso,
+        con catálogo web público sincronizado con el sistema interno.
+      </p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Panel administrativo con PHP y MariaDB</li>
+        <li><i class="fa-solid fa-check"></i> Gestión de ventas, stock, clientes y distribuidores</li>
+        <li><i class="fa-solid fa-check"></i> Roles de acceso y comisiones diferenciadas</li>
+        <li><i class="fa-solid fa-check"></i> Catálogo web público sincronizado con el inventario interno</li>
+        <li><i class="fa-solid fa-check"></i> Despliegue en Rocky Linux con Docker y Cloudflare Tunnel</li>
+        <li><i class="fa-solid fa-check"></i> Deploy automático de la web pública con GitHub y Cloudflare Pages</li>
+      </ul>
+    </div>
+    <img src="imagenes/ltecobike/panel-administrador.webp" alt="Panel administrador de Ltecobike" width="1400" height="788" loading="lazy" decoding="async">
+  </article>
+
+  <article class="panel reveal">
+    <h3>Tecnologías</h3>
+    <p>PHP, MariaDB, Docker, Rocky Linux, Apache, Cloudflare Tunnel, Cloudflare Pages, GitHub.</p>
+  </article>
+
+  <article class="panel reveal">
+    <h3>Aprendizajes clave</h3>
+    <p>Diseño y mantenimiento de base de datos para producción, implementación de roles de acceso, exposición de servicios con Cloudflare Tunnel y automatización del deploy con GitHub Actions y Cloudflare Pages.</p>
+  </article>
+</section>
+
+<section class="section project-showcase reveal">
+  <div class="section-heading">
+    <span class="kicker">Capturas reales</span>
+    <h2>Roles y pantallas del sistema</h2>
+    <p>Vistas reales del panel interno, con accesos diferenciados para administración, vendedores y distribuidores.</p>
+  </div>
+
+  <div class="showcase-grid">
+    <article class="showcase-card">
+      <img src="imagenes/ltecobike/panel-administrador.webp" alt="Panel administrador de Ltecobike" width="1400" height="788" loading="lazy" decoding="async">
+      <div>
+        <h3>Panel administrador</h3>
+        <p>Vista central con accesos a ventas, stock, usuarios, gastos, importaciones, clientes y reportes.</p>
+      </div>
+    </article>
+
+    <article class="showcase-card">
+      <img src="imagenes/ltecobike/panel-vendedor.webp" alt="Panel vendedor de Ltecobike" width="1400" height="788" loading="lazy" decoding="async">
+      <div>
+        <h3>Panel vendedor</h3>
+        <p>Acceso simplificado para registrar ventas, buscar clientes, vehículos y gestionar servicios pendientes.</p>
+      </div>
+    </article>
+
+    <article class="showcase-card">
+      <img src="imagenes/ltecobike/panel-distribuidor.webp" alt="Panel distribuidor de Ltecobike" width="1400" height="788" loading="lazy" decoding="async">
+      <div>
+        <h3>Panel distribuidor</h3>
+        <p>Vista orientada a stock asignado, ventas, pedidos de unidades y búsqueda dentro de su operación.</p>
+      </div>
+    </article>
+
+    <article class="showcase-card">
+      <img src="imagenes/ltecobike/login.webp" alt="Login del panel Ltecobike" width="1400" height="788" loading="lazy" decoding="async">
+      <div>
+        <h3>Acceso privado</h3>
+        <p>Ingreso restringido al panel interno con diseño consistente y enfoque en operación diaria.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section project-demo reveal">
+  <div class="section-heading">
+    <span class="kicker">Demo</span>
+    <h2>Video del sistema</h2>
+    <p>Recorrido visual por el funcionamiento del panel y sus principales módulos.</p>
+  </div>
+
+  <video class="demo-video" controls preload="metadata" poster="imagenes/ltecobike/panel-administrador.webp">
+    <source src="imagenes/ltecobike/ltecobike-final.mp4" type="video/mp4">
+  </video>
+</section>
+
+<div class="back-link"><a href="proyectos.html" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Volver a proyectos</a></div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <p><a href="mailto:facuperezaddiego@gmail.com"><i class="fa-solid fa-envelope"></i> facuperezaddiego@gmail.com</a></p>
+        <p><a href="tel:+59892467494"><i class="fa-solid fa-phone"></i> +598 92 467 494</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">Perfiles</h2>
+        <p><a href="https://github.com/faku-20" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/facundo-p%C3%A9rez-a61498253/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">CV</h2>
+        <p><a href="archivos/Curriculum_Facundo_Perez_Actualizado.pdf" download><i class="fa-solid fa-download"></i> Descargar CV</a></p>
+        <p><a href="formulario.html"><i class="fa-solid fa-paper-plane"></i> Enviarme un mensaje</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Facundo Pérez. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
