@@ -444,3 +444,58 @@ body {
     width: 100%;
   }
 }
+
+
+/* INDEX · Retrato real extraído de la misma sesión fotográfica del CV.
+   No aplicar filtros faciales: el tratamiento visual se limita al marco CSS. */
+.hero .hero-visual {
+  isolation: isolate;
+  padding: 1.5rem;
+  min-width: 0;
+}
+
+.hero .hero-visual::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(490px, 110%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(0, 217, 126, .28), transparent 65%),
+    radial-gradient(circle at 70% 70%, rgba(0, 184, 160, .19), transparent 68%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.hero .profile-image {
+  width: min(420px, 100%);
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 26px;
+  border: 1px solid rgba(168, 245, 216, .22);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, .42), 0 0 0 7px rgba(0, 217, 126, .07);
+}
+
+@media (max-width: 980px) {
+  .hero .hero-visual {
+    width: 100%;
+    padding: 1.35rem 1rem 1.6rem;
+    margin: 0 auto;
+  }
+  .hero .profile-image {
+    width: min(420px, 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero .hero-visual {
+    padding: 1rem .4rem 1.35rem;
+  }
+  .hero .profile-image {
+    width: min(345px, 88vw);
+    border-radius: 22px;
+  }
+}
