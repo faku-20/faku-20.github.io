@@ -1,0 +1,14 @@
+name: Validar portfolio
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validar HTML, enlaces y recursos locales
+        run: python3 scripts/validate_portfolio.py
