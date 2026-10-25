@@ -48,7 +48,7 @@
         <section class="page-hero reveal">
           <div class="page-hero-text">
             <span class="kicker">Contacto</span>
-            <h1>Contacto</h1>
+            <h1>Conversemos sobre tecnología y oportunidades IT.</h1>
             <p>Mandame un mensaje por este formulario o escribime directo por email, teléfono o LinkedIn.</p>
           </div>
         </section>
@@ -57,25 +57,26 @@
   <article class="panel">
     <span class="kicker">Contacto</span>
     <h2>Mandame un mensaje</h2>
-    <p>Completá el formulario y te respondo a la brevedad.</p>
+    <p>Contame brevemente tu consulta. Si preferís, podés escribirme directamente por email o LinkedIn.</p>
 
     <form action="https://formspree.io/f/mzdkkvrj" method="POST" class="contact-form">
       <div class="field-group">
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="120" placeholder="Tu nombre" required>
       </div>
 
       <div class="field-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="tuemail@gmail.com" required>
+        <input type="email" id="email" name="email" autocomplete="email" maxlength="254" placeholder="tuemail@gmail.com" required>
       </div>
 
       <div class="field-group">
         <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribí tu mensaje..." required></textarea>
+        <textarea id="mensaje" name="mensaje" rows="6" maxlength="3000" placeholder="Escribí tu mensaje..." required></textarea>
       </div>
 
       <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Enviar mensaje</button>
+    <p class="form-note">Este formulario se procesa mediante Formspree. Si no recibís confirmación, podés usar el correo directo.</p>
     </form>
   </article>
 
