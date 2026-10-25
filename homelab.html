@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homelab y administración de infraestructura | Facundo Pérez</title>
+  <meta name="description" content="Laboratorio de Facundo Pérez: Proxmox VE, Rocky Linux, Docker, pfSense, DNS, Jellyfin y acceso remoto.">
+  <meta name="author" content="Facundo Pérez">
+  <meta name="theme-color" content="#06130b">
+  <link rel="canonical" href="https://faku-20.github.io/homelab.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:title" content="Homelab y administración de infraestructura | Facundo Pérez">
+  <meta property="og:description" content="Laboratorio de Facundo Pérez: Proxmox VE, Rocky Linux, Docker, pfSense, DNS, Jellyfin y acceso remoto.">
+  <meta property="og:url" content="https://faku-20.github.io/homelab.html">
+  <meta property="og:image" content="https://faku-20.github.io/imagenes/facundo-homelab-portfolio.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Saltar al contenido</a>
+<header class="site-header">
+    <div class="topbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">FP</span>
+        <div>
+          <strong>Facundo Pérez</strong>
+          <small>Redes • Servidores • Desarrollo</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Navegación principal"><ul>
+<li><a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Inicio</span></a></li>
+<li><a href="proyectos.html"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><span>Proyectos</span></a></li>
+<li><a href="homelab.html" class="active" aria-current="page"><i class="fa-solid fa-server" aria-hidden="true"></i><span>Homelab</span></a></li>
+<li><a href="sobre-mi.html"><i class="fa-solid fa-user" aria-hidden="true"></i><span>Sobre mí</span></a></li>
+<li><a href="formulario.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Contacto</span></a></li>
+</ul></nav>
+    </div>
+  </header>
+<main class="container" id="main-content">
+
+<section class="page-hero reveal"><div class="page-hero-text"><span class="kicker">Infraestructura · Redes · Linux</span><h1>Homelab: aprender operando servicios reales.</h1><p>Mi laboratorio personal para practicar virtualización, administración de sistemas, redes y diagnóstico técnico. Es un entorno de aprendizaje; no lo presento como infraestructura de una empresa.</p><div class="hero-actions"><a class="btn btn-primary" href="#arquitectura"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Ver arquitectura</a><a class="btn btn-secondary" href="https://github.com/faku-20/faku-20/blob/main/evidencias/homelab.md" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Documentación</a></div></div></section>
+<section class="section reveal"><div class="section-heading"><span class="kicker">Servicios</span><h2>Qué utilizo en mi laboratorio</h2><p>Componentes que configuro y administro en equipos personales.</p></div><div class="evidence-grid">
+<article class="proof-card"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i><h3>Proxmox VE</h3><p>Host de virtualización para máquinas virtuales y contenedores LXC.</p></article>
+<article class="proof-card"><i class="fa-brands fa-linux" aria-hidden="true"></i><h3>Rocky Linux + Docker</h3><p>Servicios Linux y aplicaciones contenerizadas con supervisión de estados y registros.</p></article>
+<article class="proof-card"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><h3>pfSense (laboratorio)</h3><p>Máquina virtual destinada a prácticas de firewall y conectividad; no es el router principal de mi casa.</p></article>
+<article class="proof-card"><i class="fa-solid fa-network-wired" aria-hidden="true"></i><h3>DNS y acceso remoto</h3><p>AdGuard Home y Tailscale para experimentar con resolución de nombres y acceso privado.</p></article>
+<article class="proof-card"><i class="fa-solid fa-film" aria-hidden="true"></i><h3>Jellyfin</h3><p>Servicio multimedia instalado como contenedor LXC.</p></article>
+<article class="proof-card"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i><h3>Diagnóstico</h3><p>Comprobaciones de red, DNS, contenedores, registros y estado de servicios.</p></article>
+</div></section>
+<section class="section reveal" id="arquitectura"><div class="section-heading"><span class="kicker">Arquitectura conceptual</span><h2>Cómo se relacionan los componentes</h2><p>Diagrama simplificado: no contiene direcciones IP, puertos ni rutas de administración reales.</p></div><div class="architecture-box"><div class="arch-node arch-node-main"><span>Red doméstica / laboratorio</span></div><div class="arch-flow">↓</div><div class="arch-node"><span>Proxmox VE</span><small>Host de virtualización</small></div><div class="arch-flow">↓</div><div class="arch-branches"><div class="arch-node"><span>VM · Rocky Linux</span><small>Docker y servicios</small></div><div class="arch-node"><span>VM · pfSense</span><small>Pruebas de firewall</small></div><div class="arch-node"><span>LXC · Jellyfin</span><small>Servicio multimedia</small></div></div><p class="arch-note">AdGuard Home proporciona DNS en la red; Tailscale permite acceso remoto autorizado a equipos configurados.</p></div></section>
+<section class="section reveal"><div class="section-heading"><span class="kicker">Método de trabajo</span><h2>Cómo abordo problemas técnicos</h2></div><div class="evidence-grid"><article class="proof-card"><h3>1. Identificar</h3><p>Separar fallas de red, resolución DNS, aplicación y permisos.</p></article><article class="proof-card"><h3>2. Inspeccionar</h3><p>Consultar servicios, registros, rutas y configuración antes de intervenir.</p></article><article class="proof-card"><h3>3. Verificar</h3><p>Hacer cambios controlados, comprobar el resultado y documentar aprendizajes.</p></article></div><p class="evidence-note">Las capturas reales anonimizadas del laboratorio todavía están pendientes de publicación. La imagen de la portada es una composición conceptual, no una fotografía documental de las instalaciones.</p><div class="hero-actions"><a href="https://github.com/faku-20/faku-20/blob/main/evidencias/homelab.md" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Leer ficha técnica</a><a href="proyectos.html" class="btn btn-secondary">Volver a proyectos</a></div></section>
+</main>
+<footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <p><a href="mailto:facuperezaddiego@gmail.com"><i class="fa-solid fa-envelope"></i> facuperezaddiego@gmail.com</a></p>
+        <p><a href="tel:+59892467494"><i class="fa-solid fa-phone"></i> +598 92 467 494</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">Perfiles</h2>
+        <p><a href="https://github.com/faku-20" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/facundo-p%C3%A9rez-a61498253/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></p>
+      </div>
+      <div>
+        <h2 class="footer-title">CV</h2>
+        <p><a href="archivos/Curriculum_Facundo_Perez_Actualizado.pdf" download><i class="fa-solid fa-download"></i> Descargar CV</a></p>
+        <p><a href="formulario.html"><i class="fa-solid fa-paper-plane"></i> Enviarme un mensaje</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Facundo Pérez. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+<script src="js/script.js" defer></script>
+</body>
+</html>
