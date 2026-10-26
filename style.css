@@ -798,30 +798,23 @@ html:not(.has-intersection-observer) .reveal {opacity:1;transform:none;}
   .project-cover-real img { height: 205px; }
 }
 
-/* Homelab: portada conceptual diseñada para tarjetas de proyecto */
+/* Homelab: mostrar la portada panorámica completa en cualquier ancho */
 .project-cover-illustrated {
-  position: relative;
   display: block;
-  isolation: isolate;
+  width: 100%;
   overflow: hidden;
   background: #06160e;
+  border-bottom: 1px solid var(--line);
 }
 .project-cover-illustrated img {
   display: block;
-  padding: 0;
   width: 100%;
-  height: 240px;
-  object-fit: cover;
-  object-position: center 10%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
 }
 .project-cover-illustrated::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 65px;
-  background: linear-gradient(transparent, rgba(2, 12, 9, .85));
-  pointer-events: none;
-}
-@media (max-width: 620px) {
-  .project-cover-illustrated img { height: 205px; }
+  content: none;
 }
