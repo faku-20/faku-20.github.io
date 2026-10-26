@@ -50,7 +50,7 @@
   </header>
 <main class="container" id="main-content">
 
-<section class="page-hero reveal"><div class="page-hero-text"><span class="kicker">Infraestructura · Redes · Linux</span><h1>Homelab: aprender operando servicios reales.</h1><p>Mi laboratorio personal para practicar virtualización, administración de sistemas, redes y diagnóstico técnico. Es un entorno de aprendizaje; no lo presento como infraestructura de una empresa.</p><div class="hero-actions"><a class="btn btn-primary" href="#arquitectura"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Ver arquitectura</a><a class="btn btn-secondary" href="https://github.com/faku-20/faku-20/blob/main/evidencias/homelab.md" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Documentación</a></div></div></section>
+<section class="page-hero reveal"><div class="page-hero-text"><span class="kicker">Infraestructura · Redes · Linux</span><h1>Homelab: aprender operando servicios reales.</h1><p>Mi laboratorio personal para practicar virtualización, administración de sistemas, redes y diagnóstico técnico. Es un entorno de aprendizaje; no lo presento como infraestructura de una empresa.</p><div class="hero-actions"><a class="btn btn-primary" href="#evidencias"><i class="fa-solid fa-images" aria-hidden="true"></i> Ver capturas</a><a class="btn btn-secondary" href="https://github.com/faku-20/faku-20/blob/main/evidencias/homelab.md" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> Documentación</a></div></div></section>
 <section class="section reveal"><div class="section-heading"><span class="kicker">Servicios</span><h2>Qué utilizo en mi laboratorio</h2><p>Componentes que configuro y administro en equipos personales.</p></div><div class="evidence-grid">
 <article class="proof-card"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i><h3>Proxmox VE</h3><p>Host de virtualización para máquinas virtuales y contenedores LXC.</p></article>
 <article class="proof-card"><i class="fa-brands fa-linux" aria-hidden="true"></i><h3>Rocky Linux + Docker</h3><p>Servicios Linux y aplicaciones contenerizadas con supervisión de estados y registros.</p></article>
@@ -60,7 +60,37 @@
 <article class="proof-card"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i><h3>Diagnóstico</h3><p>Comprobaciones de red, DNS, contenedores, registros y estado de servicios.</p></article>
 </div></section>
 <section class="section reveal" id="arquitectura"><div class="section-heading"><span class="kicker">Arquitectura conceptual</span><h2>Cómo se relacionan los componentes</h2><p>Diagrama simplificado: no contiene direcciones IP, puertos ni rutas de administración reales.</p></div><div class="architecture-box"><div class="arch-node arch-node-main"><span>Red doméstica / laboratorio</span></div><div class="arch-flow">↓</div><div class="arch-node"><span>Proxmox VE</span><small>Host de virtualización</small></div><div class="arch-flow">↓</div><div class="arch-branches"><div class="arch-node"><span>VM · Rocky Linux</span><small>Docker y servicios</small></div><div class="arch-node"><span>VM · pfSense</span><small>Pruebas de firewall</small></div><div class="arch-node"><span>LXC · Jellyfin</span><small>Servicio multimedia</small></div></div><p class="arch-note">AdGuard Home proporciona DNS en la red; Tailscale permite acceso remoto autorizado a equipos configurados.</p></div></section>
-<section class="section reveal"><div class="section-heading"><span class="kicker">Método de trabajo</span><h2>Cómo abordo problemas técnicos</h2></div><div class="evidence-grid"><article class="proof-card"><h3>1. Identificar</h3><p>Separar fallas de red, resolución DNS, aplicación y permisos.</p></article><article class="proof-card"><h3>2. Inspeccionar</h3><p>Consultar servicios, registros, rutas y configuración antes de intervenir.</p></article><article class="proof-card"><h3>3. Verificar</h3><p>Hacer cambios controlados, comprobar el resultado y documentar aprendizajes.</p></article></div><p class="evidence-note">Las capturas reales anonimizadas del laboratorio todavía están pendientes de publicación. La imagen de la portada es una composición conceptual, no una fotografía documental de las instalaciones.</p><div class="hero-actions"><a href="https://github.com/faku-20/faku-20/blob/main/evidencias/homelab.md" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Leer ficha técnica</a><a href="proyectos.html" class="btn btn-secondary">Volver a proyectos</a></div></section>
+<section class="section homelab-evidence reveal" id="evidencias">
+  <div class="section-heading">
+    <span class="kicker">Evidencia técnica · Octubre 2026</span>
+    <h2>Capturas reales de mi laboratorio</h2>
+    <p>Interfaces y diagnósticos tomados de mi homelab, con recortes para no publicar direcciones IP, consultas DNS, actividad personal ni rutas internas. Las capturas reflejan un momento concreto, no métricas actuales.</p>
+  </div>
+  <div class="homelab-evidence-grid">
+    <figure class="homelab-evidence-card">
+      <img src="imagenes/homelab/homelab-proxmox-datacenter.webp" alt="Resumen de estado de un nodo Proxmox VE y consumo de CPU, memoria y almacenamiento." width="665" height="473" loading="lazy" decoding="async">
+      <figcaption><span class="homelab-evidence-label">Virtualización</span><h3>Estado del datacenter</h3><p>Supervisión del host de Proxmox y recursos asignados a máquinas virtuales y contenedores.</p></figcaption>
+    </figure>
+    <figure class="homelab-evidence-card">
+      <img src="imagenes/homelab/homelab-proxmox-metricas.webp" alt="Gráficas históricas de uso de CPU, carga y memoria de un host Proxmox VE." width="664" height="665" loading="lazy" decoding="async">
+      <figcaption><span class="homelab-evidence-label">Monitorización</span><h3>Métricas del host</h3><p>Revisión de consumo, carga y capacidad para decidir dónde ejecutar servicios.</p></figcaption>
+    </figure>
+    <figure class="homelab-evidence-card homelab-evidence-card-wide">
+      <img src="imagenes/homelab/homelab-docker-procesos.webp" alt="Salida de docker ps con estados e imágenes de contenedores, incluido un worker reiniciándose." width="766" height="159" loading="lazy" decoding="async">
+      <figcaption><span class="homelab-evidence-label">Linux · Docker</span><h3>Inspección de procesos</h3><p>Comprobación real de contenedores: la captura incluye un proceso en reinicio que se estaba diagnosticando. Es evidencia de revisión técnica, no de que todos los servicios estuvieran saludables.</p></figcaption>
+    </figure>
+    <figure class="homelab-evidence-card">
+      <img src="imagenes/homelab/homelab-jellyfin-dashboard.webp" alt="Panel administrativo de Jellyfin con versión del servidor y resumen de bibliotecas multimedia." width="777" height="323" loading="lazy" decoding="async">
+      <figcaption><span class="homelab-evidence-label">Servicios · LXC</span><h3>Jellyfin</h3><p>Panel administrativo de un servicio multimedia desplegado en un contenedor LXC.</p></figcaption>
+    </figure>
+    <figure class="homelab-evidence-card">
+      <img src="imagenes/homelab/homelab-adguard-estadisticas.webp" alt="Estadísticas de AdGuard Home con volumen de consultas DNS y solicitudes bloqueadas por filtros." width="599" height="692" loading="lazy" decoding="async">
+      <figcaption><span class="homelab-evidence-label">Redes · DNS</span><h3>AdGuard Home</h3><p>Estadísticas de consultas DNS, bloqueos y tiempo de respuesta; se excluyeron clientes y dominios concretos.</p></figcaption>
+    </figure>
+  </div>
+  <p class="evidence-note">Capturas reales, recortadas por privacidad. El diagrama anterior sigue siendo conceptual. No representan datos de producción de terceros ni una auditoría de seguridad.</p>
+</section>
+<section class="section reveal"><div class="section-heading"><span class="kicker">Método de trabajo</span><h2>Cómo abordo problemas técnicos</h2></div><div class="evidence-grid"><article class="proof-card"><h3>1. Identificar</h3><p>Separar fallas de red, resolución DNS, aplicación y permisos.</p></article><article class="proof-card"><h3>2. Inspeccionar</h3><p>Consultar servicios, registros, rutas y configuración antes de intervenir.</p></article><article class="proof-card"><h3>3. Verificar</h3><p>Hacer cambios controlados, comprobar el resultado y documentar aprendizajes.</p></article></div><p class="evidence-note">Las imágenes de la galería son capturas reales del laboratorio editadas únicamente mediante recortes para proteger la privacidad. La imagen de portada es una composición conceptual, no una fotografía documental de las instalaciones.</p><div class="hero-actions"><a href="https://github.com/faku-20/faku-20/blob/main/evidencias/homelab.md" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Leer ficha técnica</a><a href="proyectos.html" class="btn btn-secondary">Volver a proyectos</a></div></section>
 </main>
 <footer class="site-footer">
     <div class="footer-grid">

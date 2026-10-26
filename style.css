@@ -706,3 +706,48 @@ html:not(.has-intersection-observer) .reveal {opacity:1;transform:none;}
   .sigto-demo-card { padding: .85rem; }
   .sigto-demo-card h3 { font-size: 1.15rem; }
 }
+
+/* HOMELAB · galería de evidencias reales 2026 */
+.homelab-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3rem;
+  align-items: stretch;
+}
+.homelab-evidence-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+  box-shadow: var(--shadow);
+}
+.homelab-evidence-card img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background: #121518;
+  border-bottom: 1px solid var(--line);
+}
+.homelab-evidence-card figcaption { padding: 1.15rem 1.3rem 1.4rem; }
+.homelab-evidence-label {
+  color: #a8f5d8;
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .035em;
+}
+.homelab-evidence-card h3 { margin: .55rem 0 .45rem; font-size: 1.22rem; }
+.homelab-evidence-card p { color: var(--muted); line-height: 1.65; margin: 0; }
+.homelab-evidence-card-wide { grid-column: 1 / -1; }
+.homelab-evidence-card-wide img { height: auto; max-height: 220px; object-fit: contain; }
+.homelab-evidence .evidence-note { margin-top: 1.3rem; }
+@media (max-width: 760px) {
+  .homelab-evidence-grid { grid-template-columns: minmax(0, 1fr); }
+  .homelab-evidence-card-wide { grid-column: auto; }
+  .homelab-evidence-card img { height: auto; max-height: 340px; }
+  .homelab-evidence-card figcaption { padding: 1rem; }
+}
