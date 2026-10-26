@@ -662,3 +662,47 @@ html:not(.has-intersection-observer) .reveal {opacity:1;transform:none;}
   *,*::before,*::after {animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
   .reveal,.has-intersection-observer .reveal {opacity:1 !important;transform:none !important;}
 }
+
+/* S.I.G.T.O. · demos profesional y técnica */
+.sigto-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1.25rem;
+}
+.sigto-demo-card {
+  min-width: 0;
+  overflow: hidden;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+  box-shadow: var(--shadow);
+}
+.sigto-demo-card-heading { min-height: 175px; }
+.sigto-demo-eyebrow {
+  display: inline-flex;
+  gap: .45rem;
+  align-items: center;
+  color: #a8f5d8;
+  font-size: .85rem;
+  font-weight: 700;
+}
+.sigto-demo-card h3 { margin: .65rem 0 .5rem; font-size: 1.35rem; }
+.sigto-demo-card p { color: var(--muted); line-height: 1.65; }
+.sigto-demo-card .demo-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 14px;
+}
+.sigto-demo-disclaimer { margin-top: 1.25rem; }
+@media (max-width: 850px) {
+  .sigto-demo-grid { grid-template-columns: minmax(0, 1fr); }
+  .sigto-demo-card-heading { min-height: 0; margin-bottom: 1rem; }
+}
+@media (max-width: 480px) {
+  .sigto-demo-card { padding: .85rem; }
+  .sigto-demo-card h3 { font-size: 1.15rem; }
+}

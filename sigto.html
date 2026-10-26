@@ -96,7 +96,7 @@
 
       <article class="panel reveal">
         <h3>Resultado</h3>
-        <p>Documentación, capturas de interfaz y video del proyecto académico. El pago es simulado; el video existente no sustituye pruebas de ejecución y persistencia.</p>
+        <p>Documentación, capturas reales y dos videos de demostración: una presentación profesional y un recorrido técnico detallado. Los pagos son simulados.</p>
       </article>
     </section>
 
@@ -157,15 +157,38 @@
 
     <section class="section project-demo reveal" id="demo">
       <div class="section-heading">
-        <span class="kicker">Demo</span>
-        <h2>Video del sistema</h2>
-        <p>Recorrido audiovisual existente por pantallas y funciones representadas. Se está preparando una demo técnica más corta con interacciones verificables.</p>
+        <span class="kicker">Demostraciones · WinForms + MariaDB</span>
+        <h2>S.I.G.T.O. en funcionamiento</h2>
+        <p>Dos recorridos complementarios por Sell Xpress: una presentación breve para conocer el proyecto y una demostración técnica con más detalle sobre los tres perfiles.</p>
       </div>
 
-      <video class="demo-video" controls playsinline preload="metadata" poster="imagenes/sigto/empresa-dashboard.webp">
-        <source src="imagenes/sigto/sigto-demo.mp4" type="video/mp4">
-      </video>
-      <p class="evidence-note">Este video es una presentación del proyecto; algunas secuencias son capturas de interfaz, no grabaciones continuas de acciones ejecutadas. No hay pagos reales.</p>
+      <div class="sigto-demo-grid">
+        <article class="sigto-demo-card">
+          <div class="sigto-demo-card-heading">
+            <span class="sigto-demo-eyebrow"><i class="fa-solid fa-star" aria-hidden="true"></i> Video recomendado · 2:26</span>
+            <h3>Demo profesional</h3>
+            <p>Presentación concisa del recorrido de cliente, empresa y administrador, con una síntesis de la arquitectura y la participación técnica en el proyecto.</p>
+          </div>
+          <video class="demo-video" controls playsinline preload="none" poster="imagenes/sigto/SellXpress-Miniatura.jpg" aria-label="Demo profesional de Sell Xpress de dos minutos y veintiséis segundos">
+            <source src="imagenes/sigto/SellXpress-Demo-Profesional.mp4" type="video/mp4">
+            Tu navegador no admite video HTML5.
+          </video>
+        </article>
+
+        <article class="sigto-demo-card">
+          <div class="sigto-demo-card-heading">
+            <span class="sigto-demo-eyebrow"><i class="fa-solid fa-code" aria-hidden="true"></i> Recorrido técnico · 6:14</span>
+            <h3>Demo técnica completa</h3>
+            <p>Explora registro y perfiles, catálogo, carrito, compras, productos, promociones, ventas y herramientas de administración del sistema.</p>
+          </div>
+          <video class="demo-video" controls playsinline preload="none" poster="imagenes/sigto/SellXpress-Miniatura.jpg" aria-label="Demo técnica de Sell Xpress de seis minutos y catorce segundos">
+            <source src="imagenes/sigto/SellXpress-Demo-Completa-Mejorada.mp4" type="video/mp4">
+            Tu navegador no admite video HTML5.
+          </video>
+        </article>
+      </div>
+
+      <p class="evidence-note sigto-demo-disclaimer">Videos grabados en un entorno local de demostración con esquema de base de datos reconstruido y pagos simulados. La edición de reseñas presenta una incidencia detectada durante las pruebas; no se presenta como una función validada. Proyecto académico colectivo: mi contribución estuvo centrada en infraestructura, despliegue y configuración de base de datos.</p>
     </section>
 
     <div class="back-link"><a href="proyectos.html" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Volver a proyectos</a></div>
